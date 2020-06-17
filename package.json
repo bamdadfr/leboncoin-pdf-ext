@@ -1,0 +1,21 @@
+{
+  "name": "leboncoin-exporter-ext",
+  "version": "0.0.1",
+  "description": "leboncoin exporter web-extension",
+  "license": "MIT",
+  "author": "Bamdad Sabbagh <hello@bamdadsabbagh.com>",
+  "scripts": {
+    "dev": "webextension-toolbox dev",
+    "build": "webextension-toolbox build",
+    "start:firefox": "web-ext run --source-dir dist/firefox",
+    "start:chrome": "web-ext run -t chromium --source-dir dist/chrome"
+  },
+  "devDependencies": {
+    "@bamdadsabbagh/eslint-config": "^1.1.8",
+    "@bamdadsabbagh/stylelint-config": "^1.0.7",
+    "webextension-toolbox": "latest"
+  },
+  "dependencies": {
+    "jspdf": "^1.5.3"
+  }
+}
