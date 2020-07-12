@@ -39,10 +39,8 @@ const setEvents = () => {
 
 }
 
-const init = () => {
+(() => {
 
     setEvents ()
 
-}
-
-init ()
+}) ()
