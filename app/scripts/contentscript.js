@@ -1,14 +1,18 @@
 import { getBrowser, setState } from './services/browser'
-import Ad from './components/ad'
+import { Ad } from './components/ad'
 
 const run = () => {
 
-    const reduxDOM = document.getElementById ('__NEXT_DATA__').innerHTML
-    const ad = new Ad ()
+    if (document.visibilityState === 'visible') {
 
-    ad.import (reduxDOM)
-
-    ad.export ()
+        const reduxDOM = document.getElementById ('__NEXT_DATA__').innerHTML
+        const ad = new Ad ()
+    
+        ad.import (reduxDOM)
+    
+        ad.export ()
+    
+    }
 
 }
 

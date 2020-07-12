@@ -1,11 +1,13 @@
 /* eslint-disable new-cap */
 import * as jsPDF from 'jspdf'
 
-export default class PDF {
+export const PDF = class PDF {
 
-    constructor () {
+    constructor (name) {
 
         this.doc = new jsPDF ('p', 'in', 'letter')
+
+        this.name = name
 
         this.type = {
             'n': 'normal',
@@ -20,6 +22,10 @@ export default class PDF {
         }
 
         this.pos = {
+            'init': {
+                'x': 0.5,
+                'y': 0.5,
+            },
             'x': 0.5,
             'y': 0.5,
             'spacer': (size = this.size.normal, coef = 1) => {
@@ -27,11 +33,26 @@ export default class PDF {
                 this.pos.y += (0.5 * size / 24) * coef
 
             },
+            'reset': () => {
+
+                this.pos.x = this.pos.init.x
+
+                this.pos.y = this.pos.init.y
+            
+            },
         }
     
     }
 
-    save (name) {
+    init () {
+
+        this.pos.width = this.doc.internal.pageSize.getWidth () - this.pos.x
+
+        this.pos.height = this.doc.internal.pageSize.getHeight () - this.pos.y
+    
+    }
+
+    save () {
 
         const blobData = this.doc.output ('blob')
         const a = document.createElement ('a')
@@ -45,7 +66,7 @@ export default class PDF {
     
         a.href = url
     
-        a.download = name + '.pdf'
+        a.download = this.name + '.pdf'
     
         a.click ()
     
@@ -76,37 +97,67 @@ export default class PDF {
     
     }
 
-    runLoop (array) {
+    printNewPage () {
 
-        for (let i = 0; i < array.length; ++i) {
+        this.doc.addPage ()
 
-            if (array[i].isSpacer) {
-
-                this.pos.spacer ()
-
-                continue
-
-            }
-
-            if (array[i].isBlock) {
-
-                this.printBlock (array[i].text)
-
-                continue
-            
-            }
-
-            this.print (array[i].text, array[i].size, array[i].type)
-        
-        }
+        this.pos.reset ()
 
     }
 
-    run (data, name) {
+    printHR () {
 
-        this.runLoop (data)
+        this.doc.setLineWidth (0.01)
 
-        this.save (name)
+        this.doc.line (this.pos.x, this.pos.y, this.pos.width, this.pos.y)
+
+        this.pos.spacer ()
+    
+    }
+
+    printImage (id) {
+
+        if (this.pos.x !== this.pos.init.x || this.pos.y !== this.pos.init.y) {
+                
+            this.printNewPage ()
+                
+        }
+            
+        this.print (this.name, this.size.small)
+            
+        this.print (`Image ${id}`, this.size.small)
+            
+        // this.doc.addImage (imgData, 'JPEG', this.pos.x, this.pos.y, this.pos.width - 0.5, this.pos.height - 0.5)
+
+    }
+
+    iterate (array) {
+            
+        array.forEach ((el) => {
+            
+            if (el.isSpacer) return this.pos.spacer ()
+
+            if (el.isBlock) return this.printBlock (el.text)
+
+            if (el.isPageBreak) return this.printNewPage ()
+            
+            if (el.isHR) return this.printHR ()
+
+            if (el.isImage) return
+            
+            return this.print (el.text, el.size, el.type)
+        
+        }) 
+
+    }
+
+    run (data) {
+
+        this.init ()
+
+        this.iterate (data)
+
+        this.save ()
 
     }
 

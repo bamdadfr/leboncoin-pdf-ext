@@ -1,8 +1,9 @@
-import PDF from './pdf'
+import { PDF } from './pdf'
 
 // https://www.leboncoin.fr/ventes_immobilieres/1785194713.htm/
+// https://www.leboncoin.fr/ventes_immobilieres/1799700458.htm/
 
-export default class Ad {
+export const Ad = class Ad {
 
     import (data) {
 
@@ -12,7 +13,7 @@ export default class Ad {
     
     }
 
-    format (pdf) {
+    text (pdf) {
 
         return [
             {
@@ -46,7 +47,7 @@ export default class Ad {
             },
             {
                 // price
-                'text': `Prix : ${this.json.price[0].toString ()}`,
+                'text': `Prix : ${this.json.price[0].toString ()} €`,
             },
             {
                 'isSpacer': true,
@@ -77,21 +78,73 @@ export default class Ad {
                 'isBlock': true,
                 'text': this.json.body,
             },
-
+            {
+                // page break before images
+                'isPageBreak': true,
+            },
+            {
+                // url
+                'text': this.json.url,
+                'size': pdf.size.small,
+            },
+            {
+                'isHR': true,
+            },
+            {
+                // category
+                'text': this.json.category_name,
+                'size': pdf.size.small,   
+            },
         ]
     
     }
 
+    images (json) {
+
+        const data = []
+        let images = undefined
+
+        if (json.images.urls_large) {
+
+            images = json.images.urls_large
+            
+        } else if (json.images.urls) {
+            
+            images = json.images.urls
+            
+        }
+
+        images.forEach ((image, k) => {
+
+            data.push (
+                {
+                    'isImage': true,
+                    'id': k,
+                    'data': image,
+                },
+            )
+            
+        })
+
+        return data
+    
+    }
+
     export () {
-
-        const pdf = new PDF ()
-        const data = this.format (pdf)
-
-        console.log (this.json)
-
+        
         const name = `${this.json.list_id}-${this.json.subject}`
+        const pdf = new PDF (name)
+        const text = this.text (pdf)
+        const images = this.images (this.json)
 
-        pdf.run (data, name)
+        const data = [
+            ...text,
+            ...images,
+        ]
+
+        console.log (data)
+
+        pdf.run (data)
     
     }
 
