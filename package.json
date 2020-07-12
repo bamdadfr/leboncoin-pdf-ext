@@ -5,17 +5,21 @@
   "license": "MIT",
   "author": "Bamdad Sabbagh <hello@bamdadsabbagh.com>",
   "scripts": {
-    "dev": "webextension-toolbox dev",
     "build": "webextension-toolbox build",
+    "dev:chrome": "concurrently -k -p 'yarn webpack chrome' 'yarn start:chrome'",
+    "dev:firefox": "concurrently -k -p 'yarn webpack firefox' 'yarn start:firefox'",
+    "sort:package": "npx sort-package-json",
+    "start:chrome": "web-ext run -t chromium --source-dir dist/chrome",
     "start:firefox": "web-ext run --source-dir dist/firefox",
-    "start:chrome": "web-ext run -t chromium --source-dir dist/chrome"
+    "webpack": "webextension-toolbox dev"
+  },
+  "dependencies": {
+    "jspdf": "^1.5.3"
   },
   "devDependencies": {
     "@bamdadsabbagh/eslint-config": "^1.1.8",
     "@bamdadsabbagh/stylelint-config": "^1.0.7",
+    "concurrently": "^5.2.0",
     "webextension-toolbox": "latest"
-  },
-  "dependencies": {
-    "jspdf": "^1.5.3"
   }
 }
