@@ -11,7 +11,7 @@
     "start:chrome": "web-ext run -t chromium --source-dir dist/chrome"
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.1.8",
+    "@bamdadsabbagh/eslint-config": "^1.3.2",
     "@bamdadsabbagh/stylelint-config": "^1.0.7",
     "webextension-toolbox": "latest"
   },
