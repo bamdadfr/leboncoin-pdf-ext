@@ -16,9 +16,9 @@ export const setState = async (type, payload) => {
 
     const state = await getState ()
 
-    // console.log ('type', type)
+    console.log ('type', type)
 
-    // console.log ('payload', payload)
+    console.log ('payload', payload)
 
     switch (type) {
 

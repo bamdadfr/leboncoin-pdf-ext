@@ -20,6 +20,8 @@ const setEvents = () => {
     
     getBrowser ().storage.onChanged.addListener (changes => {
 
+        console.log (changes)
+
         // runtime
         switch (changes.isTriggered.newValue) {
             
@@ -41,6 +43,14 @@ const setEvents = () => {
 }
 
 (() => {
+
+    setTimeout (() => {
+
+        // https://img3.leboncoin.fr/ad-large/67fccf1c56191f78f58ba904739b657b4ed62822.jpg
+
+        // setState ('isTriggered', true)
+    
+    }, 2000)
 
     setEvents ()
 
