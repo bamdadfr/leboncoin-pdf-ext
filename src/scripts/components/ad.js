@@ -1,9 +1,6 @@
 import { PDF } from './pdf'
 import { imageToBase64, asyncForEach } from './utils'
 
-// https://www.leboncoin.fr/ventes_immobilieres/1785194713.htm/
-// https://www.leboncoin.fr/ventes_immobilieres/1799700458.htm/
-
 export const Ad = class Ad {
 
     import (data) {
