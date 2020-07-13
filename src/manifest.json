@@ -24,9 +24,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://leboncoin.fr/*",
-        "*://.leboncoin.fr/*",
-        "*://www.leboncoin.fr/*"
+        "*://*.leboncoin.fr/*"
       ],
       "js": [
         "scripts/content.js"
@@ -36,6 +34,7 @@
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "*://*.leboncoin.fr/*"
   ]
 }

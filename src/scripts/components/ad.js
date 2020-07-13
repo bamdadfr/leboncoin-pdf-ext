@@ -1,4 +1,5 @@
 import { PDF } from './pdf'
+import { imageToBase64, asyncForEach } from './utils'
 
 // https://www.leboncoin.fr/ventes_immobilieres/1785194713.htm/
 // https://www.leboncoin.fr/ventes_immobilieres/1799700458.htm/
@@ -99,7 +100,7 @@ export const Ad = class Ad {
     
     }
 
-    images (json) {
+    async images (json) {
 
         const data = []
         let images = undefined
@@ -114,35 +115,39 @@ export const Ad = class Ad {
             
         }
 
-        images.forEach ((image, k) => {
+        await asyncForEach (images, async (image, k) => {
+
+            const base64 = await imageToBase64 (image)
 
             data.push (
                 {
                     'isImage': true,
                     'id': k,
-                    'data': image,
+                    'url': image,
+                    'base64': base64,
                 },
             )
-            
+        
         })
 
         return data
     
     }
 
-    export () {
+    async export () {
         
         const name = `${this.json.list_id}-${this.json.subject}`
         const pdf = new PDF (name)
         const text = this.text (pdf)
-        const images = this.images (this.json)
+        const images = await this.images (this.json)
 
         const data = [
             ...text,
             ...images,
         ]
 
-        console.log (data)
+        // eslint-disable-next-line no-console
+        // console.log (data)
 
         pdf.run (data)
     

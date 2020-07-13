@@ -115,20 +115,24 @@ export const PDF = class PDF {
     
     }
 
-    printImage (id) {
+    printImage (id, _url, base64) {
 
         if (this.pos.x !== this.pos.init.x || this.pos.y !== this.pos.init.y) {
-                
-            this.printNewPage ()
-                
-        }
-            
-        this.print (this.name, this.size.small)
-            
-        this.print (`Image ${id}`, this.size.small)
-            
-        // this.doc.addImage (imgData, 'JPEG', this.pos.x, this.pos.y, this.pos.width - 0.5, this.pos.height - 0.5)
 
+            this.printNewPage ()
+        
+        }
+        
+        this.print (this.name, this.size.small)
+        
+        this.print (`Image ${id}`, this.size.small)
+
+        this.printHR ()
+
+        const width = this.pos.width - 0.5
+
+        this.doc.addImage (base64, 'JPEG', this.pos.x, this.pos.y, width, 5)
+    
     }
 
     iterate (array) {
@@ -143,7 +147,7 @@ export const PDF = class PDF {
             
             if (el.isHR) return this.printHR ()
 
-            if (el.isImage) return
+            if (el.isImage) return this.printImage (el.id, el.url, el.base64)
             
             return this.print (el.text, el.size, el.type)
         
