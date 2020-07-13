@@ -9,17 +9,6 @@ module.exports = {
         'scripts/content': './src/scripts/content.js',
         'scripts/popup': './src/scripts/popup.js',
     },
-    // 'resolve': {
-    //     'modules': [
-    //         './src',
-    //         './node_modules',
-    //     ],
-    // },
-    // 'node': {
-    //     'fs': 'empty',
-    //     'net': 'empty',
-    //     'tls': 'empty',
-    // },
     'plugins': [
         new CopyPlugin ({
             'patterns': [
