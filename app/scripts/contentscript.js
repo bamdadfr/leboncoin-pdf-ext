@@ -25,11 +25,8 @@ const setEvents = () => {
             
             case true:
 
-                // TODO: wrap run() in promise
                 run ()
 
-                // TODO: add a transiant isLoading state
-                
                 setState ('isTriggered', false)
 
                 break
