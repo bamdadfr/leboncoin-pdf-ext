@@ -20,6 +20,8 @@ const setEvents = () => {
     
     getBrowser ().storage.onChanged.addListener (changes => {
 
+        console.log (changes)
+
         // runtime
         switch (changes.isTriggered.newValue) {
             
@@ -41,6 +43,12 @@ const setEvents = () => {
 }
 
 (() => {
+
+    setTimeout (() => {
+
+        // setState ('isTriggered', true)
+    
+    }, 2000)
 
     setEvents ()
 

@@ -1,13 +1,12 @@
 {
-  "name": "__MSG_appName__",
-  "short_name": "__MSG_appShortName__",
-  "description": "__MSG_appDescription__",
+  "name": "leboncoin-pdf",
+  "short_name": "leboncoin-pdf",
+  "description": "leboncoin-pdf",
   "version": "0.0.1",
   "manifest_version": 2,
-  "default_locale": "en",
   "icons": {
-    "16": "images/icon.png",
-    "128": "images/icon.png"
+    "16": "assets/icon.png",
+    "128": "assets/icon.png"
   },
   "background": {
     "scripts": [
@@ -16,11 +15,11 @@
   },
   "browser_action": {
     "default_icon": {
-      "19": "images/icon.png",
-      "38": "images/icon.png"
+      "19": "assets/icon.png",
+      "38": "assets/icon.png"
     },
-    "default_title": "__MSG_browserActionTitle__",
-    "default_popup": "pages/popup.html"
+    "default_title": "leboncoin-pdf",
+    "default_popup": "popup/index.html"
   },
   "content_scripts": [
     {
@@ -29,11 +28,8 @@
         "*://.leboncoin.fr/*",
         "*://www.leboncoin.fr/*"
       ],
-      "css": [
-        "styles/contentscript.css"
-      ],
       "js": [
-        "scripts/contentscript.js"
+        "scripts/content.js"
       ],
       "run_at": "document_end",
       "all_frames": false
