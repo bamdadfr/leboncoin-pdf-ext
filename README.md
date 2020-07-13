@@ -1,8 +1,8 @@
 # leboncoin-pdf-ext
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/541249b0c60f4948819bdde8906be1b5)](https://www.codacy.com/manual/bamdadsabbagh/leboncoin-pdf-ext?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bamdadsabbagh/leboncoin-pdf-ext&amp;utm_campaign=Badge_Grade)
-![David](https://img.shields.io/david/bamdadsabbagh/bamdadsabbagh-www)
-![David](https://img.shields.io/david/dev/bamdadsabbagh/bamdadsabbagh-www)
+![David](https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext)
+![David](https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext)
 
 PDF exporter for [leboncoin.fr](https://www.leboncoin.fr/)
 
