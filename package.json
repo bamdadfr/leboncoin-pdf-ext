@@ -6,6 +6,7 @@
   "author": "Bamdad Sabbagh <hello@bamdadsabbagh.com>",
   "scripts": {
     "start": "web-ext run --source-dir dist",
+    "start:chrome": "web-ext run --source-dir dist -t chromium",
     "webpack": "yarn clean && webpack",
     "clean": "rm -rf dist"
   },
