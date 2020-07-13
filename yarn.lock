@@ -762,10 +762,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.3.3.tgz#4947841e06a6cba2a223afa545792fdb68876cfc"
-  integrity sha512-B3h50HKZ89XJvLEUlko2X1Y4KZCI6qrEGGZPp+mtTNaKaxgyEpXH+MZgkFLYGyIUka0lOFffAgGOD46tfki+mg==
+"@bamdadsabbagh/eslint-config@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.3.4.tgz#3b10503925c386982b2a1e0ff514099fbf46a1de"
+  integrity sha512-oHNJqhsJsoctTvHFFV+R9aJPQDdPfVEBaiAQ+LrRT012/TNBstm9jVbxx/yfj7yTtYxAWmNzFs7r1y/1uTHO2w==
   dependencies:
     "@types/node" "^14.0.22"
     "@types/react" "^16.9.43"
@@ -784,10 +784,10 @@
     prettier "^2.0.5"
     typescript "^3.9.6"
 
-"@bamdadsabbagh/stylelint-config@^1.2.15":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.15.tgz#e2a708fc3b0acfd5203a9d15c919e3af28865aaf"
-  integrity sha512-zNxEl5YSTpidxr76mvkNj7U08reWRMVyZdyRJHScLIJwBKcM1Sy9r9G8bza8FfwBMu/qeSNkqlFMTUXR+S6J2w==
+"@bamdadsabbagh/stylelint-config@^1.2.16":
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.16.tgz#6cdea28c1988daff0893b421f2c7e82074842baf"
+  integrity sha512-SI+Gqo0MElWNKeftYkfCSYvbCPQ5oYJtLwW67rdd+AIDU6bXOABoT5/RNPr/SRYjy+yGIfyJzjv14xqgxWE1xA==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
@@ -857,9 +857,9 @@
     fastq "^1.6.0"
 
 "@stylelint/postcss-css-in-js@^0.37.1":
-  version "0.37.1"
-  resolved "https://registry.yarnpkg.com/@stylelint/postcss-css-in-js/-/postcss-css-in-js-0.37.1.tgz#41e5e7660f73d88227610e18c6ebb262d56ac125"
-  integrity sha512-UMf2Rni3JGKi3ZwYRGMYJ5ipOA5ENJSKMtYA/pE1ZLURwdh7B5+z2r73RmWvub+N0UuH1Lo+TGfCgYwPvqpXNw==
+  version "0.37.2"
+  resolved "https://registry.yarnpkg.com/@stylelint/postcss-css-in-js/-/postcss-css-in-js-0.37.2.tgz#7e5a84ad181f4234a2480803422a47b8749af3d2"
+  integrity sha512-nEhsFoJurt8oUmieT8qy4nk81WRHmJynmVwn/Vts08PL9fhgIsMhk1GId5yAN643OzqEEb5S/6At2TZW7pqPDA==
   dependencies:
     "@babel/core" ">=7.9.0"
 
@@ -2948,7 +2948,7 @@ file-entry-cache@^5.0.1:
   dependencies:
     flat-cache "^2.0.1"
 
-file-saver@eligrey/FileSaver.js#1.3.8:
+"file-saver@github:eligrey/FileSaver.js#1.3.8":
   version "1.3.8"
   resolved "https://codeload.github.com/eligrey/FileSaver.js/tar.gz/e865e37af9f9947ddcced76b549e27dc45c1cb2e"
 
@@ -5947,9 +5947,9 @@ strip-indent@^3.0.0:
     min-indent "^1.0.0"
 
 strip-json-comments@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.0.tgz#7638d31422129ecf4457440009fba03f9f9ac180"
-  integrity sha512-e6/d0eBu7gHtdCqFt0xJr642LdToM5/cN4Qb9DbHjVx1CP5RyeM+zH7pbecEmDv/lBqb0QH+6Uqq75rxFPkM0w==
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
+  integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
 style-search@^0.1.0:
   version "0.1.0"
@@ -6415,9 +6415,9 @@ unist-util-stringify-position@^2.0.0:
     "@types/unist" "^2.0.2"
 
 unist-util-visit-parents@^3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-3.0.2.tgz#d4076af3011739c71d2ce99d05de37d545f4351d"
-  integrity sha512-yJEfuZtzFpQmg1OSCyS9M5NJRrln/9FbYosH3iW0MG402QbdbaB8ZESwUv9RO6nRfLAKvWcMxCwdLWOov36x/g==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-3.1.0.tgz#4dd262fb9dcfe44f297d53e882fc6ff3421173d5"
+  integrity sha512-0g4wbluTF93npyPrp/ymd3tCDTMnP0yo2akFD2FIBAYXq/Sga3lwaU1D8OYKbtpioaI6CkDcQ6fsMnmtzt7htw==
   dependencies:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
