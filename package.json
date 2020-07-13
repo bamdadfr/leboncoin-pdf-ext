@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Bamdad Sabbagh <hello@bamdadsabbagh.com>",
   "scripts": {
-    "build": "webextension-toolbox build",
+    "build:chrome": "webextension-toolbox build chrome",
+    "build:firefox": "webextension-toolbox build firefox",
     "dev:chrome": "concurrently 'yarn webpack chrome' 'yarn wait:chrome && yarn start:chrome'",
     "dev:firefox": "concurrently 'yarn webpack firefox' 'yarn wait:firefox && yarn start:firefox'",
     "sort:package": "npx sort-package-json",
