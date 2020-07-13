@@ -10,12 +10,13 @@ export const PDF = class PDF {
         this.name = name
 
         this.type = {
-            'n': 'normal',
-            'b': 'bold',
-            'i': 'italic',
+            'normal': 'normal',
+            'bold': 'bold',
+            'italic': 'italic',
         }
 
         this.size = {
+            'xsmall': 8,
             'small': 10,
             'normal': 12,
             'heading': 14,
@@ -74,7 +75,7 @@ export const PDF = class PDF {
     
     }
 
-    print (text, size = this.size.normal, type = this.type.n) {
+    printText (text, size = this.size.normal, type = this.type.normal) {
 
         this.doc.setFontSize (size).setFontType (type)
 
@@ -84,7 +85,17 @@ export const PDF = class PDF {
     
     }
 
-    printBlock (text, size = this.size.normal, type = this.type.n) {
+    printLink (text, url, size = this.size.normal, type = this.type.normal) {
+
+        this.doc.setFontSize (size).setFontType (type)
+
+        this.doc.textWithLink (text, this.pos.x, this.pos.y, { url })
+    
+        this.pos.spacer (size)
+    
+    }
+
+    printBlock (text, size = this.size.normal, type = this.type.normal) {
 
         const lines = this.doc
             .setFontSize (size)
@@ -115,7 +126,7 @@ export const PDF = class PDF {
     
     }
 
-    printImage (id, _url, base64) {
+    printImage (id, total, _url, base64) {
 
         if (this.pos.x !== this.pos.init.x || this.pos.y !== this.pos.init.y) {
 
@@ -123,9 +134,9 @@ export const PDF = class PDF {
         
         }
         
-        this.print (this.name, this.size.small)
+        this.printText (this.name, this.size.small)
         
-        this.print (`Image ${id}`, this.size.small)
+        this.printText (`Image ${id} / ${total}`, this.size.small)
 
         this.printHR ()
 
@@ -141,15 +152,17 @@ export const PDF = class PDF {
             
             if (el.isSpacer) return this.pos.spacer ()
 
-            if (el.isBlock) return this.printBlock (el.text)
+            if (el.isBlock) return this.printBlock (el.text, el.size, el.type)
 
             if (el.isPageBreak) return this.printNewPage ()
             
             if (el.isHR) return this.printHR ()
 
-            if (el.isImage) return this.printImage (el.id, el.url, el.base64)
+            if (el.isImage) return this.printImage (el.id, el.total, el.url, el.base64)
+
+            if (el.isLink) return this.printLink (el.text, el.url, el.size)
             
-            return this.print (el.text, el.size, el.type)
+            return this.printText (el.text, el.size, el.type)
         
         }) 
 

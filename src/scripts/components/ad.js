@@ -11,89 +11,143 @@ export const Ad = class Ad {
     
     }
 
-    text (pdf) {
+    header (json, pdf) {
 
         return [
             {
                 // url
-                'text': this.json.url,
+                'isLink': true,
+                'text': json.url,
+                'url': json.url,
                 'size': pdf.size.small,
             },
             {
                 // category
-                'text': this.json.category_name,
+                'text': json.category_name,
                 'size': pdf.size.small,   
             },
             {
                 // date of first publication
-                'text': `Première publication : ${this.json.first_publication_date}`,
-                'size': pdf.size.small,
+                'text': `Première publication : ${json.first_publication_date}`,
+                'size': pdf.size.xsmall,
             },
             {
                 // date of latest update
-                'text': `Dernière mise à jour : ${this.json.index_date}`,
-                'size': pdf.size.small,
+                'text': `Dernière mise à jour : ${json.index_date}`,
+                'size': pdf.size.xsmall,
             },
+        ]
+    
+    }
+
+    title (json, pdf) {
+
+        return [
             {
-                'isSpacer': true,
+                'isHR': true,
             },
             {
                 // title
-                'text': this.json.subject,
-                'size': pdf.size.heading,
-                'type': pdf.type.b,
+                'text': json.subject,
+                'type': pdf.type.bold,
             },
             {
                 // price
-                'text': `Prix : ${this.json.price[0].toString ()} €`,
-            },
-            {
-                'isSpacer': true,
-            },
-            {
-                'text': `Vendeur ${this.json.owner.type} : ${this.json.owner.name}`,
+                'text': `Prix : ${json.price[0].toString ()} €`,
                 'size': pdf.size.small,
             },
             {
-                'text': `Lieu : ${this.json.location.city}, ${this.json.location.zipcode}, ${this.json.location.department_name}`,
+                'text': `Lieu : ${json.location.city}, ${json.location.zipcode}, ${json.location.department_name}`,
                 'size': pdf.size.small,
             },
             {
-                'text': `GPS : ${this.json.location.lat}, ${this.json.location.lng}`,
+                'text': `GPS : ${json.location.lat}, ${json.location.lng}`,
                 'size': pdf.size.small,
             },
             {
-                'isSpacer': true,
+                'isLink': true,
+                'text': 'Google Maps',
+                'url': `https://www.google.com/maps/place/${json.location.lat},${json.location.lng}`,
+                'size': pdf.size.xsmall,
+            },
+        ]
+    
+    }
+
+    seller (json, pdf) {
+
+        return [
+            {
+                'isHR': true,
+            },
+            {
+                'text': 'Vendeur',
+                'size': pdf.size.normal,
+                'type': pdf.type.bold,
+            },
+            {
+                'text': `Vendeur ${json.owner.type} : ${json.owner.name}`,
+                'size': pdf.size.small,
+            },
+            {
+                'text': `SIREN : ${json.owner.siren}`,
+                'size': pdf.size.xsmall,
+            },
+        ]
+    
+    }
+
+    description (json, pdf) {
+
+        return [
+            {
+                'isHR': true,
             },
             {
                 // description title
                 'text': 'Description',
                 'size': pdf.size.normal,
-                'type': pdf.type.b,
+                'type': pdf.type.bold,
             },
             {
                 // description
                 'isBlock': true,
-                'text': this.json.body,
-            },
-            {
-                // page break before images
-                'isPageBreak': true,
-            },
-            {
-                // url
-                'text': this.json.url,
+                'text': json.body,
                 'size': pdf.size.small,
             },
+        ]
+    
+    }
+
+    attributes (json, pdf) {
+
+        const data = [
             {
                 'isHR': true,
             },
             {
-                // category
-                'text': this.json.category_name,
-                'size': pdf.size.small,   
+                'text': 'Critères',
+                'type': pdf.type.bold,
             },
         ]
+
+        json.attributes.forEach ((attribute) => {
+
+            const title = attribute.key_label
+            const value = attribute.value_label
+
+            if (title !== undefined) {
+                
+                data.push ({
+                    'text': `${title} : ${value}`,
+                    'size': pdf.size.small,
+                })
+                
+            }
+        
+        })
+
+        return data
     
     }
 
@@ -119,7 +173,8 @@ export const Ad = class Ad {
             data.push (
                 {
                     'isImage': true,
-                    'id': k,
+                    'id': k + 1,
+                    'total': images.length,
                     'url': image,
                     'base64': base64,
                 },
@@ -135,16 +190,24 @@ export const Ad = class Ad {
         
         const name = `${this.json.list_id}-${this.json.subject}`
         const pdf = new PDF (name)
-        const text = this.text (pdf)
+        const header = this.header (this.json, pdf)
+        const title = this.title (this.json, pdf)
+        const seller = this.seller (this.json, pdf)
+        const description = this.description (this.json, pdf)
+        const attributes = this.attributes (this.json, pdf)
         const images = await this.images (this.json)
 
         const data = [
-            ...text,
+            ...header,
+            ...title,
+            ...seller,
+            ...attributes,
+            ...description,
             ...images,
         ]
 
         // eslint-disable-next-line no-console
-        // console.log (data)
+        console.log (this.json)
 
         pdf.run (data)
     

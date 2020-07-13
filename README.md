@@ -20,3 +20,7 @@ Web Extension available for:
 
 - <https://www.leboncoin.fr/ventes_immobilieres/1785194713.htm/>
 - <https://www.leboncoin.fr/ventes_immobilieres/1799700458.htm/>
+
+## TODO
+
+- [ ] compute max width & max height for the best image rendering possible
