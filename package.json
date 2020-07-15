@@ -9,8 +9,8 @@
     "ext:chrome": "web-ext run --source-dir dist -t chromium",
     "ext:firefox": "web-ext run --source-dir dist",
     "sort:package": "npx sort-package-json",
-    "start:chrome": "yarn clean && concurrently 'yarn webpack' 'wait-on dist/manifest.json && yarn ext:chrome'",
-    "start:firefox": "yarn clean && concurrently 'yarn webpack' 'wait-on dist/manifest.json && yarn ext:firefox'",
+    "dev:chrome": "yarn clean && concurrently 'yarn webpack' 'wait-on dist/manifest.json && yarn ext:chrome'",
+    "dev:firefox": "yarn clean && concurrently 'yarn webpack' 'wait-on dist/manifest.json && yarn ext:firefox'",
     "webpack": "webpack"
   },
   "dependencies": {

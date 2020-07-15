@@ -1,5 +1,6 @@
 # [leboncoin-pdf-ext](https://github.com/bamdadsabbagh/leboncoin-pdf-ext)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/90c2b2e5d1c33e53448d/maintainability)](https://codeclimate.com/github/bamdadsabbagh/leboncoin-pdf-ext/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/541249b0c60f4948819bdde8906be1b5)](https://www.codacy.com/manual/bamdadsabbagh/leboncoin-pdf-ext?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bamdadsabbagh/leboncoin-pdf-ext&amp;utm_campaign=Badge_Grade)
 [![David](https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext)](##)
 [![David](https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext)](##)
