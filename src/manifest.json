@@ -2,7 +2,7 @@
   "name": "leboncoin-pdf",
   "short_name": "leboncoin-pdf",
   "description": "leboncoin-pdf",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifest_version": 2,
   "icons": {
     "512": "assets/icon.png"

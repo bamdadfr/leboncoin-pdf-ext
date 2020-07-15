@@ -1,4 +1,4 @@
-name: semantic-release__0430
+name: semantic-release-web-ext__0430
 
 on:
   schedule:
@@ -21,7 +21,16 @@ jobs:
 
       - run: yarn
 
-      - run: npm install -g semantic-release @semantic-release/github @semantic-release/git
+      - run: yarn build
+
+      - run: |
+          npm install -g \
+            semantic-release \
+            @semantic-release/github \
+            @semantic-release/git \
+            @semantic-release/npm \
+            semantic-release-chrome \
+            semantic-release-firefox-add-on
 
       - run: semantic-release
         env:
