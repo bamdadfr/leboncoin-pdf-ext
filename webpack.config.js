@@ -5,7 +5,7 @@ module.exports = {
     'mode': 'development',
     'devtool': 'cheap-source-map',
     'entry': {
-        'scripts/background': './src/scripts/background.js',
+        // 'scripts/background': './src/scripts/background.js',
         'scripts/content': './src/scripts/content.js',
         'scripts/popup': './src/scripts/popup.js',
     },
