@@ -1,20 +1,20 @@
 {
   "name": "leboncoin-pdf-ext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PDF exporter for leboncoin.fr",
   "license": "MIT",
   "author": "Bamdad Sabbagh <hello@bamdadsabbagh.com>",
   "scripts": {
-    "build:clean": "rm -rf web-ext-artifacts",
-    "build:ext": "web-ext build --source-dir dist",
     "build": "yarn clean && yarn build:webpack && yarn build:ext",
+    "build:clean": "rm -rf packages",
+    "build:ext": "web-ext build --source-dir dist",
     "build:webpack": "NODE_ENV=production webpack",
     "clean": "yarn dev:clean && yarn build:clean",
-    "dev:chrome": "yarn clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:chrome'",
+    "dev:chrome": "yarn dev:clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:chrome'",
     "dev:clean": "rm -rf dist",
-    "dev:ext:chrome": "web-ext run --source-dir dist -t chromium",
-    "dev:ext:firefox": "web-ext run --source-dir dist",
-    "dev:firefox": "yarn clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:firefox'",
+    "dev:ext:chrome": "web-ext run -t chromium",
+    "dev:ext:firefox": "web-ext run",
+    "dev:firefox": "yarn dev:clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:firefox'",
     "dev:webpack": "webpack",
     "sort:package": "npx sort-package-json"
   },
@@ -30,5 +30,9 @@
     "web-ext": "^4.3.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
+  },
+  "webExt": {
+    "sourceDir": "dist",
+    "artifactsDir": "packages"
   }
 }

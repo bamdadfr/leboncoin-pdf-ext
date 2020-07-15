@@ -1,4 +1,23 @@
 {
+  "verifyConditions":
+  [
+    "semantic-release-chrome"
+  ],
+  "prepare":
+  [
+    {
+      "path": "semantic-release-chrome",
+      "asset": "leboncoin-pdf.zip"
+    }
+  ],
+  "publish":
+  [
+    {
+      "path": "semantic-release-chrome",
+      "asset": "leboncoin-pdf.zip",
+      "extensionId": "mifkoblilhehppoemadbhopbbijpifcj"
+    }
+  ],
   "plugins":
   [
     "@semantic-release/commit-analyzer",
@@ -14,7 +33,7 @@
       "@semantic-release/git",
       {
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
-        "assets": "packages/*.zip"
+        "assets": "web-ext-artifacts/*.zip"
       }
     ]
   ]
