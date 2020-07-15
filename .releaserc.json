@@ -9,14 +9,18 @@
         "npmPublish": false
       }
     ],
-    "@semantic-release/github",
     [
-      "@semantic-release/git",
+      "@semantic-release/github",
       {
         "assets":
         [
           "packages/*.zip"
-        ],
+        ]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ]
