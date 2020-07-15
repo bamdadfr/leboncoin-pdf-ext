@@ -14,5 +14,3 @@ update_json
 path='src/manifest.json'
 
 update_json
-
-yarn build
