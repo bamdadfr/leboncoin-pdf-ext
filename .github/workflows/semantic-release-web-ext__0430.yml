@@ -21,13 +21,12 @@ jobs:
 
       - run: yarn
 
-      - run: yarn build
-
       - run: |
           npm install -g \
             semantic-release \
             @semantic-release/github \
             @semantic-release/git \
+            @semantic-release/exec \
             @semantic-release/npm \
             semantic-release-chrome \
             semantic-release-firefox-add-on
