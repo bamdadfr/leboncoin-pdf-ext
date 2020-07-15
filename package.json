@@ -5,13 +5,18 @@
   "license": "MIT",
   "author": "Bamdad Sabbagh <hello@bamdadsabbagh.com>",
   "scripts": {
-    "clean": "rm -rf dist",
-    "ext:chrome": "web-ext run --source-dir dist -t chromium",
-    "ext:firefox": "web-ext run --source-dir dist",
-    "sort:package": "npx sort-package-json",
-    "dev:chrome": "yarn clean && concurrently 'yarn webpack' 'wait-on dist/manifest.json && yarn ext:chrome'",
-    "dev:firefox": "yarn clean && concurrently 'yarn webpack' 'wait-on dist/manifest.json && yarn ext:firefox'",
-    "webpack": "webpack"
+    "build:clean": "rm -rf web-ext-artifacts",
+    "build:ext": "web-ext build --source-dir dist",
+    "build": "yarn clean && yarn build:webpack && yarn build:ext",
+    "build:webpack": "webpack",
+    "clean": "yarn dev:clean && yarn build:clean",
+    "dev:chrome": "yarn clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:chrome'",
+    "dev:clean": "rm -rf dist",
+    "dev:ext:chrome": "web-ext run --source-dir dist -t chromium",
+    "dev:ext:firefox": "web-ext run --source-dir dist",
+    "dev:firefox": "yarn clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:firefox'",
+    "dev:webpack": "webpack --watch",
+    "sort:package": "npx sort-package-json"
   },
   "dependencies": {
     "jspdf": "^1.5.3"

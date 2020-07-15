@@ -1,7 +1,7 @@
 const CopyPlugin = require ('copy-webpack-plugin')
 
 module.exports = {
-    'watch': true,
+    // 'watch': true,
     'mode': 'development',
     'devtool': 'cheap-source-map',
     'entry': {
