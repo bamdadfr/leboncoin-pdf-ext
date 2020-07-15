@@ -7,7 +7,7 @@
   "scripts": {
     "build:clean": "rm -rf web-ext-artifacts",
     "build:ext": "web-ext build --source-dir dist",
-    "build": "yarn clean && yarn build:webpack && yarn build:ext",
+    "build": "yarn clean && yarn build:webpack && yarn build:ext && yarn dev:clean",
     "build:webpack": "webpack",
     "clean": "yarn dev:clean && yarn build:clean",
     "dev:chrome": "yarn clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:chrome'",
