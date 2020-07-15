@@ -37,7 +37,7 @@ export const Ad = class Ad {
         ]
 
         // eslint-disable-next-line no-console
-        console.log (this.json)
+        // console.log (this.json)
 
         pdf.run (data)
     

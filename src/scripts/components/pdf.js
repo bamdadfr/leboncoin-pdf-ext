@@ -1,5 +1,6 @@
 /* eslint-disable new-cap */
 import * as jsPDF from 'jspdf'
+import { PDFFontWeights, PDFFontSizes, PDFPosition } from './pdf.constants'
 
 export const PDF = class PDF {
 
@@ -9,40 +10,12 @@ export const PDF = class PDF {
 
         this.name = name
 
-        this.type = {
-            'normal': 'normal',
-            'bold': 'bold',
-            'italic': 'italic',
-        }
+        this.type = PDFFontWeights
 
-        this.size = {
-            'xsmall': 8,
-            'small': 10,
-            'normal': 12,
-            'heading': 14,
-        }
+        this.size = PDFFontSizes
 
-        this.pos = {
-            'init': {
-                'x': 0.5,
-                'y': 0.5,
-            },
-            'x': 0.5,
-            'y': 0.5,
-            'spacer': (size = this.size.normal, coef = 1) => {
+        this.pos = PDFPosition
 
-                this.pos.y += (0.5 * size / 24) * coef
-
-            },
-            'reset': () => {
-
-                this.pos.x = this.pos.init.x
-
-                this.pos.y = this.pos.init.y
-            
-            },
-        }
-    
     }
 
     init () {
