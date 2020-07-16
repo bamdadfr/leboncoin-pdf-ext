@@ -29,8 +29,7 @@
       {
         "assets":
         [
-          "packages/*.zip",
-          "packages/*.xpi"
+          "packages/leboncoin-pdf-ext-${nextRelease.version}.xpi"
         ]
       }
     ],
