@@ -30,7 +30,8 @@ jobs:
             @semantic-release/changelog \
             @semantic-release/npm \
             semantic-release-chrome \
-            semantic-release-firefox-add-on
+            semantic-release-firefox-add-on \
+            aggregate-error
         
         # semantic-release-firefox-add-on
         # FIREFOX_API_KEY
