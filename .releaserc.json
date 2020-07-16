@@ -16,11 +16,20 @@
       }
     ],
     [
+      "semantic-release-firefox-add-on",
+      {
+        "extensionId": "{55a4be35-e4be-40dc-a87e-ea6a58d04f46}",
+        "targetXpi": "leboncoin-pdf-ext-${nextRelease.version}.xpi",
+        "artifactsDir": "packages"
+      }
+    ],
+    [
       "@semantic-release/github",
       {
         "assets":
         [
-          "packages/*.zip"
+          "packages/*.zip",
+          "packages/*.xpi"
         ]
       }
     ],
