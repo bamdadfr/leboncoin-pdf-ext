@@ -6,3 +6,4 @@
 - [ ] add [semantic-release-firefox-add-on](https://www.npmjs.com/package/semantic-release-firefox-add-on)
   - [ ] [auth guide](https://addons-server.readthedocs.io/en/latest/topics/api/auth.html#access-credentials)
 - [ ] add polyfill to webpack via [this example](https://github.com/webextension-toolbox/webextension-toolbox/blob/master/src/webpack-config.js)
+- [ ] [Issue #11](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/11)

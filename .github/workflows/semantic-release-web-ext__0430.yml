@@ -27,9 +27,14 @@ jobs:
             @semantic-release/github \
             @semantic-release/git \
             @semantic-release/exec \
+            @semantic-release/changelog \
             @semantic-release/npm \
             semantic-release-chrome \
             semantic-release-firefox-add-on
+        
+        # semantic-release-firefox-add-on
+        # FIREFOX_API_KEY
+        # FIREFOX_SECRET_KEY
 
       - run: semantic-release
         env:
