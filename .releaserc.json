@@ -10,23 +10,18 @@
       }
     ],
     [
-      "semantic-release-firefox-add-on",
+      "@semantic-release/exec",
       {
-        "prepare": {
-          "sourceDir": "src"
-        },
-        "publish": {
-          "extensionId": "{55a4be35-e4be-40dc-a87e-ea6a58d04f46}",
-          "targetXpi": "leboncoin-pdf-ext-${nextRelease.version}.xpi",
-          "sourceDir": "dist",
-          "artifactsDir": "packages"
-        }
+        "prepareCmd": "yarn build:prepare ${nextRelease.version} && yarn build"
       }
     ],
     [
-      "@semantic-release/npm",
+      "semantic-release-firefox-add-on",
       {
-        "npmPublish": false
+        "extensionId": "{55a4be35-e4be-40dc-a87e-ea6a58d04f46}",
+        "targetXpi": "leboncoin-pdf-ext-${nextRelease.version}.xpi",
+        "artifactsDir": "packages",
+        "sourceDir": "src"
       }
     ],
     [
