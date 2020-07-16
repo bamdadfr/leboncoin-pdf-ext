@@ -1,3 +1,12 @@
+## [1.1.13](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.1.12...v1.1.13) (2020-07-16)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([c5d51f4](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/c5d51f4496d8100b9ad0df46e4be103bbfee50b5))
+* better release [force-release] ([9e1e5bd](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/9e1e5bdf751bb2b0569b2891a1d017b282ce6ddc))
+* i want automatic distribution on  firefox channel ([8e946f1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8e946f1de2cb775d828933f34ff37bfccaeda8cc))
+
 ## [1.1.12](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.1.11...v1.1.12) (2020-07-16)
 
 
