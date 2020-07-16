@@ -5,9 +5,11 @@
 [![David](https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext)](##)
 [![David](https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext)](##)
 
-PDF exporter for <img width=15 src="./src/assets/icon.png"> [**leboncoin.fr**](https://www.leboncoin.fr/)
+PDF Exporter for <img width="15" src="./src/assets/icon.png"> [**leboncoin.fr**](https://www.leboncoin.fr/)
 
-## Why
+<img align="right" width="200" src="./assets/screenshots/promo_small.jpg">
+
+## Context
 
 This Web Extension allows you to export a classified ad from leboncoin.fr
 in PDF format.
@@ -15,7 +17,7 @@ in PDF format.
 It is useful if you want to keep archives of certain ads,
 thus making them available to you after their expiry on the actual website.
 
-## Where
+## Where to get
 
 Web Extension available for:
 
@@ -24,11 +26,10 @@ Web Extension available for:
 - <img height=15 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-firefox-icon.png"> [**firefox**](https://www.mozilla.org/en-US/firefox/new/)
   - get [**here**](https://addons.mozilla.org/en-US/firefox/addon/leboncoin-pdf/)
 
-## How
+## Screenshots
 
-[strawpoll](https://www.strawpoll.me/20569260/r)
+<img align="left" width="600" src="./assets/screenshots/001.jpg">
 
-## What
+<img align="right" width="600" src="./assets/screenshots/002.jpg">
 
-- <https://www.leboncoin.fr/ventes_immobilieres/1785194713.htm/>
-- <https://www.leboncoin.fr/ventes_immobilieres/1799700458.htm/>
+<img align="right" width="600" src="./assets/screenshots/003.jpg">
