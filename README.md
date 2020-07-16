@@ -5,9 +5,9 @@
 [![David](https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext)](##)
 [![David](https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext)](##)
 
-PDF Exporter for <img width="15" src="./src/assets/icon.png"> [**leboncoin.fr**](https://www.leboncoin.fr/)
+PDF Exporter for <img width=15 src="./src/assets/icon.png"> [**leboncoin.fr**](https://www.leboncoin.fr/)
 
-<img align="right" width="200" src="./assets/screenshots/promo_small.jpg">
+<img align=right width=200 src="./assets/screenshots/promo_small.jpg">
 
 ## Context
 
@@ -28,8 +28,8 @@ Web Extension available for:
 
 ## Screenshots
 
-<img align="left" width="600" src="./assets/screenshots/001.jpg">
-
-<img align="right" width="600" src="./assets/screenshots/002.jpg">
-
-<img align="right" width="600" src="./assets/screenshots/003.jpg">
+<p align=center>
+  <img width=600 src="./assets/screenshots/001.jpg">
+  <img width=600 src="./assets/screenshots/002.jpg">
+  <img width=600 src="./assets/screenshots/003.jpg">
+</p>
