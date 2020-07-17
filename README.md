@@ -6,10 +6,12 @@
 ![David](https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext)
 ![David](https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext)
 
+<img height=15 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-firefox-icon.png">
 ![Mozilla Add-on](https://img.shields.io/amo/v/leboncoin-pdf)
 ![Mozilla Add-on](https://img.shields.io/amo/stars/leboncoin-pdf)
 ![Mozilla Add-on](https://img.shields.io/amo/users/leboncoin-pdf)
 
+<img height=15 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-chrome-icon.png">
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj)
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/stars/mifkoblilhehppoemadbhopbbijpifcj)
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/users/mifkoblilhehppoemadbhopbbijpifcj)
