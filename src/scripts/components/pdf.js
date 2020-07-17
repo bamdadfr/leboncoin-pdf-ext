@@ -20,6 +20,8 @@ export const PDF = class PDF {
 
     init () {
 
+        this.pos.reset ()
+
         this.pos.width = this.doc.internal.pageSize.getWidth () - this.pos.x
 
         this.pos.height = this.doc.internal.pageSize.getHeight () - this.pos.y
