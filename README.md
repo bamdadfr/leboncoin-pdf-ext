@@ -17,6 +17,8 @@ in PDF format.
 It is useful if you want to keep archives of certain ads,
 thus making them available to you after their expiry on the actual website.
 
+**No more outdated ad you can't access.**
+
 ## Where to get
 
 Web Extension available for:
