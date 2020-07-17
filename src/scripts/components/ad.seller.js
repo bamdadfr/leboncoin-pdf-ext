@@ -10,7 +10,9 @@ export const AdSeller = (json, pdf) => {
             'type': pdf.type.bold,
         },
         {
+            'isLink': true,
             'text': `Vendeur ${json.owner.type} : ${json.owner.name}`,
+            'url': `https://www.leboncoin.fr/profil/${json.owner.user_id}`,
             'size': pdf.size.small,
         },
     ]
