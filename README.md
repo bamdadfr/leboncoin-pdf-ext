@@ -23,11 +23,8 @@ thus making them available to you after their expiry on the actual website.
 
 Web Extension available for:
 
-- <img height=15 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-chrome-icon.png"> [**chrome**](https://www.google.com/chrome/)
-  - get [**here**](https://chrome.google.com/webstore/detail/pdf-exporter-for-leboncoi/mifkoblilhehppoemadbhopbbijpifcj)
-
-- <img height=15 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-firefox-icon.png"> [**firefox**](https://www.mozilla.org/en-US/firefox/new/)
-  - get [**here**](https://addons.mozilla.org/en-US/firefox/addon/leboncoin-pdf/)
+- get for [<img height=15 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-chrome-icon.png"> **chrome**](https://chrome.google.com/webstore/detail/pdf-exporter-for-leboncoi/mifkoblilhehppoemadbhopbbijpifcj)
+- get for [<img height=15 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-firefox-icon.png"> **firefox**](https://addons.mozilla.org/en-US/firefox/addon/leboncoin-pdf/)
 
 ## Screenshots
 
