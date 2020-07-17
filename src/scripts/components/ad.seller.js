@@ -1,6 +1,6 @@
 export const AdSeller = (json, pdf) => {
 
-    return [
+    const data = [
         {
             'isHR': true,
         },
@@ -13,11 +13,19 @@ export const AdSeller = (json, pdf) => {
             'text': `Vendeur ${json.owner.type} : ${json.owner.name}`,
             'size': pdf.size.small,
         },
-        {
+    ]
+
+    if (json.owner.siren !== undefined) {
+
+        data.push ({
             'text': `SIREN : ${json.owner.siren}`,
             'size': pdf.size.xsmall,
-        },
-    ]
+
+        })
+    
+    }
+
+    return data
 
 }
 
