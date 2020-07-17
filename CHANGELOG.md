@@ -1,3 +1,17 @@
+## [1.1.15](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.1.14...v1.1.15) (2020-07-17)
+
+
+### Bug Fixes
+
+* [#12](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/12) ([a5ccb94](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/a5ccb94d0100d6f7e19e0dd997bbac28af067120))
+* [#13](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/13) ([f41cd7b](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f41cd7b58dca9ce1ebadfb5144062dbd155f12dc))
+* [#14](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/14) ([b994d6a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/b994d6ad2d8899e93d150b562b473281ccb5c068))
+* asfalte: ⚙️ yarn-upgrade__0*100 ([f61fea7](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f61fea76fd5a61844eafce33f0880997e3f821b4))
+* asfalte: 🔨 git-commit-force-release__push ([a60e29b](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/a60e29bcc290770b731c1a5e920b84feb417fbfa))
+* cleaned and new release [force-release] ([df8a695](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/df8a695161030858f7daaad81ccaa3f7fde27b78))
+* fix [#11](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/11) ([238211e](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/238211e6053b486a37c063f40672656da9c7cee2))
+* updated ([ad0c857](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ad0c857238155a831721d0a7da0edb561836eeb7))
+
 ## [1.1.14](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.1.13...v1.1.14) (2020-07-17)
 
 
