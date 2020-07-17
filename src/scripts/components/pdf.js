@@ -125,19 +125,35 @@ export const PDF = class PDF {
             
         array.forEach ((el) => {
             
-            if (el.isSpacer) return this.pos.spacer ()
+            if (el.isSpacer) {
 
-            if (el.isBlock) return this.printBlock (el.text, el.size, el.type)
+                return this.pos.spacer () 
 
-            if (el.isPageBreak) return this.printNewPage ()
+            } else if (el.isBlock) {
+
+                return this.printBlock (el.text, el.size, el.type) 
+
+            } else if (el.isPageBreak) {
+
+                return this.printNewPage () 
+
+            } else if (el.isHR) {
+
+                return this.printHR () 
+
+            } else if (el.isImage) {
+
+                return this.printImage (el.id, el.total, el.url, el.base64) 
+
+            } else if (el.isLink) {
+
+                return this.printLink (el.text, el.url, el.size) 
+
+            } else {
+
+                return this.printText (el.text, el.size, el.type)
             
-            if (el.isHR) return this.printHR ()
-
-            if (el.isImage) return this.printImage (el.id, el.total, el.url, el.base64)
-
-            if (el.isLink) return this.printLink (el.text, el.url, el.size)
-            
-            return this.printText (el.text, el.size, el.type)
+            }
         
         }) 
 
