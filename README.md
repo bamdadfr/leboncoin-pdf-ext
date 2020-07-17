@@ -6,6 +6,10 @@
 ![David](https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext)
 ![David](https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext)
 
+![Mozilla Add-on](https://img.shields.io/amo/v/leboncoin-pdf)
+![Mozilla Add-on](https://img.shields.io/amo/stars/leboncoin-pdf)
+![Mozilla Add-on](https://img.shields.io/amo/users/leboncoin-pdf)
+
 PDF Exporter for <img width=15 src="./src/assets/icon.png"> [**leboncoin.fr**](https://www.leboncoin.fr/)
 
 <img align=right width=200 src="./assets/screenshots/promo_small.jpg">
