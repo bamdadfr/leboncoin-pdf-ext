@@ -1,4 +1,4 @@
-name: semantic-release-web-ext__0430
+name: semantic-release-with-build__0430
 
 on:
   schedule:
