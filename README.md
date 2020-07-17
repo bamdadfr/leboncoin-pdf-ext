@@ -10,6 +10,10 @@
 ![Mozilla Add-on](https://img.shields.io/amo/stars/leboncoin-pdf)
 ![Mozilla Add-on](https://img.shields.io/amo/users/leboncoin-pdf)
 
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/users/mifkoblilhehppoemadbhopbbijpifcj)
+
 PDF Exporter for <img width=15 src="./src/assets/icon.png"> [**leboncoin.fr**](https://www.leboncoin.fr/)
 
 <img align=right width=200 src="./assets/screenshots/promo_small.jpg">
