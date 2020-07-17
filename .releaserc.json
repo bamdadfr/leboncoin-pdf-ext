@@ -25,11 +25,19 @@
       }
     ],
     [
+      "semantic-release-chrome",
+      {
+        "asset": "leboncoin-pdf-ext-${nextRelease.version}.zip",
+        "extensionId": "mifkoblilhehppoemadbhopbbijpifcj"
+      }
+    ],
+    [
       "@semantic-release/github",
       {
         "assets":
         [
-          "packages/leboncoin-pdf-ext-${nextRelease.version}.xpi"
+          "packages/leboncoin-pdf-ext-${nextRelease.version}.xpi",
+          "leboncoin-pdf-ext-${nextRelease.version}.zip"
         ]
       }
     ],
