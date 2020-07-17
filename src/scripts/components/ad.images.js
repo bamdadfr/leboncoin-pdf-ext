@@ -15,6 +15,8 @@ export const AdImages = async (json) => {
         
     }
 
+    if (images === undefined) return data
+
     await asyncForEach (images, async (image, k) => {
 
         const base64 = await imageToBase64 (image)
