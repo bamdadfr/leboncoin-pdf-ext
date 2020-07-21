@@ -5,11 +5,11 @@
 ![David](https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext)
 ![David](https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext)
 
-![Mozilla Add-on](https://img.shields.io/amo/v/leboncoin-pdf)
+[![Mozilla Add-on](https://img.shields.io/amo/v/leboncoin-pdf)](https://addons.mozilla.org/en-US/firefox/addon/leboncoin-pdf)
 ![Mozilla Add-on](https://img.shields.io/amo/stars/leboncoin-pdf)
 ![Mozilla Add-on](https://img.shields.io/amo/users/leboncoin-pdf)
 
-![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj)](https://chrome.google.com/webstore/detail/pdf-exporter-for-leboncoi/mifkoblilhehppoemadbhopbbijpifcj)
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/stars/mifkoblilhehppoemadbhopbbijpifcj)
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/users/mifkoblilhehppoemadbhopbbijpifcj)
 
