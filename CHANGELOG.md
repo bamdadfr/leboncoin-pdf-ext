@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.2.0...v1.3.0) (2020-07-26)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([8411bb9](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8411bb99c3eb0b5e7bab5730b404e727038af532))
+
+
+### Features
+
+* adding price to pdf name [force-release] ([d68452a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/d68452a096e48aeb1ea42ab065636de5159b4134))
+* replacing 'private' by 'particulier' as seller name ([d4e6c5f](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/d4e6c5ff027b26e86fb384885df700ed537695e0))
+
 # [1.2.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.1.25...v1.2.0) (2020-07-26)
 
 
