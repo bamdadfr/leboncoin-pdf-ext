@@ -58,3 +58,25 @@ thus making them available to you after their expiry on the actual website.
   <img width=600 src="./assets/screenshots/002.jpg">
   <img width=600 src="./assets/screenshots/003.jpg">
 </p>
+
+## 🖊 Contribute
+
+### Development environment
+
+outputs in `dist`
+
+```bash
+# firefox
+yarn dev:firefox
+
+# chrome
+yarn dev:chrome
+```
+
+### Build environment
+
+outputs in `packages`
+
+```bash
+yarn build
+```
