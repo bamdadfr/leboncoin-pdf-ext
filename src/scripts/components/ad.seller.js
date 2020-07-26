@@ -1,5 +1,9 @@
 export const AdSeller = (json, pdf) => {
 
+    let type = json.owner.type
+
+    if (type === 'private') type = 'particulier'
+
     const data = [
         {
             'isHR': true,
@@ -11,7 +15,7 @@ export const AdSeller = (json, pdf) => {
         },
         {
             'isLink': true,
-            'text': `Vendeur ${json.owner.type} : ${json.owner.name}`,
+            'text': `Vendeur ${type} : ${json.owner.name}`,
             'url': `https://www.leboncoin.fr/profil/${json.owner.user_id}`,
             'size': pdf.size.small,
         },
