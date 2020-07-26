@@ -1,6 +1,7 @@
 /* eslint-disable new-cap */
 import * as jsPDF from 'jspdf'
 import { PDFFontWeights, PDFFontSizes, PDFPosition } from './pdf.constants'
+import { getMaxDimensions } from './utils'
 
 export const PDF = class PDF {
 
@@ -101,7 +102,7 @@ export const PDF = class PDF {
     
     }
 
-    printImage (id, total, _url, base64) {
+    printImage (id, total, _url, base64, width, height) {
 
         if (this.pos.x !== this.pos.init.x || this.pos.y !== this.pos.init.y) {
 
@@ -115,9 +116,11 @@ export const PDF = class PDF {
 
         this.printHR ()
 
-        const width = this.pos.width - 0.5
+        const maxWidth = this.pos.width
+        const maxHeight = this.pos.height
+        const dimensions = getMaxDimensions (width, height, maxWidth, maxHeight)
 
-        this.doc.addImage (base64, 'JPEG', this.pos.x, this.pos.y, width, 5)
+        this.doc.addImage (base64, 'JPEG', this.pos.x, this.pos.y, dimensions.width, dimensions.height)
     
     }
 
@@ -143,7 +146,7 @@ export const PDF = class PDF {
 
             } else if (el.isImage) {
 
-                return this.printImage (el.id, el.total, el.url, el.base64) 
+                return this.printImage (el.id, el.total, el.url, el.base64, el.width, el.height) 
 
             } else if (el.isLink) {
 

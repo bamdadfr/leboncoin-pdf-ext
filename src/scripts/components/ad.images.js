@@ -1,4 +1,4 @@
-import { asyncForEach, imageToBase64 } from './utils'
+import { asyncForEach, imageToBase64, getDimensionsFromURL } from './utils'
 
 export const AdImages = async (json) => {
 
@@ -20,6 +20,7 @@ export const AdImages = async (json) => {
     await asyncForEach (images, async (image, k) => {
 
         const base64 = await imageToBase64 (image)
+        const dimensions = await getDimensionsFromURL (image)
 
         data.push (
             {
@@ -28,6 +29,8 @@ export const AdImages = async (json) => {
                 'total': images.length,
                 'url': image,
                 'base64': base64,
+                'width': dimensions.width,
+                'height': dimensions.height,
             },
         )
     

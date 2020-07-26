@@ -21,6 +21,27 @@ export const imageToBase64 = async (url) => {
     
 }
 
+export const getDimensionsFromURL = (url) => {
+
+    const image = new Image ()
+
+    image.src = url
+
+    return new Promise (resolve => {
+
+        image.addEventListener ('load', () => {
+    
+            resolve ({
+                'width': image.naturalWidth,
+                'height': image.naturalHeight,
+            })
+        
+        })
+    
+    })
+
+}
+
 export const asyncForEach = async (array, callback) => {
 
     for (let index = 0; index < array.length; index++) {
@@ -29,4 +50,29 @@ export const asyncForEach = async (array, callback) => {
     
     }
 
+}
+
+export const getMaxDimensions = (width, height, canvasWidth, canvasHeight, margin = 0.5) => {
+
+    const compute = (margin) => {
+
+        const maxWidth = canvasWidth - margin
+        const ratio = maxWidth / width
+        const maxHeight = height * ratio
+
+        return {
+            'width': maxWidth,
+            'height': maxHeight,
+        }
+        
+    }
+
+    const dimensions = compute (margin)
+    const bottomDifference = canvasHeight - dimensions.height
+
+    // if true, this means the bottom margin is not big enough
+    if (bottomDifference <= margin) return compute (margin + bottomDifference)
+    
+    return dimensions
+ 
 }
