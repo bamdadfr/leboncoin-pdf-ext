@@ -18,7 +18,7 @@ export const Ad = class Ad {
 
     async export () {
         
-        const name = `${this.json.list_id}-${this.json.subject}`
+        const name = `${this.json.list_id} - ${this.json.subject} - ${this.json.price[0].toString ()} euros`
         const pdf = new PDF (name)
         const header = AdHeader (this.json, pdf)
         const title = AdTitle (this.json, pdf)
