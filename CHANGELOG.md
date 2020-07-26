@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.4.0...v1.4.1) (2020-07-26)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([f2fc68a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f2fc68acf64fa0dd30a7b85843a15cfc9316c6e4))
+* date is now printing local time instead of UTC [force-release] ([7e0ae28](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/7e0ae28c36e9aa9072e15cfbd063ea26e682767b))
+* refactored for easier maintenability ([afda6f9](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/afda6f9a6fdf21aa3056cd51c51a32f5651e2b5c))
+
 # [1.4.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.3.0...v1.4.0) (2020-07-26)
 
 
