@@ -206,17 +206,17 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.3.20":
-  version "1.3.20"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.3.20.tgz#6fd4c750dca406ceb84c2b8236f19ddb04904073"
-  integrity sha512-x4jfD//wg+p/SKQaZjnm7a2cHPoEoQg2h9OyeiLeE5PVl8LfgmluBF9wgdspIWIM67tziXNC2RNZ7ZUand4YJA==
+"@bamdadsabbagh/eslint-config@^1.3.21":
+  version "1.3.21"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.3.21.tgz#fe65747f978685b905cd2134bed4eef12c39a55b"
+  integrity sha512-0AOc4c8tC6salLZtWSsX1vMb0WwZuMNN7/+RLgjWvHK3bordSQckz1eixBwh2hOyAlPOhevAuT9iXNoaYJP1kg==
   dependencies:
     "@types/node" "^14.0.27"
-    "@types/react" "^16.9.43"
+    "@types/react" "^16.9.44"
     "@types/react-dom" "^16.9.8"
     "@typescript-eslint/eslint-plugin" "^3.7.1"
     "@typescript-eslint/parser" "^3.7.1"
-    eslint "^7.5.0"
+    eslint "^7.6.0"
     eslint-config-airbnb "^18.2.0"
     eslint-config-prettier "^6.10.0"
     eslint-plugin-import "^2.22.0"
@@ -228,10 +228,10 @@
     prettier "^2.0.5"
     typescript "^3.9.7"
 
-"@bamdadsabbagh/stylelint-config@^1.2.32":
-  version "1.2.32"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.32.tgz#2d3d009e56e8378ba5cb89f8ac14c98aa19ddda6"
-  integrity sha512-l7NaiXivHCxvU4fw5DrEFMIvyopFKHV5JTC0rJ17fTIaT5ZvPJPfxry+ZFZPhy6Wwq9a9wpQrgOZhqmBPYj/Hg==
+"@bamdadsabbagh/stylelint-config@^1.2.33":
+  version "1.2.33"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.33.tgz#333fa56dd363ef2d402cee6e8e0d3ce9f421dbd0"
+  integrity sha512-OuZebVpE6QK/G+H0UD2aZsAJcv2nK3y9R8Y0/BeFnIu5+IvO9p9nAg+rVJIDNPH66VDxvhbEOETEivBXVWU8gA==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
@@ -407,7 +407,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.43":
+"@types/react@*", "@types/react@^16.9.44":
   version "16.9.44"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.44.tgz#da84b179c031aef67dc92c33bd3401f1da2fa3bc"
   integrity sha512-BtLoJrXdW8DVZauKP+bY4Kmiq7ubcJq+H/aCpRfvPF7RAT3RwR73Sg8szdc2YasbAlWBDrQ6Q+AFM0KwtQY+WQ==
@@ -2759,7 +2759,7 @@ eslint@7.5.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-eslint@^7.5.0:
+eslint@^7.6.0:
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.6.0.tgz#522d67cfaea09724d96949c70e7a0550614d64d6"
   integrity sha512-QlAManNtqr7sozWm5TF4wIH9gmUm2hE3vNRUvyoYAa4y1l5/jxD/PQStEjBMQtCqZmSep8UxrcecI60hOpe61w==
