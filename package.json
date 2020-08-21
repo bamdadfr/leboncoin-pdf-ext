@@ -17,7 +17,8 @@
     "dev:ext:firefox": "web-ext run",
     "dev:firefox": "yarn dev:clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:firefox'",
     "dev:webpack": "webpack",
-    "sort:package": "npx sort-package-json"
+    "package:reinstall": "rm -rf node_modules && yarn",
+    "package:sort": "npx sort-package-json"
   },
   "dependencies": {
     "jspdf": "1.5.3"
