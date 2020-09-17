@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.5.26...v1.6.0) (2020-09-17)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([28cfc62](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/28cfc627db521f4c62c1ded9ea8bc346ba23bf1a))
+
+
+### Features
+
+* Merge remote-tracking branch 'origin/dependabot/npm_and_yarn/jspdf-2.1.1' ([ce213ad](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ce213ad4e7d90a18965d5f5904086370233e1bae))
+* new jsPDF version ([98e8cfb](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/98e8cfbcfcc6b37890799842a4b2428e3ec349f8))
+
 ## [1.5.26](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.5.25...v1.5.26) (2020-09-17)
 
 
