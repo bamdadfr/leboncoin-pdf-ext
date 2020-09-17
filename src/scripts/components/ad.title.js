@@ -11,7 +11,7 @@ export const AdTitle = (json, pdf) => {
         },
         {
             // price
-            'text': `Prix : ${json.price[0].toString ()} €`,
+            'text': `Prix : ${json.price[0].toString ()} euros`,
             'size': pdf.size.small,
         },
         {

@@ -1,5 +1,6 @@
 /* eslint-disable new-cap */
-import * as jsPDF from 'jspdf'
+// import * as jsPDF from 'jspdf'
+import { jsPDF } from 'jspdf'
 import { PDFFontWeights, PDFFontSizes, PDFPosition } from './pdf.constants'
 import { getMaxDimensions } from './utils'
 
@@ -10,6 +11,8 @@ export const PDF = class PDF {
         this.doc = new jsPDF ('p', 'in', 'letter')
 
         this.name = name
+
+        this.font = 'helvetica'
 
         this.type = PDFFontWeights
 
@@ -53,7 +56,7 @@ export const PDF = class PDF {
 
     printText (text, size = this.size.normal, type = this.type.normal) {
 
-        this.doc.setFontSize (size).setFontType (type)
+        this.doc.setFontSize (size).setFont (this.font, type)
 
         this.doc.text (this.pos.x, this.pos.y, text)
     
@@ -63,7 +66,7 @@ export const PDF = class PDF {
 
     printLink (text, url, size = this.size.normal, type = this.type.normal) {
 
-        this.doc.setFontSize (size).setFontType (type)
+        this.doc.setFontSize (size).setFont (this.font, type)
 
         this.doc.textWithLink (text, this.pos.x, this.pos.y, { url })
     
@@ -75,7 +78,7 @@ export const PDF = class PDF {
 
         const lines = this.doc
             .setFontSize (size)
-            .setFontType (type)
+            .setFont (this.font, type)
             .splitTextToSize (text, 7.5)
 
         this.doc.text (this.pos.x, this.pos.y, lines)
