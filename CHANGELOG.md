@@ -1,3 +1,12 @@
+## [1.6.8](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.7...v1.6.8) (2020-09-25)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([8bb79a0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8bb79a076a3811e88581a8002ebd25684f21aefa))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([050a72f](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/050a72ff85447b79f72445a58da1d61b5a8916e9))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([f471143](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f4711438512257d83b2a4bb7326ed0dc149b89e9))
+
 ## [1.6.7](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.6...v1.6.7) (2020-09-24)
 
 
