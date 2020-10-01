@@ -1,3 +1,11 @@
+## [1.6.15](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.14...v1.6.15) (2020-10-01)
+
+
+### Bug Fixes
+
+* added node-forge latest version to dev dependencies [force-release] ([a1d93af](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/a1d93affd34e5c134810ce6ee21a155f10f2e419))
+* asfalte: 🔨 git-commit-force-release__push ([51b1945](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/51b194548c9bb37ed19201e6a2a8335ebe8b6740))
+
 ## [1.6.14](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.13...v1.6.14) (2020-10-01)
 
 
