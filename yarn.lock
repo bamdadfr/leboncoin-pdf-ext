@@ -5847,9 +5847,9 @@ readable-stream@^3.1.1, readable-stream@^3.4.0, readable-stream@^3.6.0:
     util-deprecate "^1.0.1"
 
 readdir-glob@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/readdir-glob/-/readdir-glob-1.1.0.tgz#a3def6f7b61343e8a1274dbb872b9a2ad055d086"
-  integrity sha512-KgT0oXPIDQRRRYFf+06AUaodICTep2Q5635BORLzTEzp7rEqcR14a47j3Vzm3ix7FeI1lp8mYyG7r8lTB06Pyg==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/readdir-glob/-/readdir-glob-1.1.1.tgz#f0e10bb7bf7bfa7e0add8baffdc54c3f7dbee6c4"
+  integrity sha512-91/k1EzZwDx6HbERR+zucygRFfiPl2zkIYZtv3Jjr6Mn7SkKcVct8aVO+sSRiGMc6fLf72du3d92/uY63YPdEA==
   dependencies:
     minimatch "^3.0.4"
 
