@@ -12,7 +12,7 @@ export const PDF = class PDF {
 
         this.name = name
 
-        this.font = 'helvetica'
+        this.font = 'arial'
 
         this.type = PDFFontWeights
 
