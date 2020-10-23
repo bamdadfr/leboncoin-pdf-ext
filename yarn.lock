@@ -230,9 +230,9 @@
     typescript "^3.9.7"
 
 "@bamdadsabbagh/stylelint-config@^1.2.43":
-  version "1.2.95"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.95.tgz#8ab482b6a4814e8098f60794a1a5d4d54e19fd35"
-  integrity sha512-/W7s/2HZmHwZOSJpBOYvJks6sQnLWTvvXdwTsYzy0AFNc1NRc98OQLexabfThQzJSNBw2izAGpiHrGZVAy+0sA==
+  version "1.2.96"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.96.tgz#e315a477860a021f39d73d3c5970c3885fb94f68"
+  integrity sha512-C4EW9Fr0igj3LLxyTGdidAvfF8vqE7psHiza92pczuVeN/S+m4VibyOeaDIOHxaQLRLu8/jTGPFpFx2cxf/suw==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
@@ -4892,9 +4892,9 @@ nan@^2.12.1, nan@^2.14.0:
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
 
 nanoid@^3.1.12:
-  version "3.1.14"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.14.tgz#ede9ee0b70e3f757f31ba3e60e8534fb3be8d4df"
-  integrity sha512-eW4inyfnbKQ6tGwd52HXuMyjexTQ6UClX3tJidRa1HCgWTyWC+Zv6JM+r7csBnPObSLUBPptAhfyxEKMT8N2+Q==
+  version "3.1.15"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.15.tgz#28e7c4ce56aff2d0c2d37814c7aef9d6c5b3e6f3"
+  integrity sha512-n8rXUZ8UU3lV6+43atPrSizqzh25n1/f00Wx1sCiE7R1sSHytZLTTiQl8DjC4IDLOnEZDlgJhy0yO4VsIpMxow==
 
 nanomatch@^1.2.9:
   version "1.2.13"
