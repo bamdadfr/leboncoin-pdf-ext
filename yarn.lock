@@ -3646,9 +3646,9 @@ human-signals@^1.1.1:
   integrity sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
 
 ieee754@^1.1.13, ieee754@^1.1.4:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.0.tgz#199187d07b31d4aa68ed02311914049795868ea6"
-  integrity sha512-EWa7B4Ik9ncTIIojzGoKzpUdswDKO6v1BQ0pcKajYCrZckY9gNjiEparSGlyz5C2HcpV62qiVkmLBCPx77Hq2g==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
+  integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
 
 iferr@^0.1.5:
   version "0.1.5"
