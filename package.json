@@ -3,7 +3,11 @@
   "version": "1.6.50",
   "description": "PDF exporter for leboncoin.fr",
   "license": "MIT",
-  "author": "Bamdad Sabbagh <hello@bamdadsabbagh.com>",
+  "author": {
+    "name": "Bamdad Sabbagh",
+    "email": "hello@bamdadsabbagh.com",
+    "url": "https://bamdadsabbagh.com/"
+  },
   "scripts": {
     "build": "yarn clean && yarn build:webpack && yarn build:ext",
     "build:clean": "rm -rf packages",
