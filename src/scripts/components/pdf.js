@@ -12,7 +12,7 @@ export const PDF = class PDF {
 
         this.name = name
 
-        this.font = 'arial'
+        this.font = 'times'
 
         this.type = PDFFontWeights
 
