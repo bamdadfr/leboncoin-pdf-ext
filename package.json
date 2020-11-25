@@ -22,7 +22,8 @@
     "dev:firefox": "yarn dev:clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:firefox'",
     "dev:webpack": "webpack",
     "package:reinstall": "rm -rf node_modules && yarn",
-    "package:sort": "npx sort-package-json"
+    "package:sort": "npx sort-package-json",
+    "publish": "semantic-release --dry-run"
   },
   "dependencies": {
     "jspdf": "2.1.1"
@@ -30,9 +31,18 @@
   "devDependencies": {
     "@bamdadsabbagh/eslint-config": "^1.3.29",
     "@bamdadsabbagh/stylelint-config": "^1.2.43",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.0",
+    "@semantic-release/npm": "^7.0.8",
+    "aggregate-error": "^3.1.0",
     "concurrently": "^5.3.0",
     "copy-webpack-plugin": "^6.0.3",
     "node-forge": "^0.10.0",
+    "semantic-release": "^17.3.0",
+    "semantic-release-chrome": "^1.1.3",
+    "semantic-release-firefox-add-on": "^0.2.7",
     "wait-on": "^5.2.0",
     "web-ext": "^5.0.0",
     "webpack": "^4.44.1",
