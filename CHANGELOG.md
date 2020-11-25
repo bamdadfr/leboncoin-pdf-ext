@@ -1,3 +1,11 @@
+## [1.6.72](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.71...v1.6.72) (2020-11-25)
+
+
+### Bug Fixes
+
+* added `sign-addon` [force-release] ([8ab1628](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8ab16284a943f9acce9977bf60a793729edc4a16))
+* asfalte: 🔨 git-commit-force-release__push ([5331a4c](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/5331a4c1e76074eaa2546c5e0243198dae8a728b))
+
 ## [1.6.71](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.70...v1.6.71) (2020-11-25)
 
 
