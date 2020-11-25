@@ -23,21 +23,20 @@ jobs:
 
       - run: yarn build
 
-      # - run: |
-      #     npm install -g \
-      #       semantic-release \
-      #       @semantic-release/github \
-      #       @semantic-release/git \
-      #       @semantic-release/exec \
-      #       @semantic-release/changelog \
-      #       @semantic-release/npm \
-      #       semantic-release-chrome \
-      #       semantic-release-firefox-add-on \
-      #       aggregate-error \
-      #       sign-addon
+      - run: |
+          npm install -g \
+            semantic-release \
+            @semantic-release/github \
+            @semantic-release/git \
+            @semantic-release/exec \
+            @semantic-release/changelog \
+            @semantic-release/npm \
+            semantic-release-chrome \
+            semantic-release-firefox-add-on \
+            aggregate-error \
+            sign-addon
         
-      # - run: semantic-release
-      - run: yarn release
+      - run: semantic-release
         env:
           GH_TOKEN: ${{ secrets.PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
