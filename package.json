@@ -45,7 +45,7 @@
     "semantic-release-firefox-add-on": "^0.2.7",
     "sign-addon": "^3.1.0",
     "wait-on": "^5.2.0",
-    "web-ext": "^5.0.0",
+    "web-ext": "^5.4.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
