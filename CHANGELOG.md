@@ -1,3 +1,15 @@
+## [1.6.75](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.74...v1.6.75) (2020-11-25)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([63c93ca](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/63c93ca5461e0e8d4be3d8b54b28c0bc3a01eb74))
+
+
+### Performance Improvements
+
+* updated webpack to v5 [force-release] ([9c6d3d8](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/9c6d3d8555a41878d5fc3d953c98782f123da528))
+
 ## [1.6.74](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.73...v1.6.74) (2020-11-25)
 
 
