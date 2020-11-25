@@ -23,7 +23,7 @@
     "dev:webpack": "webpack",
     "package:reinstall": "rm -rf node_modules && yarn",
     "package:sort": "npx sort-package-json",
-    "publish": "semantic-release --dry-run"
+    "release": "semantic-release --dry-run"
   },
   "dependencies": {
     "jspdf": "2.1.1"
