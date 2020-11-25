@@ -7,7 +7,7 @@ console.log ('Production mode is: ', isProduction)
 module.exports = {
     'watch': isProduction ? false : true,
     'mode': isProduction ? 'production' : 'development',
-    'devtool': isProduction ? 'none' : 'cheap-source-map',
+    'devtool': isProduction ? false : 'cheap-source-map',
     'entry': {
         // 'scripts/background': './src/scripts/background.js',
         'scripts/content': './src/scripts/content.js',
