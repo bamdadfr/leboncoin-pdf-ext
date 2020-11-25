@@ -37,7 +37,7 @@ jobs:
       #       sign-addon
         
       # - run: semantic-release
-      - run: yarn publish
+      - run: yarn release
         env:
           GH_TOKEN: ${{ secrets.PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
