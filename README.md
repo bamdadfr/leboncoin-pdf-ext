@@ -10,9 +10,7 @@
 
 <p align=center>
   <img src="https://img.shields.io/github/v/release/bamdadsabbagh/leboncoin-pdf-ext">
-  <a href="https://codeclimate.com/github/bamdadsabbagh/leboncoin-pdf-ext/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/90c2b2e5d1c33e53448d/maintainability" />
-  </a>
+  <img src="https://api.codeclimate.com/v1/badges/90c2b2e5d1c33e53448d/maintainability" />
 </p>
 
 <p align=center>
