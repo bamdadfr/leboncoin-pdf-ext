@@ -1,11 +1,21 @@
 #
 
 <p align=center>
-  <img width=150 src="./src/assets/icon.png">
+  <img width=150 src="https://raw.githubusercontent.com/bamdadsabbagh/leboncoin-pdf-ext/master/src/assets/icon.png">
 </p>
 
 <p align=center>
   PDF Exporter for <a href="https://www.leboncoin.fr/">leboncoin.fr</a>
+</p>
+
+<p align=center>
+  <a href="https://github.com/bamdadsabbagh/leboncoin-pdf-ext"><img src="https://img.shields.io/github/stars/bamdadsabbagh/leboncoin-pdf-ext?label=git"></a>
+  <img src="https://img.shields.io/github/license/bamdadsabbagh/leboncoin-pdf-ext">
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/github/languages/count/bamdadsabbagh/leboncoin-pdf-ext">
+  <img src="https://img.shields.io/github/languages/top/bamdadsabbagh/leboncoin-pdf-ext">
 </p>
 
 <p align=center>
@@ -29,6 +39,10 @@
   <img src="https://img.shields.io/amo/v/leboncoin-pdf">
   <img src="https://img.shields.io/amo/stars/leboncoin-pdf">
   <img src="https://img.shields.io/amo/users/leboncoin-pdf">
+</p>
+
+<p align=center>
+  <img src="https://i.imgur.com/kAdOAZ9.gif">
 </p>
 
 <img align=right width=200 src="./assets/screenshots/promo_small.jpg">
