@@ -63,14 +63,6 @@ thus making them available to you after their expiry on the actual website.
 
 [<img height=30 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-firefox-icon.png"> **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/leboncoin-pdf/)
 
-## 📸 Screenshots
-
-<p align=center>
-  <img width=600 src="./assets/screenshots/001.jpg">
-  <img width=600 src="./assets/screenshots/002.jpg">
-  <img width=600 src="./assets/screenshots/003.jpg">
-</p>
-
 ## 🖊 Contribute
 
 ### Development environment
