@@ -1,11 +1,15 @@
-#
+# <img width=25 src="https://i.imgur.com/LCwbHeA.png"> PDF Exporter for leboncoin.fr
 
 <p align=center>
-  <img width=150 src="https://raw.githubusercontent.com/bamdadsabbagh/leboncoin-pdf-ext/master/src/assets/icon.png">
+  <a href="https://github.com/bamdadsabbagh/leboncoin-pdf-ext"><img width=150 src="https://raw.githubusercontent.com/bamdadsabbagh/leboncoin-pdf-ext/master/src/assets/icon.png"></a>
 </p>
 
 <p align=center>
   PDF Exporter for <a href="https://www.leboncoin.fr/">leboncoin.fr</a>
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/badge/role-lead-blueviolet">
 </p>
 
 <p align=center>
@@ -39,6 +43,11 @@
   <img src="https://img.shields.io/amo/v/leboncoin-pdf">
   <img src="https://img.shields.io/amo/stars/leboncoin-pdf">
   <img src="https://img.shields.io/amo/users/leboncoin-pdf">
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
+  <img src="https://img.shields.io/badge/cd-docker-yellowgreen">
 </p>
 
 <p align=center>
