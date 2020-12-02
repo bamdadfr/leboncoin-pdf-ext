@@ -10,7 +10,7 @@ on:
 
 jobs:
   semantic-release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
 
       - uses: actions/checkout@master
@@ -33,8 +33,7 @@ jobs:
             @semantic-release/npm \
             semantic-release-chrome \
             semantic-release-firefox-add-on@0.2.6 \
-            aggregate-error \
-            sign-addon
+            aggregate-error
         
       - run: semantic-release
         env:
