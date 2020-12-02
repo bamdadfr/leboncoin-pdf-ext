@@ -1,3 +1,10 @@
+## [1.6.84](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.83...v1.6.84) (2020-12-02)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([a44c2b8](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/a44c2b8751b32e8f0973f67489e8a892263db440))
+
 ## [1.6.83](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.82...v1.6.83) (2020-12-02)
 
 
