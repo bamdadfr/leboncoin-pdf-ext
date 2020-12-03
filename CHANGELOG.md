@@ -1,3 +1,13 @@
+## [1.6.89](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.88...v1.6.89) (2020-12-03)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([619342f](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/619342f97b6613340578a8b17eb9834dbfd0fb58))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([6c5790b](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/6c5790b16913eb540db67541942e416e52a666a6))
+* asfalte: 🔨 git-commit-force-release__push ([984a64c](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/984a64c88946e2a7d3eab596539eb4c45e942743))
+* signing function is now correctly imported with latest `semantic-release-firefox-add-on` ([4e5d479](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/4e5d479c47219b8f490d62596ae709cbceeeed92))
+
 ## [1.6.88](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.87...v1.6.88) (2020-12-03)
 
 
