@@ -429,9 +429,9 @@
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
 
 "@types/node@*", "@types/node@^14.0.27":
-  version "14.14.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.13.tgz#9e425079799322113ae8477297ae6ef51b8e0cdf"
-  integrity sha512-vbxr0VZ8exFMMAjCW8rJwaya0dMCDyYW2ZRdTyjtrCvJoENMpdUHOT/eTzvgyA5ZnqRZ/sI0NwqAxNHKYokLJQ==
+  version "14.14.14"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.14.tgz#f7fd5f3cc8521301119f63910f0fb965c7d761ae"
+  integrity sha512-UHnOPWVWV1z+VV8k6L1HhG7UbGBgIdghqF3l9Ny9ApPghbjICXkUJSd/b9gOgQfjM1r+37cipdw/HJ3F6ICEnQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -2165,9 +2165,9 @@ domhandler@^2.3.0:
     domelementtype "1"
 
 dompurify@^2.0.12:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.2.3.tgz#ec653ba521b39f397c2ca045769438d593ea8a9f"
-  integrity sha512-8Hv7Q0FuwD9rWoB6qI2eZsfKbGXfoUVuGHHrE15vgk4ReOKwOkSgbqb2OMFtc0d5besOEkoLkcyuV10zQ2X5gw==
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.2.4.tgz#a98cd182b729bdd8715c3eb7a8bf8eafb2ff7410"
+  integrity sha512-jE21SelIgWrGKoXGfGPA524Zt1IJFBnktwfFMHDlEYRx5FZOdc+4eEH9mkA6PuhExrq3HVpJnY8hMYUzAMl0OA==
 
 domutils@1.5.1:
   version "1.5.1"
