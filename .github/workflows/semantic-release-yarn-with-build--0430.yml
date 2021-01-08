@@ -1,15 +1,15 @@
-name: semantic-release-with-build__0430
+name: semantic-release-yarn-with-build--0430
 
 on:
   schedule:
-    - cron: '30 4 * * *'
+    - cron: '30 4 * * *' # at 04H30
   repository_dispatch:
     types:
       - docker-base-image-check
       - git-commit-force-release
 
 jobs:
-  semantic-release:
+  semantic-release-yarn-with-build--0430:
     runs-on: ubuntu-latest
     steps:
 
