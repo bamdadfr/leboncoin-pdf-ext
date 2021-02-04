@@ -4330,9 +4330,9 @@ mdast-util-from-markdown@^0.8.0:
     unist-util-stringify-position "^2.0.0"
 
 mdast-util-to-markdown@^0.6.0:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/mdast-util-to-markdown/-/mdast-util-to-markdown-0.6.2.tgz#8fe6f42a2683c43c5609dfb40407c095409c85b4"
-  integrity sha512-iRczns6WMvu0hUw02LXsPDJshBIwtUPbvHBWo19IQeU0YqmzlA8Pd30U8V7uiI0VPkxzS7A/NXBXH6u+HS87Zg==
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/mdast-util-to-markdown/-/mdast-util-to-markdown-0.6.3.tgz#54e732ca84e52dc48219763a9d9ef4d711042c64"
+  integrity sha512-BZ3z5VrlFpwmtT2YO7f5K7kjI57BLVWpjwyKzXWU/MZcEoFojS9Lfl7JNlUHvBsr/gHMV2gQaq/JivwkCAi5Tg==
   dependencies:
     "@types/unist" "^2.0.0"
     longest-streak "^2.0.0"
