@@ -230,10 +230,10 @@
     eslint-plugin-react-hooks "^4.0.8"
     prettier "^2.0.5"
 
-"@bamdadsabbagh/stylelint-config@^1.2.43":
-  version "1.2.187"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.187.tgz#3cfd3b4d022f3accbdb2f41de21ecdc264506264"
-  integrity sha512-tUSpppRPhEQn1jg0mh43+XoqwFABOnQuycfsO92GSaAXvhqmSWj3sdE1oVtFIT7ZVNEy/ioL8PUue/biTvYzkA==
+"@bamdadsabbagh/stylelint-config@^1.2.188":
+  version "1.2.188"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.188.tgz#b4bf7cd20454ec155d0fae7992ab07da54f71a24"
+  integrity sha512-7KttQ6/gJUwSwCOY4SjXeIWozcAcMYCtYFB8U1ufPBe5fgEcJRkIGpAsKqdST2gKO+F0hj5y+d1TP+hzvJWnyQ==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
