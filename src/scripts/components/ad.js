@@ -17,7 +17,7 @@ export const Ad = class Ad {
     }
 
     async export () {
-        
+
         const name = `${this.json.location.zipcode} - ${this.json.list_id} - ${this.json.subject} - ${this.json.price[0].toString ()} euros`
         const pdf = new PDF (name)
         const header = AdHeader (this.json, pdf)
@@ -35,9 +35,6 @@ export const Ad = class Ad {
             ...description,
             ...images,
         ]
-
-        // eslint-disable-next-line no-console
-        // console.log (this.json)
 
         pdf.run (data)
     
