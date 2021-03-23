@@ -5,10 +5,10 @@ const run = () => {
     
     if (document.visibilityState === 'visible') {
         
-        const reduxDOM = document.getElementById ('__NEXT_DATA__').innerHTML
+        const nextData = document.getElementById ('__NEXT_DATA__').innerHTML
         const ad = new Ad ()
         
-        ad.import (reduxDOM)
+        ad.import (nextData)
         
         ad.export ()
         
