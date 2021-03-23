@@ -1,4 +1,4 @@
-// prefering `chrome` instead of `browser` (cross-browser)
+// preferring `chrome` instead of `browser` (cross-browser)
 // eslint-disable-next-line no-undef
 export const getBrowser = () => chrome
 
