@@ -2,8 +2,8 @@ import { setState } from './services/browser'
 
 const link = document.getElementById ('link')
 
-link.addEventListener ('click', () => {
+link.addEventListener ('click', async () => {
 
-    setState ('isTriggered', true)
+    await setState ('isTriggered', true)
 
 })

@@ -1,9 +1,10 @@
-import { version } from '../../manifest.json'
+import manifest from '../../manifest.json'
 import { getDate } from './utils'
 
 export const AdHeaderDates = (json, pdf) => {
 
     const now = getDate ()
+    const { version } = manifest
 
     return [
         {

@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 // import * as jsPDF from 'jspdf'
 import { jsPDF } from 'jspdf'
-import { PDFFontWeights, PDFFontSizes, PDFPosition } from './pdf.constants'
+import { PDFFontWeights, PDFFontSizes, PDFPosition } from './pdf-constants'
 import { getMaxDimensions } from './utils'
 
 export const PDF = class PDF {

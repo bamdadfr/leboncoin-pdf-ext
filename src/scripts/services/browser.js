@@ -1,24 +1,14 @@
-// prefering `chrome` instead of `browser` (cross-browser)
+// preferring `chrome` instead of `browser` (cross-browser)
 // eslint-disable-next-line no-undef
 export const getBrowser = () => chrome
 
-export const getState = async () => {
-
-    const state = await getBrowser ().storage.local.get ([], () => {
-        // dummy for chrome
-    })
-
-    return state
-
-}
+export const getState = async () => await getBrowser ().storage.local.get ([], () => {
+    // dummy for chrome
+})
 
 export const setState = async (type, payload) => {
 
     const state = await getState ()
-
-    // console.log ('type', type)
-
-    // console.log ('payload', payload)
 
     switch (type) {
 
