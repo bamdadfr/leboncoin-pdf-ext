@@ -1,10 +1,10 @@
 import { PDF } from './pdf'
-import { AdHeader } from './ad.header'
-import { AdTitle } from './ad.title'
-import { AdSeller } from './ad.seller'
-import { AdDescription } from './ad.description'
-import { AdAttributes } from './ad.attributes'
-import { AdImages } from './ad.images'
+import { AdHeader } from './ad-header'
+import { AdTitle } from './ad-title'
+import { AdSeller } from './ad-seller'
+import { AdDescription } from './ad-description'
+import { AdAttributes } from './ad-attributes'
+import { AdImages } from './ad-images'
 
 export const Ad = class Ad {
 
