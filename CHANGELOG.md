@@ -1,3 +1,20 @@
+## [1.6.163](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.162...v1.6.163) (2021-03-23)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release--onPush ([8a2e7d8](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8a2e7d8cdc6a24c1c3878933f5cce75ea24bdb61))
+* **ad.js:** cleaning ([600c07a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/600c07a1f33bd1376bb89aee5617de5c7f22535b))
+* **browser:** cleaning ([4a52803](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/4a5280393392512ebc50f036b7c20c744945960a))
+* **browser:** typo ([464b2ea](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/464b2ea33f9c4aa8743157b3ee9d083b114dc172))
+* **components:** better naming conventions & shortened arrow functions ([af5a0a0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/af5a0a0b76eb8f6a8551b9e734a1cfb64b511b9f))
+* **content.js:** better code ([ce5a83a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ce5a83af32924e87bd341b60c25f30817b9da637))
+* **content.js:** better variable name ([b1cf286](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/b1cf286945720f8dbcc9430952b25be652911697))
+* **content.js:** setEvents() is now async ([f0739e9](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f0739e9f6efaf053488a4d35033ebbf4f64d3a29))
+* **deps:** updated to latest ([4a24d93](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/4a24d9308e9438067c96dd549c07df727ebae816))
+* **popup.js:** setState() is now async ([5678c61](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/5678c6183e56595a70690a7364348ca7a4283f18))
+* **version:** better importing then deconstruct ([65a023b](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/65a023b95fd8861b2ed0654ebb926c60248a6a2d))
+
 ## [1.6.162](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.161...v1.6.162) (2021-03-22)
 
 
