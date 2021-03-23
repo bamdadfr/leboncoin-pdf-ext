@@ -1,7 +1,7 @@
 import { getBrowser, setState } from './services/browser'
 import { Ad } from './components/ad'
 
-const run = () => {
+const run = async () => {
 
     if (document.visibilityState === 'visible') {
         
@@ -10,38 +10,27 @@ const run = () => {
         
         ad.import (nextData)
         
-        ad.export ()
+        await ad.export ()
         
     }
     
 }
 
-const setEvents = () => {
+/**
+ * Watch for changes in browser storage
+ */
+(() => {
 
     getBrowser ().storage.onChanged.addListener (async (changes) => {
-        
-        // runtime
-        switch (changes.isTriggered.newValue) {
-            
-            case true:
-                
-                run ()
 
-                await setState ('isTriggered', false)
+        if (changes.isTriggered.newValue === true) {
 
-                break
+            await run ()
 
-            default:
-                return null
-        
+            await setState ('isTriggered', false)
+
         }
     
     })
-
-}
-
-(() => {
-
-    setEvents ()
 
 }) ()
