@@ -2,7 +2,7 @@ import { getBrowser, setState } from './services/browser'
 import { Ad } from './components/ad'
 
 const run = () => {
-    
+
     if (document.visibilityState === 'visible') {
         
         const nextData = document.getElementById ('__NEXT_DATA__').innerHTML
@@ -17,11 +17,8 @@ const run = () => {
 }
 
 const setEvents = () => {
-    
-    getBrowser ().storage.onChanged.addListener (changes => {
-        
-        // eslint-disable-next-line no-console
-        // console.log (changes)
+
+    getBrowser ().storage.onChanged.addListener (async (changes) => {
         
         // runtime
         switch (changes.isTriggered.newValue) {
@@ -30,7 +27,7 @@ const setEvents = () => {
                 
                 run ()
 
-                setState ('isTriggered', false)
+                await setState ('isTriggered', false)
 
                 break
 
