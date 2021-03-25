@@ -1,11 +1,11 @@
-name: yarn-upgrade--onMondays-0930
+name: yarn-upgrade--onMondays-1000
 
 on:
   schedule:
-    - cron: '30 9 * * 1' # every monday at 09:30
+    - cron: '0 10 * * 1' # every monday at 1000
 
 jobs:
-  yarn-upgrade--onMondays-0930:
+  yarn-upgrade--onMondays-1000:
     runs-on: ubuntu-latest
     steps:
 
@@ -23,7 +23,7 @@ jobs:
 
       - run: |
           git add .
-          git diff-index --quiet HEAD || git commit -m "fix: asfalte: ⚙️ yarn-upgrade--onMondays-0930"
+          git diff-index --quiet HEAD || git commit -m "fix: asfalte: ⚙️ yarn-upgrade--onMondays-1000"
 
       - run: git push
 
