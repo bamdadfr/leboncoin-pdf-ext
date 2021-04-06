@@ -30,7 +30,7 @@
   "devDependencies": {
     "@bamdadsabbagh/eslint-config": "^1.9.1",
     "@bamdadsabbagh/stylelint-config": "^1.2.43",
-    "concurrently": "^6.0.0",
+    "concurrently": "^6.0.1",
     "copy-webpack-plugin": "^8.1.0",
     "node-forge": "^0.10.0",
     "wait-on": "^5.2.0",
