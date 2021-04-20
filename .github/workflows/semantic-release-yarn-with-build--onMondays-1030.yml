@@ -10,7 +10,7 @@ on:
 
 jobs:
   semantic-release-yarn-with-build--onMondays-1030:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
 
       - uses: actions/checkout@master
