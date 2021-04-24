@@ -33,7 +33,7 @@ jobs:
             @semantic-release/npm \
             semantic-release-chrome \
             semantic-release-firefox-add-on \
-            aggregate-error
+            aggregate-error@3.1.0
         
       - run: semantic-release
         env:
