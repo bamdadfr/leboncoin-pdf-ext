@@ -1,3 +1,4 @@
 node_modules
 dist
 packages
+release-test.sh
