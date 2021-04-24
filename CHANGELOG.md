@@ -1,3 +1,19 @@
+## [1.6.166](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.165...v1.6.166) (2021-04-24)
+
+
+### Bug Fixes
+
+* **ci-cd:** building and publishing with node version 14 ([f542abb](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f542abb7fdb5a07586dcafe35356dc33264654ee))
+* **deps:** upgraded webpack to latest ([5663101](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/5663101c5f8bf45284e227c7e20e56bbc8782fe4))
+* **linters:** better config file names ([e69574e](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/e69574ebd256fd9735266a2adfa9d2065f3007b3))
+* **package:** added `rimraf` ([fe8f0a5](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/fe8f0a50237b84554f2b772ba1d866ddd0b694da))
+* asfalte: ⚙️ yarn-upgrade--onMondays-1000 ([8648c80](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8648c804338e772d7c1c6343e28a4178098e4349))
+* asfalte: 🔨 git-commit-force-release--onPush ([f74c3ac](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f74c3acd2cef010961b7679cdce631b100642f1c))
+* asfalte: 🔨 git-commit-force-release--onPush ([137fc6c](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/137fc6cd35536454e9b38ca4d4b721e67641c6b9))
+* asfalte: 🔨 git-commit-force-release--onPush ([1068264](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/1068264e9487a89e058a554de3170ceac994577e))
+* asfalte: 🔨 git-commit-force-release--onPush ([d970de5](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/d970de5f18cabac43a3aab324776a2a5bd6e47f2))
+* **deps:** upgraded to latest ([7964f80](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/7964f802e7ff9259b9accec6cebc5a8337cf7f43))
+
 ## [1.6.165](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.164...v1.6.165) (2021-04-12)
 
 
