@@ -1,3 +1,10 @@
+## [1.6.167](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.166...v1.6.167) (2021-04-24)
+
+
+### Bug Fixes
+
+* **publishing:** rolling back to `aggregate-error@3.1.0` ([0136b69](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/0136b69b7a462650e094f5c4c48361fad211c249))
+
 ## [1.6.166](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.165...v1.6.166) (2021-04-24)
 
 
