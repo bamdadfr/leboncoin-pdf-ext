@@ -56,7 +56,12 @@ export const getMaxDimensions = (width, height, canvasWidth, canvasHeight, margi
 
     const compute = (margin) => {
 
-        const maxWidth = canvasWidth - margin
+        let maxWidth = canvasWidth - margin
+
+        // todo: write a better fix because this one is clunky
+        // (case when image get zoomed in too much and right margin is negative)
+        if (maxWidth > canvasWidth) maxWidth = canvasWidth - 0.5
+
         const ratio = maxWidth / width
         const maxHeight = height * ratio
 
@@ -72,7 +77,7 @@ export const getMaxDimensions = (width, height, canvasWidth, canvasHeight, margi
 
     // if true, this means the bottom margin is not big enough
     if (bottomDifference <= margin) return compute (margin + bottomDifference)
-    
+
     return dimensions
  
 }

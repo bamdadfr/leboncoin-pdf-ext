@@ -1,4 +1,4 @@
-export const AdAttributes = (json, pdf) => {
+export function AdAttributes (json, pdf) {
 
     const data = [
         {

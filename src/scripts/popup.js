@@ -1,9 +1,9 @@
-import { setState } from './services/browser'
+import { StateSet } from './state-set/state-set'
 
 const link = document.getElementById ('link')
 
 link.addEventListener ('click', async () => {
 
-    await setState ('isTriggered', true)
-
+    await StateSet ('isTriggered', true)
+    
 })

@@ -1,3 +1,4 @@
+// todo: refactor
 export const PDFFontWeights = {
     'normal': 'normal',
     'bold': 'bold',

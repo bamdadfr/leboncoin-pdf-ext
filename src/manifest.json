@@ -26,8 +26,14 @@
       "all_frames": false
     }
   ],
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ]
+  },
   "permissions": [
+    "*://*.leboncoin.fr/*",
     "storage",
-    "*://*.leboncoin.fr/*"
+    "tabs"
   ]
 }

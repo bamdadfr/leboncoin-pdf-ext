@@ -1,6 +1,6 @@
-import { asyncForEach, imageToBase64, getDimensionsFromURL } from './utils'
+import { asyncForEach, imageToBase64, getDimensionsFromURL } from '../utils/utils'
 
-export const AdImages = async (json) => {
+export async function AdImages (json) {
 
     const data = []
     let images = undefined
