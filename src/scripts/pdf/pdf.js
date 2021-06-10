@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 import { jsPDF } from 'jspdf'
 import { PDFFontWeights, PDFFontSizes, PDFPosition } from '../pdf-constants/pdf-constants'
-import { getMaxDimensions } from '../utils/utils'
+import { UtilsGetMaxDimensions } from '../utils-get-max-dimensions/utils-get-max-dimensions'
 
 export class PDF {
 
@@ -120,7 +120,7 @@ export class PDF {
 
         const maxWidth = this.pos.width
         const maxHeight = this.pos.height
-        const dimensions = getMaxDimensions (width, height, maxWidth, maxHeight)
+        const dimensions = UtilsGetMaxDimensions (width, height, maxWidth, maxHeight)
 
         this.doc.addImage (base64, 'JPEG', this.pos.x, this.pos.y, dimensions.width, dimensions.height)
     
