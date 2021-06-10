@@ -2,9 +2,9 @@
  * @function
  * @name UtilsAsyncForEach
  * @description utils: for each function for async items in an array
- * @param {Array<*>} array - array to iterate, containing async elements
+ * @param {Array.<*>} array - array to iterate, containing async elements
  * @param {Function} callback - callback function
- * @returns {Promise<void>}
+ * @return {undefined}
  */
 export async function UtilsAsyncForEach (array, callback) {
 

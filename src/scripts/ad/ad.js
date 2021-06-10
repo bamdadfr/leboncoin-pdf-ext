@@ -19,7 +19,7 @@ export class Ad {
      * @public
      * @name import
      * @description import data
-     * @param {JSON} data - NextJS data from leboncoin
+     * @param {Object} data - NextJS data from leboncoin
      */
     import (data) {
 
@@ -34,7 +34,7 @@ export class Ad {
      * @public
      * @name export
      * @description export data into a PDF container
-     * @returns {Promise<null>}
+     * @return {Promise<null>}
      */
     async export () {
 

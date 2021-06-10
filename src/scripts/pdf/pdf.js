@@ -208,7 +208,7 @@ export class PDF {
      * @private
      * @name iterate
      * @description iterate function to parse the incoming state data
-     * @param {Array<*>} array - state
+     * @param {Array.<*>} array - state
      */
     iterate (array) {
             

@@ -7,7 +7,7 @@ import { UtilsGetDate } from '../utils-get-date/utils-get-date'
  * @description function generating the header dates block
  * @param {Object} json - state in JSON format
  * @param {PDF} pdf - PDF instance
- * @returns {Array<Object>}
+ * @return {Array.<Object>}
  */
 export function AdHeaderDates (json, pdf) {
 

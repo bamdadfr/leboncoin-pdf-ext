@@ -2,7 +2,7 @@
  * @function
  * @name Browser
  * @description get browser API object
- * @returns {*}
+ * @return {*}
  */
 export function Browser () {
 

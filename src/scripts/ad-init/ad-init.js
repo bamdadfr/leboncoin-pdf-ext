@@ -4,7 +4,7 @@ import { Ad } from '../ad/ad'
  * @function
  * @name AdInit
  * @description get data from current page, import to PDF and export as browser download
- * @returns {Promise<null>}
+ * @return {Promise<null>}
  */
 export async function AdInit () {
 

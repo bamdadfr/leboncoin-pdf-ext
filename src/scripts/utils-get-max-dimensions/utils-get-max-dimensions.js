@@ -6,8 +6,8 @@
  * @param {Number} height - height of image
  * @param {Number} canvasWidth - width of canvas
  * @param {Number} canvasHeight - height of canvas
- * @param {Number} margin - margin to apply on borders of canvas
- * @returns {{width: number, height: number}}
+ * @param {Number} [margin=0.5] - margin to apply on borders of canvas
+ * @return {{width: Number, height: Number}}
  */
 export function UtilsGetMaxDimensions (width, height, canvasWidth, canvasHeight, margin = 0.5) {
 

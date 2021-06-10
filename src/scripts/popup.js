@@ -4,7 +4,7 @@ import { StateSet } from './state-set/state-set'
  * @function
  * @name PopupOnLoad
  * @description popup: on load
- * @return {Promise<void>}
+ * @return {undefined}
  */
 async function PopupOnLoad () {
 

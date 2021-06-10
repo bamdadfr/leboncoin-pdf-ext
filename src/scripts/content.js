@@ -6,7 +6,7 @@ import { AdInit } from './ad-init/ad-init'
  * @function
  * @name ContentOnLoad
  * @description content: on load
- * @return {Promise<void>}
+ * @return {undefined}
  */
 async function ContentOnLoad () {
 

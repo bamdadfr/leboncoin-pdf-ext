@@ -6,7 +6,7 @@ import { Browser } from '../browser/browser'
  * @description set browser state
  * @param {String} type - type of action
  * @param {Boolean} payload - payload to write in state
- * @returns {Promise<null>}
+ * @return {Promise<(null|undefined)>}
  */
 export async function StateSet (type, payload) {
 
