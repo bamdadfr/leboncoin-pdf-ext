@@ -1,6 +1,6 @@
-import { Browser } from './browser/browser'
 import { StateSet } from './state-set/state-set'
 import { AdInit } from './ad-init/ad-init'
+import { State } from './state/state'
 
 /**
  * @function
@@ -10,19 +10,17 @@ import { AdInit } from './ad-init/ad-init'
  */
 async function ContentOnLoad () {
 
-    const browser = await Browser ()
+    const state = await State ()
 
-    browser.storage.onChanged.addListener (async (changes) => {
+    console.log (state)
 
-        if (changes.isTriggered.newValue === true) {
+    if (state.isReloading === true && state.isTriggered === true) {
 
-            await AdInit ()
+        await StateSet ('isReloaded', true)
 
-            await StateSet ('isTriggered', false)
+        await AdInit ()
 
-        }
-        
-    })
+    }
 
 }
 

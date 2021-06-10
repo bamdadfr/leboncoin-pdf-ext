@@ -24,17 +24,11 @@ export async function State () {
     
     })
 
-    if (typeof state.isTriggered === 'undefined') {
+    if (typeof state.isTriggered === 'undefined') await StateSet ('isTriggered', false)
 
-        await StateSet ('isTriggered', false)
-    
-    }
+    if (typeof state.isReloading === 'undefined') await StateSet ('isReloading', false)
 
-    if (typeof state.isTriggeredAndRefreshed === 'undefined') {
-
-        await StateSet ('isTriggeredAndRefreshed', false)
-
-    }
+    if (typeof state.isReloaded === 'undefined') await StateSet ('isReloaded', false)
 
     return state
 

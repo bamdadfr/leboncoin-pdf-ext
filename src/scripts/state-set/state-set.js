@@ -22,10 +22,22 @@ export async function StateSet (type, payload) {
 
             break
 
-        case 'isTriggeredAndRefreshed':
+        case 'isReloading':
+            await browser.storage.local.set ({
+                'isReloading': payload,
+            })
+
+            break
+
+        case 'isReloaded':
             await browser.storage.local.set ({
                 'isTriggered': false,
-                'isTriggeredAndRefreshed': payload,
+                'isReloading': false,
+                'isReloaded': payload,
+            })
+
+            await browser.storage.local.set ({
+                'isReloaded': false,
             })
 
             break
