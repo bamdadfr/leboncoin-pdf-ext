@@ -4,16 +4,16 @@ import { PDFFontWeights, PDFFontSizes, PDFPosition } from '../pdf-constants/pdf-
 import { UtilsGetMaxDimensions } from '../utils-get-max-dimensions/utils-get-max-dimensions'
 
 /**
- * @public
  * @class
+ * @public
  * @name PDF
  * @description class representing the PDF file to export
  */
 export class PDF {
 
     /**
-     * @private
      * @method
+     * @private
      * @name constructor
      * @description create the PDF file with name and settings
      * @param {String} name - PDF filename
@@ -35,8 +35,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name init
      * @description initialize cursor
      */
@@ -51,8 +51,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name save
      * @description export PDF file by triggering a browser download
      */
@@ -79,8 +79,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name printText
      * @description print a line of text
      * @param {String} text - text to print
@@ -98,8 +98,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name printLink
      * @description print a line of clickable text
      * @param {String} text - text to print
@@ -118,8 +118,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name printBlock
      * @description print a block / paragraph of text
      * @param {String} text - text to print
@@ -140,8 +140,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name printNewPage
      * @description add a new page
      */
@@ -154,8 +154,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name printHR
      * @description print a horizontal line
      */
@@ -170,8 +170,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name printImage
      * @description print an image
      * @param {Number} id - image number
@@ -204,8 +204,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @private
      * @name iterate
      * @description iterate function to parse the incoming state data
      * @param {Array<*>} array - state
@@ -249,8 +249,8 @@ export class PDF {
     }
 
     /**
-     * @private
      * @method
+     * @public
      * @name run
      * @description run this after class instantiation
      * @param {Array} data - state to parse and print
