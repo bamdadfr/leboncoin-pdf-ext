@@ -1,9 +1,9 @@
 import manifest from '../../manifest.json'
-import { getDate } from './utils'
+import { UtilsGetDate } from '../utils-get-date/utils-get-date'
 
-export const AdHeaderDates = (json, pdf) => {
+export function AdHeaderDates (json, pdf) {
 
-    const now = getDate ()
+    const now = UtilsGetDate ()
     const { version } = manifest
 
     return [

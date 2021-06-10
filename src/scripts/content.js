@@ -1,36 +1,25 @@
-import { getBrowser, setState } from './services/browser'
-import { Ad } from './components/ad'
+import { Browser } from './browser/browser'
+import { StateSet } from './state-set/state-set'
+import { AdInit } from './ad-init/ad-init'
+import { State } from './state/state'
 
-const run = async () => {
+async function ContentOnLoad () {
 
-    if (document.visibilityState === 'visible') {
-        
-        const nextData = document.getElementById ('__NEXT_DATA__').innerHTML
-        const ad = new Ad ()
-        
-        ad.import (nextData)
-        
-        await ad.export ()
-        
-    }
-    
-}
+    const browser = await Browser ()
+    const state = await State ()
 
-/**
- * Watch for changes in browser storage
- */
-(() => {
-
-    getBrowser ().storage.onChanged.addListener (async (changes) => {
+    browser.storage.onChanged.addListener (async (changes) => {
 
         if (changes.isTriggered.newValue === true) {
 
-            await run ()
+            await AdInit ()
 
-            await setState ('isTriggered', false)
+            await StateSet ('isTriggered', false)
 
         }
-    
+        
     })
 
-}) ()
+}
+
+window.addEventListener ('load', ContentOnLoad)

@@ -1,4 +1,4 @@
-export const AdSeller = (json, pdf) => {
+export function AdSeller (json, pdf) {
 
     let type = json.owner.type
 
