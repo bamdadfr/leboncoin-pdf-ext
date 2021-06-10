@@ -1,3 +1,11 @@
+/**
+ * @function
+ * @name AdSeller
+ * @description function generating the seller block
+ * @param {Object} json - state in JSON format
+ * @param {PDF} pdf - PDF instance
+ * @returns {Array<Object>}
+ */
 export function AdSeller (json, pdf) {
 
     let type = json.owner.type

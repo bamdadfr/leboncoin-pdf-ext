@@ -1,5 +1,13 @@
 import { Browser } from '../browser/browser'
 
+/**
+ * @function
+ * @name StateSet
+ * @description set browser state
+ * @param {String} type - type of action
+ * @param {Boolean} payload - payload to write in state
+ * @returns {Promise<null>}
+ */
 export async function StateSet (type, payload) {
 
     const browser = await Browser ()

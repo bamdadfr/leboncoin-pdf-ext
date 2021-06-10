@@ -1,9 +1,21 @@
 import { StateSet } from './state-set/state-set'
 
-const link = document.getElementById ('link')
+/**
+ * @function
+ * @name PopupOnLoad
+ * @description popup: on load
+ * @return {Promise<void>}
+ */
+async function PopupOnLoad () {
 
-link.addEventListener ('click', async () => {
+    const link = document.getElementById ('link')
 
-    await StateSet ('isTriggered', true)
-    
-})
+    link.addEventListener ('click', async () => {
+
+        await StateSet ('isTriggered', true)
+
+    })
+
+}
+
+window.addEventListener ('load', PopupOnLoad)

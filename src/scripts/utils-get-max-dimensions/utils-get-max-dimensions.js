@@ -1,3 +1,14 @@
+/**
+ * @function
+ * @name UtilsGetMaxDimensions
+ * @description compute max dimensions for an image to fit in a given canvas' space
+ * @param {Number} width - width of image
+ * @param {Number} height - height of image
+ * @param {Number} canvasWidth - width of canvas
+ * @param {Number} canvasHeight - height of canvas
+ * @param {Number} margin - margin to apply on borders of canvas
+ * @returns {{width: number, height: number}}
+ */
 export function UtilsGetMaxDimensions (width, height, canvasWidth, canvasHeight, margin = 0.5) {
 
     const compute = (margin) => {

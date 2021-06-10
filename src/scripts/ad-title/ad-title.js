@@ -1,3 +1,11 @@
+/**
+ * @function
+ * @name AdTitle
+ * @description function generating the title block
+ * @param {Object} json - state in JSON format
+ * @param {PDF} pdf - PDF instance
+ * @returns {Array<Object>}
+ */
 export function AdTitle (json, pdf) {
 
     return [

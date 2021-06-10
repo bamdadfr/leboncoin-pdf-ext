@@ -1,5 +1,11 @@
 import { Ad } from '../ad/ad'
 
+/**
+ * @function
+ * @name AdInit
+ * @description get data from current page, import to PDF and export as browser download
+ * @returns {Promise<null>}
+ */
 export async function AdInit () {
 
     if (document.visibilityState === 'visible') {
@@ -12,5 +18,7 @@ export async function AdInit () {
         await ad.export ()
 
     }
+
+    return null
 
 }

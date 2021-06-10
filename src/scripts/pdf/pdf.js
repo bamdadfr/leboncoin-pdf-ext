@@ -3,8 +3,21 @@ import { jsPDF } from 'jspdf'
 import { PDFFontWeights, PDFFontSizes, PDFPosition } from '../pdf-constants/pdf-constants'
 import { UtilsGetMaxDimensions } from '../utils-get-max-dimensions/utils-get-max-dimensions'
 
+/**
+ * @public
+ * @class
+ * @name PDF
+ * @description class representing the PDF file to export
+ */
 export class PDF {
 
+    /**
+     * @private
+     * @method
+     * @name constructor
+     * @description create the PDF file with name and settings
+     * @param {String} name - PDF filename
+     */
     constructor (name) {
 
         this.doc = new jsPDF ('p', 'in', 'letter')
@@ -21,6 +34,12 @@ export class PDF {
 
     }
 
+    /**
+     * @private
+     * @method
+     * @name init
+     * @description initialize cursor
+     */
     init () {
 
         this.pos.reset ()
@@ -31,6 +50,12 @@ export class PDF {
     
     }
 
+    /**
+     * @private
+     * @method
+     * @name save
+     * @description export PDF file by triggering a browser download
+     */
     save () {
 
         const blobData = this.doc.output ('blob')
@@ -53,6 +78,15 @@ export class PDF {
     
     }
 
+    /**
+     * @private
+     * @method
+     * @name printText
+     * @description print a line of text
+     * @param {String} text - text to print
+     * @param {Number} size - font size
+     * @param {String} type - font weight (todo: rename type to weight)
+     */
     printText (text, size = this.size.normal, type = this.type.normal) {
 
         this.doc.setFontSize (size).setFont (this.font, type)
@@ -63,6 +97,16 @@ export class PDF {
     
     }
 
+    /**
+     * @private
+     * @method
+     * @name printLink
+     * @description print a line of clickable text
+     * @param {String} text - text to print
+     * @param {String} url - target link
+     * @param {Number} size - font size
+     * @param {String} type - font weight
+     */
     printLink (text, url, size = this.size.normal, type = this.type.normal) {
 
         this.doc.setFontSize (size).setFont (this.font, type)
@@ -73,6 +117,15 @@ export class PDF {
     
     }
 
+    /**
+     * @private
+     * @method
+     * @name printBlock
+     * @description print a block / paragraph of text
+     * @param {String} text - text to print
+     * @param {Number} size - font size
+     * @param {String} type - font weight
+     */
     printBlock (text, size = this.size.normal, type = this.type.normal) {
 
         const lines = this.doc
@@ -86,6 +139,12 @@ export class PDF {
     
     }
 
+    /**
+     * @private
+     * @method
+     * @name printNewPage
+     * @description add a new page
+     */
     printNewPage () {
 
         this.doc.addPage ()
@@ -94,6 +153,12 @@ export class PDF {
 
     }
 
+    /**
+     * @private
+     * @method
+     * @name printHR
+     * @description print a horizontal line
+     */
     printHR () {
 
         this.doc.setLineWidth (0.01)
@@ -104,6 +169,18 @@ export class PDF {
     
     }
 
+    /**
+     * @private
+     * @method
+     * @name printImage
+     * @description print an image
+     * @param {Number} id - image number
+     * @param {Number} total - total number of image
+     * @param {String} _url - unused URL string
+     * @param {String} base64 - image in base 64 blob format
+     * @param {Number} width - width of image
+     * @param {Number} height - height of image
+     */
     printImage (id, total, _url, base64, width, height) {
 
         if (this.pos.x !== this.pos.init.x || this.pos.y !== this.pos.init.y) {
@@ -126,6 +203,13 @@ export class PDF {
     
     }
 
+    /**
+     * @private
+     * @method
+     * @name iterate
+     * @description iterate function to parse the incoming state data
+     * @param {Array<*>} array - state
+     */
     iterate (array) {
             
         array.forEach ((el) => {
@@ -164,6 +248,13 @@ export class PDF {
 
     }
 
+    /**
+     * @private
+     * @method
+     * @name run
+     * @description run this after class instantiation
+     * @param {Array} data - state to parse and print
+     */
     run (data) {
 
         this.init ()

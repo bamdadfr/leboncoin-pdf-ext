@@ -1,6 +1,14 @@
 import manifest from '../../manifest.json'
 import { UtilsGetDate } from '../utils-get-date/utils-get-date'
 
+/**
+ * @function
+ * @name AdHeaderDates
+ * @description function generating the header dates block
+ * @param {Object} json - state in JSON format
+ * @param {PDF} pdf - PDF instance
+ * @returns {Array<Object>}
+ */
 export function AdHeaderDates (json, pdf) {
 
     const now = UtilsGetDate ()

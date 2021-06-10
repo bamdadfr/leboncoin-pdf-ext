@@ -1,12 +1,16 @@
 import { Browser } from './browser/browser'
 import { StateSet } from './state-set/state-set'
 import { AdInit } from './ad-init/ad-init'
-import { State } from './state/state'
 
+/**
+ * @function
+ * @name ContentOnLoad
+ * @description content: on load
+ * @return {Promise<void>}
+ */
 async function ContentOnLoad () {
 
     const browser = await Browser ()
-    const state = await State ()
 
     browser.storage.onChanged.addListener (async (changes) => {
 

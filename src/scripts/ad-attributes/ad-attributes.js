@@ -1,3 +1,11 @@
+/**
+ * @function
+ * @name AdAttributes
+ * @description function generating the attributes block
+ * @param {Object} json - state in JSON format
+ * @param {PDF} pdf - PDF instance
+ * @returns {Array<Object>}
+ */
 export function AdAttributes (json, pdf) {
 
     const data = [

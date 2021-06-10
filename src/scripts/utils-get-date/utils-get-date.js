@@ -1,3 +1,10 @@
+/**
+ * @function
+ * @name UtilsGetDate
+ * @description utils: get date function for consistent behavior
+ * @returns {{date: string, time: string}}
+ * @constructor
+ */
 export function UtilsGetDate () {
 
     const test = new Date ()

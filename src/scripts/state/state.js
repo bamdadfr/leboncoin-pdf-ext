@@ -1,6 +1,12 @@
 import { Browser } from '../browser/browser'
 import { StateSet } from '../state-set/state-set'
 
+/**
+ * @function
+ * @name State
+ * @description get browser state
+ * @return {Promise<Object>}
+ */
 export async function State () {
 
     const browser = await Browser ()

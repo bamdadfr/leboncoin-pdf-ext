@@ -6,8 +6,21 @@ import { AdDescription } from '../ad-description/ad-description'
 import { AdAttributes } from '../ad-attributes/ad-attributes'
 import { AdImages } from '../ad-images/ad-images'
 
+/**
+ * @class
+ * @public
+ * @name Ad
+ * @description class representing an Ad
+ */
 export class Ad {
 
+    /**
+     * @method
+     * @public
+     * @name import
+     * @description import data
+     * @param {JSON} data - NextJS data from leboncoin
+     */
     import (data) {
 
         const json = JSON.parse (data)
@@ -16,6 +29,13 @@ export class Ad {
     
     }
 
+    /**
+     * @method
+     * @public
+     * @name export
+     * @description export data into a PDF container
+     * @returns {Promise<null>}
+     */
     async export () {
 
         const name = `${this.json.location.zipcode} - ${this.json.list_id} - ${this.json.subject} - ${this.json.price[0].toString ()} euros`
@@ -37,6 +57,8 @@ export class Ad {
         ]
 
         pdf.run (data)
+
+        return null
     
     }
 
