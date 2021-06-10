@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.0...v1.9.1) (2021-06-10)
+
+
+### Bug Fixes
+
+* **content:** removed console.log ([a2e7306](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/a2e730606dcbde0af6fd396a6b0e6b25de20b6c7))
+
 # [1.9.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.8.3...v1.9.0) (2021-06-10)
 
 
