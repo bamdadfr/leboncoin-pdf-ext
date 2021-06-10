@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.8.2...v1.8.3) (2021-06-10)
+
+
+### Bug Fixes
+
+* **jsdoc:** fixed typos and better doc ([904a674](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/904a674cf36599c585c8ef87e0c92c80bb0d5c6f))
+
 ## [1.8.2](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.8.1...v1.8.2) (2021-06-10)
 
 
