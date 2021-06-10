@@ -12,8 +12,6 @@ async function ContentOnLoad () {
 
     const state = await State ()
 
-    console.log (state)
-
     if (state.isReloading === true && state.isTriggered === true) {
 
         await StateSet ('isReloaded', true)
