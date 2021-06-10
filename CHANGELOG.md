@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.8.1...v1.8.2) (2021-06-10)
+
+
+### Bug Fixes
+
+* **state:** default state is now correctly applied ([f5c2601](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f5c2601017366660b88e791d709a054a49bdab1a))
+
 ## [1.8.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.8.0...v1.8.1) (2021-06-10)
 
 
