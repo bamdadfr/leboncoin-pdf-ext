@@ -24,14 +24,16 @@ export async function State () {
     
     })
 
-    if (Object.keys (state).length === 0 && state.constructor === Object) {
+    if (typeof state.isTriggered === 'undefined') {
 
         await StateSet ('isTriggered', false)
+    
+    }
+
+    if (typeof state.isTriggeredAndRefreshed === 'undefined') {
 
         await StateSet ('isTriggeredAndRefreshed', false)
 
-        await State ()
-    
     }
 
     return state
