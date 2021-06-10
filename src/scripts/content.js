@@ -6,19 +6,17 @@ async function ContentOnLoad () {
 
     const browser = await Browser ()
 
-    browser.storage.onChanged.addListener (
-        async (changes) => {
+    browser.storage.onChanged.addListener (async (changes) => {
 
-            if (changes.isTriggered.newValue === true) {
+        if (changes.isTriggered.newValue === true) {
 
-                await AdInit ()
+            await AdInit ()
 
-                await StateSet ('isTriggered', false)
+            await StateSet ('isTriggered', false)
 
-            }
+        }
         
-        },
-    )
+    })
 
 }
 

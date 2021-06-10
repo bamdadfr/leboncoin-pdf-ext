@@ -2,23 +2,20 @@ import { Browser } from '../browser/browser'
 
 export async function StateSet (type, payload) {
 
-    const state = await Browser ().storage.local.get ()
-    const set = await Browser ().storage.local.set
+    const browser = await Browser ()
 
     // reducer
     switch (type) {
 
         case 'isTriggered':
-            await set ({
-                ...state,
+            await browser.storage.local.set ({
                 'isTriggered': payload,
             })
 
             break
 
         case 'isTriggeredAndRefreshed':
-            await set ({
-                ...state,
+            await browser.storage.local.set ({
                 'isTriggered': false,
                 'isTriggeredAndRefreshed': payload,
             })

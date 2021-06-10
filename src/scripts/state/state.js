@@ -3,21 +3,30 @@ import { StateSet } from '../state-set/state-set'
 
 export async function State () {
 
-    const state = await Browser ().storage.local.get ()
+    const browser = await Browser ()
 
-    if (typeof state.isTriggered === 'undefined') {
+    const state = await new Promise ((resolve) => {
+
+        browser.storage.local.get (
+            null,
+            async (state) => {
+
+                resolve (state)
+            
+            },
+        )
+    
+    })
+
+    if (Object.keys (state).length === 0 && state.constructor === Object) {
 
         await StateSet ('isTriggered', false)
-    
-    }
-
-    if (typeof state.isTriggeredAndRefreshed === 'undefined') {
 
         await StateSet ('isTriggeredAndRefreshed', false)
+
+        await State ()
     
     }
-
-    console.log ('state', state)
 
     return state
 
