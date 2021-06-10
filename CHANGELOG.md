@@ -1,3 +1,18 @@
+# [1.7.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.174...v1.7.0) (2021-06-10)
+
+
+### Bug Fixes
+
+* **deps:** upgraded to latest ([881d00d](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/881d00df5237a58ca56f59bc92ac4a6548a24967))
+* **storage:** compatible with chrome api ([e34703e](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/e34703eb41f96edd80eec27ea2066ed141761457))
+* **utils:** moved functions to their own files ([b3e8684](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/b3e86848f97857c9dc3eb60c407946821e0ce155))
+* **utils:** refactored utils functions ([0d1c7b8](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/0d1c7b8edf42b17221152a612d868b9507d23b35))
+
+
+### Features
+
+* **app:** started refactoring ([f34915a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f34915a76a087068ccadd48d1b2189a307a2147d))
+
 ## [1.6.174](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.6.173...v1.6.174) (2021-06-07)
 
 
