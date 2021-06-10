@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.8.3...v1.9.0) (2021-06-10)
+
+
+### Features
+
+* **app:** now reloading before exporting to ensure fresh data ([5ee1158](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/5ee115865d47357ab343522234f4b8291c8d0cdd))
+
 ## [1.8.3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.8.2...v1.8.3) (2021-06-10)
 
 
