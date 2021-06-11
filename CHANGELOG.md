@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.1...v1.9.2) (2021-06-11)
+
+
+### Bug Fixes
+
+* **dummy:** dummy version bump for chrome sync ([5253ab8](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/5253ab89c24eb2f5b7423d6798e26aa6f83cfa86))
+
 ## [1.9.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.0...v1.9.1) (2021-06-10)
 
 
