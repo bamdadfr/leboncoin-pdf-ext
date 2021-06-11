@@ -28,7 +28,7 @@
     "jspdf": "2.3.1"
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.9.1",
+    "@bamdadsabbagh/eslint-config": "^1.10.1",
     "@bamdadsabbagh/stylelint-config": "^1.2.43",
     "concurrently": "^6.0.0",
     "copy-webpack-plugin": "^9.0.0",
