@@ -21,6 +21,7 @@
     "dev:ext:firefox": "web-ext run",
     "dev:firefox": "yarn dev:clean && concurrently 'yarn dev:webpack' 'wait-on dist/manifest.json && yarn dev:ext:firefox'",
     "dev:webpack": "webpack",
+    "lint": "eslint src --ext .js --fix",
     "package:reinstall": "rimraf node_modules && yarn",
     "package:sort": "npx sort-package-json"
   },
@@ -28,15 +29,15 @@
     "jspdf": "2.3.1"
   },
   "devDependencies": {
-    "@bamdadsabbagh/eslint-config": "^1.9.1",
+    "@bamdadsabbagh/eslint-config": "^1.11.0",
     "@bamdadsabbagh/stylelint-config": "^1.2.43",
     "concurrently": "^6.0.0",
     "copy-webpack-plugin": "^9.0.0",
     "node-forge": "^0.10.0",
     "rimraf": "^3.0.2",
-    "wait-on": "^5.2.0",
+    "wait-on": "^6.0.0",
     "web-ext": "^6.1.0",
-    "webpack": "^5.35.1",
+    "webpack": "^5.42.1",
     "webpack-cli": "^4.7.2"
   },
   "webExt": {
