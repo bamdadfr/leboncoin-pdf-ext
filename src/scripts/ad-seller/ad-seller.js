@@ -1,10 +1,10 @@
 /**
  * @function
  * @name AdSeller
- * @description function generating the seller block
- * @param {Object} json - state in JSON format
- * @param {PDF} pdf - PDF instance
- * @return {Array.<Object>}
+ * @description pdf: seller block
+ * @param {object} json - state in JSON format
+ * @param {*} pdf - PDF instance
+ * @returns {Array.<object>} - seller data
  */
 export function AdSeller (json, pdf) {
 

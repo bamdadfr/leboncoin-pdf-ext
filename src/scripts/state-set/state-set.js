@@ -4,9 +4,9 @@ import { Browser } from '../browser/browser'
  * @function
  * @name StateSet
  * @description set browser state
- * @param {String} type - type of action
- * @param {Boolean} payload - payload to write in state
- * @return {Promise<(null|undefined)>}
+ * @param {string} type - type of action
+ * @param {boolean} payload - payload to write in state
+ * @returns {Promise<void>}
  */
 export async function StateSet (type, payload) {
 
@@ -43,7 +43,7 @@ export async function StateSet (type, payload) {
             break
 
         default:
-            return null
+            throw new Error ('state error')
 
     }
 

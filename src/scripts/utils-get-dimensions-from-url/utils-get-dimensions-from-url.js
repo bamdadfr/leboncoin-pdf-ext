@@ -2,8 +2,8 @@
  * @function
  * @name UtilsGetDimensionsFromUrl
  * @description get the dimensions of an image after fetching from an URL
- * @param {String} url - URL to image
- * @return {Promise<{width: Number, height: Number}>}
+ * @param {string} url - URL to image
+ * @returns {Promise<{width: number, height: number}>} - dimensions
  */
 export function UtilsGetDimensionsFromUrl (url) {
 

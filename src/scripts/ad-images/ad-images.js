@@ -5,9 +5,9 @@ import { UtilsAsyncForEach } from '../utils-async-for-each/utils-async-for-each'
 /**
  * @function
  * @name AdImages
- * @description function generating the images blocks
- * @param {Object} json - state in JSON format
- * @return {Promise<Array.<*>>}
+ * @description pdf: images block
+ * @param {object} json - state in JSON format
+ * @returns {Promise<Array.<*>>} - images data
  */
 export async function AdImages (json) {
 

@@ -2,7 +2,7 @@
  * @function
  * @name UtilsGetDate
  * @description utils: get date function for consistent behavior
- * @return {{date: String, time: String}}
+ * @returns {{date: string, time: string}} - current date & time
  */
 export function UtilsGetDate () {
 

@@ -3,10 +3,10 @@ import { AdHeaderDates } from '../ad-header-dates/ad-header-dates'
 /**
  * @function
  * @name AdHeader
- * @description function generating the header block
- * @param {Object} json - state in JSON format
- * @param {PDF} pdf - PDF instance
- * @return {Array.<Object>}
+ * @description pdf: header block
+ * @param {object} json - state in JSON format
+ * @param {*} pdf - PDF instance
+ * @returns {Array.<object>} - header data
  */
 export function AdHeader (json, pdf) {
 

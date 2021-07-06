@@ -4,7 +4,7 @@
  * @description utils: for each function for async items in an array
  * @param {Array.<*>} array - array to iterate, containing async elements
  * @param {Function} callback - callback function
- * @return {undefined}
+ * @returns {void}
  */
 export async function UtilsAsyncForEach (array, callback) {
 

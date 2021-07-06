@@ -15,26 +15,26 @@ import { AdImages } from '../ad-images/ad-images'
 export class Ad {
 
     /**
-     * @method
+     * @function
      * @public
-     * @name import
+     * @name importData
      * @description import data
-     * @param {Object} data - NextJS data from leboncoin
+     * @param {object} data - NextJS data from leboncoin
      */
-    import (data) {
+    importData (data) {
 
         const json = JSON.parse (data)
 
         this.json = json.props.pageProps.ad
-    
+
     }
 
     /**
-     * @method
+     * @function
      * @public
      * @name export
      * @description export data into a PDF container
-     * @return {Promise<null>}
+     * @returns {Promise<void>}
      */
     async export () {
 
@@ -57,8 +57,6 @@ export class Ad {
         ]
 
         pdf.run (data)
-
-        return null
     
     }
 

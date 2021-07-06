@@ -6,7 +6,7 @@ import { State } from './state/state'
  * @function
  * @name ContentOnLoad
  * @description content: on load
- * @return {undefined}
+ * @returns {void}
  */
 async function ContentOnLoad () {
 

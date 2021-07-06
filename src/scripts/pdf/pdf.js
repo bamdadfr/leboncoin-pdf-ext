@@ -12,11 +12,11 @@ import { UtilsGetMaxDimensions } from '../utils-get-max-dimensions/utils-get-max
 export class PDF {
 
     /**
-     * @method
+     * @function
      * @private
      * @name constructor
      * @description create the PDF file with name and settings
-     * @param {String} name - PDF filename
+     * @param {string} name - PDF filename
      */
     constructor (name) {
 
@@ -35,7 +35,7 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name init
      * @description initialize cursor
@@ -51,7 +51,7 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name save
      * @description export PDF file by triggering a browser download
@@ -79,13 +79,13 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name printText
      * @description print a line of text
-     * @param {String} text - text to print
-     * @param {Number} size - font size
-     * @param {String} type - font weight (todo: rename type to weight)
+     * @param {string} text - text to print
+     * @param {number} size - font size
+     * @param {string} type - font weight (todo: rename type to weight)
      */
     printText (text, size = this.size.normal, type = this.type.normal) {
 
@@ -98,14 +98,14 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name printLink
      * @description print a line of clickable text
-     * @param {String} text - text to print
-     * @param {String} url - target link
-     * @param {Number} size - font size
-     * @param {String} type - font weight
+     * @param {string} text - text to print
+     * @param {string} url - target link
+     * @param {number} size - font size
+     * @param {string} type - font weight
      */
     printLink (text, url, size = this.size.normal, type = this.type.normal) {
 
@@ -118,13 +118,13 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name printBlock
      * @description print a block / paragraph of text
-     * @param {String} text - text to print
-     * @param {Number} size - font size
-     * @param {String} type - font weight
+     * @param {string} text - text to print
+     * @param {number} size - font size
+     * @param {string} type - font weight
      */
     printBlock (text, size = this.size.normal, type = this.type.normal) {
 
@@ -140,7 +140,7 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name printNewPage
      * @description add a new page
@@ -154,7 +154,7 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name printHR
      * @description print a horizontal line
@@ -170,16 +170,16 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name printImage
      * @description print an image
-     * @param {Number} id - image number
-     * @param {Number} total - total number of image
-     * @param {String} _url - unused URL string
-     * @param {String} base64 - image in base 64 blob format
-     * @param {Number} width - width of image
-     * @param {Number} height - height of image
+     * @param {number} id - image number
+     * @param {number} total - total number of image
+     * @param {string} _url - unused URL string
+     * @param {string} base64 - image in base 64 blob format
+     * @param {number} width - width of image
+     * @param {number} height - height of image
      */
     printImage (id, total, _url, base64, width, height) {
 
@@ -204,7 +204,7 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @private
      * @name iterate
      * @description iterate function to parse the incoming state data
@@ -249,7 +249,7 @@ export class PDF {
     }
 
     /**
-     * @method
+     * @function
      * @public
      * @name run
      * @description run this after class instantiation

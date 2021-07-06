@@ -2,12 +2,12 @@
  * @function
  * @name UtilsGetMaxDimensions
  * @description compute max dimensions for an image to fit in a given canvas' space
- * @param {Number} width - width of image
- * @param {Number} height - height of image
- * @param {Number} canvasWidth - width of canvas
- * @param {Number} canvasHeight - height of canvas
- * @param {Number} [margin=0.5] - margin to apply on borders of canvas
- * @return {{width: Number, height: Number}}
+ * @param {number} width - width of image
+ * @param {number} height - height of image
+ * @param {number} canvasWidth - width of canvas
+ * @param {number} canvasHeight - height of canvas
+ * @param {number} [margin=0.5] - margin to apply on borders of canvas
+ * @returns {{width: number, height: number}} - dimensions
  */
 export function UtilsGetMaxDimensions (width, height, canvasWidth, canvasHeight, margin = 0.5) {
 

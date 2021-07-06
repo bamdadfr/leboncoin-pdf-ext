@@ -1,10 +1,10 @@
 /**
  * @function
  * @name AdDescription
- * @description function generating the description block
- * @param {Object} json - state in JSON format
- * @param {PDF} pdf - PDF instance
- * @return {Array.<Object>}
+ * @description pdf: description block
+ * @param {object} json - state in JSON format
+ * @param {*} pdf - PDF instance
+ * @returns {Array.<object>} - description data
  */
 export function AdDescription (json, pdf) {
 

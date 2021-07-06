@@ -3,8 +3,8 @@ import { Ad } from '../ad/ad'
 /**
  * @function
  * @name AdInit
- * @description get data from current page, import to PDF and export as browser download
- * @return {Promise<null>}
+ * @description pdf: get data from current tab and import
+ * @returns {Promise<void>}
  */
 export async function AdInit () {
 
@@ -13,12 +13,10 @@ export async function AdInit () {
         const nextData = document.getElementById ('__NEXT_DATA__').innerHTML
         const ad = new Ad ()
 
-        ad.import (nextData)
+        ad.importData (nextData)
 
         await ad.export ()
 
     }
-
-    return null
 
 }

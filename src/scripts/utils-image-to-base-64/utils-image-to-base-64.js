@@ -2,8 +2,8 @@
  * @function
  * @name UtilsImageToBase64
  * @description utils: encode an image file to a base64 blob
- * @param {String} url - URL to image
- * @return {Promise<String>}
+ * @param {string} url - URL to image
+ * @returns {Promise<string>} - base64 encoded image
  */
 export async function UtilsImageToBase64 (url) {
 

@@ -5,7 +5,7 @@ import { StateSet } from '../state-set/state-set'
  * @function
  * @name State
  * @description get browser state
- * @return {Promise<Object>}
+ * @returns {Promise<object>} - state
  */
 export async function State () {
 
