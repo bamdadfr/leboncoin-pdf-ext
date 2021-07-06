@@ -1,7 +1,12 @@
 import { StateSet } from './state-set/state-set'
+import { Browser } from './browser/browser'
 
-const { Browser } = require ('./browser/browser')
-
+/**
+ * @function
+ * @name BackgroundInit
+ * @description background initialization script
+ * @returns {void}
+ */
 async function BackgroundInit () {
 
     const browser = await Browser ()
