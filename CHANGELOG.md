@@ -1,3 +1,13 @@
+## [1.9.7](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.6...v1.9.7) (2021-07-06)
+
+
+### Bug Fixes
+
+* **background:** added jsdoc + es6 import for `browser` ([e2e0022](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/e2e002208f6d86994d720fb06d4de0ca2439333c))
+* **deps:** updated dependencies + lint command ([38722fd](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/38722fd29921b04700fd7ad1e4ca3474317ff938))
+* **doc:** better jsdoc ([e86c3d3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/e86c3d3f1b33f96543d1ff5e0014dff7fefa1175))
+* **price:** fix [#92](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/92) ([81e2208](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/81e2208b5f1b27daaa18956a18648b9268fb1433))
+
 ## [1.9.6](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.5...v1.9.6) (2021-07-05)
 
 
