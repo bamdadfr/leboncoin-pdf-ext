@@ -19,9 +19,10 @@ async function ContentOnLoad () {
         if (document.visibilityState === 'visible') {
 
             const nextData = document.getElementById ('__NEXT_DATA__').innerHTML
+            const ad = await new Ad (nextData)
 
-            await new Ad (nextData)
-        
+            ad.export ()
+
         }
     
     }
