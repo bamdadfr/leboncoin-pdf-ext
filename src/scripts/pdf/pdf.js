@@ -38,10 +38,10 @@ export class PDF {
 
     /**
      * @function
-     * @name init
+     * @name initialize
      * @description initialize cursor
      */
-    #init () {
+    #initialize () {
 
         this.#pos.reset ()
 
@@ -177,7 +177,7 @@ export class PDF {
      */
     #printImage (id, total, _url, base64, width, height) {
 
-        if (this.#pos.x !== this.#pos.#init.x || this.#pos.y !== this.#pos.#init.y) {
+        if (this.#pos.x !== this.#pos.init.x || this.#pos.y !== this.#pos.init.y) {
 
             this.#printNewPage ()
 
@@ -249,7 +249,7 @@ export class PDF {
      */
     run (data) {
 
-        this.#init ()
+        this.#initialize ()
 
         this.#iterate (data)
 
