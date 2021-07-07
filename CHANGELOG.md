@@ -1,3 +1,21 @@
+# [1.10.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.7...v1.10.0) (2021-07-07)
+
+
+### Bug Fixes
+
+* **ad:** whitespaces cleaned ([46928f6](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/46928f6375030d7590d4370d5ff1f27c8c070e9c))
+* **background:** ensure `isTriggered` exists ([22d4995](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/22d4995a50c488a7a8ad52e2c1e8efba43211498))
+* **content:** forgot to export() ([006084f](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/006084f408ff5fa95c132c04a5e57af0045a3b4b))
+* **pdf:** renamed `init` to `initialize` to avoid conflicts ([58b25f3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/58b25f368096686213642188cd4ac74d9ba735db))
+* **pdf-constants-positions:** redundant naming instead of `this` that is lost after transpiling (lazy solution) ([a8599f9](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/a8599f9cd8a9e42bef5819c3a8d3af20848fe717))
+* **webpack:** added `babel-loader` configuration + dummy `publicPath` (see comments for stackoverflow) ([efaf1b7](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/efaf1b76dfc84aee92e1904aa4429514de7c3d14))
+
+
+### Features
+
+* **app:** adding private fields (thus babel config needed) ([e5f5f96](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/e5f5f965b745db791abc85aca23129415026831b))
+* **transpiling:** added babel so latest javascript features are available (like private fields in classes) ([89b9c58](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/89b9c58571ceff2e6452a7931dca8fa53cf1a4c6))
+
 ## [1.9.7](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.6...v1.9.7) (2021-07-06)
 
 
