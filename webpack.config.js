@@ -13,6 +13,9 @@ module.exports = {
         'scripts/content': './src/scripts/content.js',
         'scripts/popup': './src/scripts/popup.js',
     },
+    'output': {
+        'publicPath': '',
+    },
     'node': false,
     'plugins': [
         new CopyPlugin ({
@@ -32,4 +35,15 @@ module.exports = {
             ],
         }),
     ],
+    'module': {
+        'rules': [
+            {
+                'test': /\.js$/,
+                'exclude': /node_modules/,
+                'use': {
+                    'loader': 'babel-loader',
+                },
+            },
+        ],
+    },
 }
