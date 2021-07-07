@@ -1,6 +1,6 @@
 import { StateSet } from './state-set/state-set'
-import { AdInit } from './ad-init/ad-init'
 import { State } from './state/state'
+import { Ad } from './ad/ad'
 
 /**
  * @function
@@ -16,8 +16,14 @@ async function ContentOnLoad () {
 
         await StateSet ('isReloaded', true)
 
-        await AdInit ()
+        if (document.visibilityState === 'visible') {
 
+            const nextData = document.getElementById ('__NEXT_DATA__').innerHTML
+
+            await new Ad (nextData)
+        
+        }
+    
     }
 
 }

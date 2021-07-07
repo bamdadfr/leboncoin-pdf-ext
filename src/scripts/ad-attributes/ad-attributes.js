@@ -1,12 +1,14 @@
+import { PdfConstantsFontWeights } from '../pdf-constants-font-weights/pdf-constants-font-weights'
+import { PdfConstantsFontSizes } from '../pdf-constants-font-sizes/pdf-constants-font-sizes'
+
 /**
  * @function
  * @name AdAttributes
  * @description pdf: attributes block
  * @param {object} json - state in JSON format
- * @param {*} pdf - PDF instance
  * @returns {Array.<object>} - attributes data
  */
-export function AdAttributes (json, pdf) {
+export function AdAttributes (json) {
 
     const data = [
         {
@@ -14,7 +16,7 @@ export function AdAttributes (json, pdf) {
         },
         {
             'text': 'Critères',
-            'type': pdf.type.bold,
+            'type': PdfConstantsFontWeights.bold,
         },
     ]
 
@@ -27,7 +29,7 @@ export function AdAttributes (json, pdf) {
             
             data.push ({
                 'text': `${title} : ${value}`,
-                'size': pdf.size.small,
+                'size': PdfConstantsFontSizes.small,
             })
             
         }

@@ -1,12 +1,14 @@
+import { PdfConstantsFontWeights } from '../pdf-constants-font-weights/pdf-constants-font-weights'
+import { PdfConstantsFontSizes } from '../pdf-constants-font-sizes/pdf-constants-font-sizes'
+
 /**
  * @function
  * @name AdTitle
  * @description pdf: title block
  * @param {object} json - state in JSON format
- * @param {*} pdf - PDF instance
  * @returns {Array.<object>} - title data
  */
-export function AdTitle (json, pdf) {
+export function AdTitle (json) {
 
     return [
         {
@@ -15,26 +17,26 @@ export function AdTitle (json, pdf) {
         {
             // title
             'text': json.subject,
-            'type': pdf.type.bold,
+            'type': PdfConstantsFontWeights.bold,
         },
         {
             // price
             'text': `Prix : ${json.price[0].toString () || '?'} euros`,
-            'size': pdf.size.small,
+            'size': PdfConstantsFontSizes.small,
         },
         {
             'text': `Lieu : ${json.location.city}, ${json.location.zipcode}, ${json.location.department_name}`,
-            'size': pdf.size.small,
+            'size': PdfConstantsFontSizes.small,
         },
         {
             'text': `GPS : ${json.location.lat}, ${json.location.lng}`,
-            'size': pdf.size.small,
+            'size': PdfConstantsFontSizes.small,
         },
         {
             'isLink': true,
             'text': 'Google Maps',
             'url': `https://www.google.com/maps/place/${json.location.lat},${json.location.lng}`,
-            'size': pdf.size.xsmall,
+            'size': PdfConstantsFontSizes.xsmall,
         },
     ]
 
