@@ -26,7 +26,7 @@ export class Ad {
         const json = JSON.parse (data)
 
         this.#json = json.props.pageProps.ad
-    
+
     }
 
     /**
