@@ -1,12 +1,14 @@
+import { PdfConstantsFontWeights } from '../pdf-constants-font-weights/pdf-constants-font-weights'
+import { PdfConstantsFontSizes } from '../pdf-constants-font-sizes/pdf-constants-font-sizes'
+
 /**
  * @function
  * @name AdSeller
- * @description pdf: seller block
+ * @description ad: seller block
  * @param {object} json - state in JSON format
- * @param {*} pdf - PDF instance
  * @returns {Array.<object>} - seller data
  */
-export function AdSeller (json, pdf) {
+export function AdSeller (json) {
 
     let type = json.owner.type
 
@@ -18,14 +20,14 @@ export function AdSeller (json, pdf) {
         },
         {
             'text': 'Vendeur',
-            'size': pdf.size.normal,
-            'type': pdf.type.bold,
+            'size': PdfConstantsFontSizes.normal,
+            'type': PdfConstantsFontWeights.bold,
         },
         {
             'isLink': true,
             'text': `Vendeur ${type} : ${json.owner.name}`,
             'url': `https://www.leboncoin.fr/profil/${json.owner.user_id}`,
-            'size': pdf.size.small,
+            'size': PdfConstantsFontSizes.small,
         },
     ]
 
@@ -33,8 +35,7 @@ export function AdSeller (json, pdf) {
 
         data.push ({
             'text': `SIREN : ${json.owner.siren}`,
-            'size': pdf.size.xsmall,
-
+            'size': PdfConstantsFontSizes.xsmall,
         })
     
     }

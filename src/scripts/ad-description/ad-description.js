@@ -1,12 +1,14 @@
+import { PdfConstantsFontSizes } from '../pdf-constants-font-sizes/pdf-constants-font-sizes'
+import { PdfConstantsFontWeights } from '../pdf-constants-font-weights/pdf-constants-font-weights'
+
 /**
  * @function
  * @name AdDescription
  * @description pdf: description block
  * @param {object} json - state in JSON format
- * @param {*} pdf - PDF instance
  * @returns {Array.<object>} - description data
  */
-export function AdDescription (json, pdf) {
+export function AdDescription (json) {
 
     return [
         {
@@ -15,14 +17,14 @@ export function AdDescription (json, pdf) {
         {
         // description title
             'text': 'Description',
-            'size': pdf.size.normal,
-            'type': pdf.type.bold,
+            'size': PdfConstantsFontSizes.normal,
+            'type': PdfConstantsFontWeights.bold,
         },
         {
         // description
             'isBlock': true,
             'text': json.body,
-            'size': pdf.size.small,
+            'size': PdfConstantsFontSizes.small,
         },
     ]
 

@@ -13,7 +13,7 @@ async function BackgroundInit () {
 
     browser.storage.onChanged.addListener (async (changes) => {
 
-        if (changes.isTriggered.newValue === true) {
+        if (changes.isTriggered && changes.isTriggered.newValue === true) {
 
             await StateSet ('isReloading', true)
 
