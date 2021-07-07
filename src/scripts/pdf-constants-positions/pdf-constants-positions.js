@@ -9,14 +9,14 @@ export const PdfConstantsPositions = {
     'y': 0.5,
     'spacer': (size = PdfConstantsFontSizes.normal, coef = 1) => {
 
-        this.y += (0.5 * size / 24) * coef
+        PdfConstantsPositions.y += (0.5 * size / 24) * coef
 
     },
     'reset': () => {
 
-        this.x = this.init.x
+        PdfConstantsPositions.x = PdfConstantsPositions.init.x
 
-        this.y = this.init.y
+        PdfConstantsPositions.y = PdfConstantsPositions.init.y
 
     },
 }
