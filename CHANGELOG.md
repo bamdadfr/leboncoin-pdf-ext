@@ -1,3 +1,11 @@
+## [1.10.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.0...v1.10.1) (2021-07-12)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([cbfb699](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/cbfb6991554f1a6f5e33de3d917c79f655fcde4d))
+* **package:** remove unused `babel-preset-minify` ([99d192e](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/99d192ef687e701910ae66bc75c104c6e540f6ae))
+
 # [1.10.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.9.7...v1.10.0) (2021-07-07)
 
 
