@@ -1,3 +1,11 @@
+## [1.10.4](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.3...v1.10.4) (2021-07-31)
+
+
+### Performance Improvements
+
+* **deps:** update to latest dependencies ([9c18cd3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/9c18cd3ae7d9e9bb729a2401ec242d2e184825a4))
+* **linting:** enforce parenthesis around arguments of arrow functions ([cfc646f](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/cfc646ff49101d8b8e85915d3eb57bfb83e94190))
+
 ## [1.10.3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.2...v1.10.3) (2021-07-26)
 
 
