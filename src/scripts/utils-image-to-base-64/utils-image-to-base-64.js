@@ -13,7 +13,7 @@ export async function UtilsImageToBase64 (url) {
 
     reader.readAsDataURL (blob)
 
-    return new Promise (resolve => {
+    return new Promise ((resolve) => {
 
         reader.onloadend = () => {
 

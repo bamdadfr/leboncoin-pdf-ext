@@ -11,7 +11,7 @@ export function UtilsGetDimensionsFromUrl (url) {
 
     image.src = url
 
-    return new Promise (resolve => {
+    return new Promise ((resolve) => {
 
         image.addEventListener ('load', () => {
 
