@@ -1,3 +1,11 @@
+## [1.10.8](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.7...v1.10.8) (2021-08-22)
+
+
+### Performance Improvements
+
+* **bundling:** add HTML + CSS + javascript minification ([3b2e019](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/3b2e01942dd80514c71bf9f7264f11dc7db40074))
+* **deps:** update to latest dependencies ([f2efd73](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f2efd73174cdc4e70a15d3b279b9b9e173846a12))
+
 ## [1.10.7](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.6...v1.10.7) (2021-08-16)
 
 
