@@ -1,3 +1,10 @@
+## [1.10.19](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.18...v1.10.19) (2021-11-01)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([717fd6d](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/717fd6de5dba1451987dbf71cea1e816a03b391c))
+
 ## [1.10.18](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.17...v1.10.18) (2021-10-25)
 
 
