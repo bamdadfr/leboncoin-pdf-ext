@@ -1,21 +1,14 @@
-import { StateSet } from './state-set/state-set'
+import {StateSet} from './state-set/state-set';
 
 /**
- * @function
- * @name PopupOnLoad
- * @description popup: on load
- * @returns {void}
+ * @description Script for the popup.
  */
-async function PopupOnLoad () {
+async function PopupOnLoad() {
+  const link = document.getElementById('link');
 
-    const link = document.getElementById ('link')
-
-    link.addEventListener ('click', async () => {
-
-        await StateSet ('isTriggered', true)
-
-    })
-
+  link.addEventListener('click', async () => {
+    await StateSet('isTriggered', true);
+  });
 }
 
-window.addEventListener ('load', PopupOnLoad)
+window.addEventListener('load', PopupOnLoad);

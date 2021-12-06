@@ -1,51 +1,46 @@
-import { UtilsImageToBase64 } from '../utils-image-to-base-64/utils-image-to-base-64'
-import { UtilsGetDimensionsFromUrl } from '../utils-get-dimensions-from-url/utils-get-dimensions-from-url'
-import { UtilsAsyncForEach } from '../utils-async-for-each/utils-async-for-each'
+import {
+  UtilsImageToBase64,
+} from '../utils-image-to-base-64/utils-image-to-base-64';
+import {
+  UtilsGetDimensionsFromUrl,
+} from '../utils-get-dimensions-from-url/utils-get-dimensions-from-url';
+import {UtilsAsyncForEach} from '../utils-async-for-each/utils-async-for-each';
 
 /**
- * @function
- * @name AdImages
- * @description pdf: images block
- * @param {object} json - state in JSON format
- * @returns {Promise<Array.<*>>} - images data
+ * @description Ad images
+ * @param {object} json - Ad data
+ * @returns {Promise<Array.<*>>} - Images block
  */
-export async function AdImages (json) {
+export async function AdImages(json) {
+  const data = [];
+  let images = undefined;
 
-    const data = []
-    let images = undefined
+  if (json.images.urls_large) {
+    images = json.images.urls_large;
+  } else if (json.images.urls) {
+    images = json.images.urls;
+  }
 
-    if (json.images.urls_large) {
+  if (images === undefined) {
+    return data;
+  }
 
-        images = json.images.urls_large
-        
-    } else if (json.images.urls) {
-        
-        images = json.images.urls
-        
-    }
+  await UtilsAsyncForEach(images, async (image, k) => {
+    const base64 = await UtilsImageToBase64(image);
+    const dimensions = await UtilsGetDimensionsFromUrl(image);
 
-    if (images === undefined) return data
+    data.push(
+      {
+        isImage: true,
+        id: k + 1,
+        total: images.length,
+        url: image,
+        base64,
+        width: dimensions.width,
+        height: dimensions.height,
+      },
+    );
+  });
 
-    await UtilsAsyncForEach (images, async (image, k) => {
-
-        const base64 = await UtilsImageToBase64 (image)
-        const dimensions = await UtilsGetDimensionsFromUrl (image)
-
-        data.push (
-            {
-                'isImage': true,
-                'id': k + 1,
-                'total': images.length,
-                'url': image,
-                'base64': base64,
-                'width': dimensions.width,
-                'height': dimensions.height,
-            },
-        )
-    
-    })
-
-    return data
-
+  return data;
 }
-

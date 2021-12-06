@@ -1,28 +1,18 @@
 /**
- * @function
- * @name UtilsGetDimensionsFromUrl
- * @description get the dimensions of an image after fetching from an URL
- * @param {string} url - URL to image
- * @returns {Promise<{width: number, height: number}>} - dimensions
+ * @description Get dimensions from URL
+ * @param {string} url - URL
+ * @returns {Promise<{width: number, height: number}>} - Dimensions
  */
-export function UtilsGetDimensionsFromUrl (url) {
+export function UtilsGetDimensionsFromUrl(url) {
+  const image = new Image();
+  image.src = url;
 
-    const image = new Image ()
-
-    image.src = url
-
-    return new Promise ((resolve) => {
-
-        image.addEventListener ('load', () => {
-
-            resolve ({
-                'width': image.naturalWidth,
-                'height': image.naturalHeight,
-            })
-
-        })
-
-    })
-
+  return new Promise((resolve) => {
+    image.addEventListener('load', () => {
+      resolve({
+        width: image.naturalWidth,
+        height: image.naturalHeight,
+      });
+    });
+  });
 }
-
