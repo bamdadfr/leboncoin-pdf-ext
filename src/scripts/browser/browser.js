@@ -1,12 +1,8 @@
 /**
- * @function
- * @name Browser
- * @description get browser API object
+ * @description get browser object
  * @returns {*} - browser
  */
-export function Browser () {
-
-    // eslint-disable-next-line no-undef
-    return chrome
-
+export function Browser() {
+  // eslint-disable-next-line no-undef
+  return chrome;
 }

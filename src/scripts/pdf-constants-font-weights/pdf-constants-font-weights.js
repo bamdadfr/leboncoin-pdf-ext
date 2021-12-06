@@ -1,5 +1,5 @@
 export const PdfConstantsFontWeights = {
-    'normal': 'normal',
-    'bold': 'bold',
-    'italic': 'italic',
-}
+  normal: 'normal',
+  bold: 'bold',
+  italic: 'italic',
+};

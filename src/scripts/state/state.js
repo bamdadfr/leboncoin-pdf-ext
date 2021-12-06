@@ -1,35 +1,33 @@
-import { Browser } from '../browser/browser'
-import { StateSet } from '../state-set/state-set'
+import {Browser} from '../browser/browser';
+import {StateSet} from '../state-set/state-set';
 
 /**
- * @function
- * @name State
- * @description get browser state
- * @returns {Promise<object>} - state
+ * @description Get state instance.
+ * @returns {Promise<object>} - State instance.
  */
-export async function State () {
+export async function State() {
+  const browser = await Browser();
 
-    const browser = await Browser ()
+  const state = await new Promise((resolve) => {
+    browser.storage.local.get(
+      null,
+      async (state) => {
+        resolve(state);
+      },
+    );
+  });
 
-    const state = await new Promise ((resolve) => {
+  if (typeof state.isTriggered === 'undefined') {
+    await StateSet('isTriggered', false);
+  }
 
-        browser.storage.local.get (
-            null,
-            async (state) => {
+  if (typeof state.isReloading === 'undefined') {
+    await StateSet('isReloading', false);
+  }
 
-                resolve (state)
-            
-            },
-        )
-    
-    })
+  if (typeof state.isReloaded === 'undefined') {
+    await StateSet('isReloaded', false);
+  }
 
-    if (typeof state.isTriggered === 'undefined') await StateSet ('isTriggered', false)
-
-    if (typeof state.isReloading === 'undefined') await StateSet ('isReloading', false)
-
-    if (typeof state.isReloaded === 'undefined') await StateSet ('isReloaded', false)
-
-    return state
-
+  return state;
 }
