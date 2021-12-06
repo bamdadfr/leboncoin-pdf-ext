@@ -26,24 +26,24 @@
     "package:sort": "npx sort-package-json"
   },
   "dependencies": {
-    "jspdf": "2.3.1"
+    "jspdf": "2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.7",
-    "@bamdadsabbagh/eslint-config": "^1.14.0",
+    "@bamdadsabbagh/eslint-config": "^2.0.4",
     "@bamdadsabbagh/stylelint-config": "^1.2.43",
     "babel-loader": "^8.2.2",
     "concurrently": "^6.0.0",
-    "copy-webpack-plugin": "^9.0.0",
+    "copy-webpack-plugin": "^10.0.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
-    "html-minimizer-webpack-plugin": "^3.1.1",
+    "html-minimizer-webpack-plugin": "^3.4.0",
     "rimraf": "^3.0.2",
     "terser-webpack-plugin": "^5.1.4",
     "wait-on": "^6.0.0",
     "web-ext": "^6.3.0",
-    "webpack": "^5.51.1",
+    "webpack": "^5.65.0",
     "webpack-cli": "^4.7.2"
   },
   "webExt": {
