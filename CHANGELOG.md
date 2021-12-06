@@ -1,3 +1,10 @@
+## [1.10.25](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.24...v1.10.25) (2021-12-06)
+
+
+### Performance Improvements
+
+* update dependencies ([ed6ef9a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ed6ef9a4c78ba7d93269554470c0cae6fd44a09b))
+
 ## [1.10.24](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.23...v1.10.24) (2021-12-06)
 
 
