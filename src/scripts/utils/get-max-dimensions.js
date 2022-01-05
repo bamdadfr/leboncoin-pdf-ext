@@ -7,7 +7,7 @@
  * @param {number} [margin=0.5] - Margin between the image and the container
  * @returns {{width: number, height: number}} - The scaled image dimensions
  */
-export function UtilsGetMaxDimensions(
+export function getMaxDimensions(
   width,
   height,
   canvasWidth,

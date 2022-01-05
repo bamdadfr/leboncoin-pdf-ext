@@ -3,7 +3,7 @@
  * @param {string} url - URL
  * @returns {Promise<{width: number, height: number}>} - Dimensions
  */
-export function UtilsGetDimensionsFromUrl(url) {
+export function getDimensionsFromUrl(url) {
   const image = new Image();
   image.src = url;
 

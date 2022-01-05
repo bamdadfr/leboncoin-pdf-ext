@@ -1,12 +1,12 @@
-import {Browser} from '../browser/browser';
-import {StateSet} from '../state-set/state-set';
+import {getBrowser} from './get-browser';
+import {setState} from './set-state';
 
 /**
  * @description Get state instance.
  * @returns {Promise<object>} - State instance.
  */
-export async function State() {
-  const browser = await Browser();
+export async function getState() {
+  const browser = await getBrowser();
 
   const state = await new Promise((resolve) => {
     browser.storage.local.get(
@@ -18,15 +18,15 @@ export async function State() {
   });
 
   if (typeof state.isTriggered === 'undefined') {
-    await StateSet('isTriggered', false);
+    await setState('isTriggered', false);
   }
 
   if (typeof state.isReloading === 'undefined') {
-    await StateSet('isReloading', false);
+    await setState('isReloading', false);
   }
 
   if (typeof state.isReloaded === 'undefined') {
-    await StateSet('isReloaded', false);
+    await setState('isReloaded', false);
   }
 
   return state;

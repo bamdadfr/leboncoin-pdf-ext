@@ -1,16 +1,8 @@
 import {jsPDF} from 'jspdf';
 import {
-  UtilsGetMaxDimensions,
-} from '../utils-get-max-dimensions/utils-get-max-dimensions';
-import {
-  PdfConstantsFontWeights,
-} from '../pdf-constants-font-weights/pdf-constants-font-weights';
-import {
-  PdfConstantsFontSizes,
-} from '../pdf-constants-font-sizes/pdf-constants-font-sizes';
-import {
-  PdfConstantsPositions,
-} from '../pdf-constants-positions/pdf-constants-positions';
+  getMaxDimensions,
+} from '../utils/get-max-dimensions';
+import {PdfConstants} from './pdf.constants';
 
 /**
  * @description Class for generating PDFs.
@@ -31,7 +23,7 @@ export class PDF {
     // eslint-disable-next-line new-cap
     this.#doc = new jsPDF('p', 'in', 'letter');
     this.#name = name;
-    this.#pos = PdfConstantsPositions;
+    this.#pos = PdfConstants.position;
   }
 
   /**
@@ -72,8 +64,8 @@ export class PDF {
    */
   #printText(
     text,
-    size = PdfConstantsFontSizes.normal,
-    weight = PdfConstantsFontWeights.normal,
+    size = PdfConstants.fontSize.normal,
+    weight = PdfConstants.fontWeight.normal,
   ) {
     this.#doc.setFontSize(size).setFont(this.#font, weight);
     this.#doc.text(this.#pos.x, this.#pos.y, text);
@@ -90,8 +82,8 @@ export class PDF {
   #printLink(
     text,
     url,
-    size = PdfConstantsFontSizes.normal,
-    weight = PdfConstantsFontWeights.normal,
+    size = PdfConstants.fontSize.normal,
+    weight = PdfConstants.fontWeight.normal,
   ) {
     this.#doc.setFontSize(size).setFont(this.#font, weight);
     this.#doc.textWithLink(text, this.#pos.x, this.#pos.y, {url});
@@ -106,8 +98,8 @@ export class PDF {
    */
   #printBlock(
     text,
-    size = PdfConstantsFontSizes.normal,
-    weight = PdfConstantsFontWeights.normal,
+    size = PdfConstants.fontSize.normal,
+    weight = PdfConstants.fontWeight.normal,
   ) {
     const lines = this.#doc
       .setFontSize(size)
@@ -156,13 +148,13 @@ export class PDF {
       this.#printNewPage();
     }
 
-    this.#printText(this.#name, PdfConstantsFontSizes.small);
-    this.#printText(`Image ${id} / ${total}`, PdfConstantsFontSizes.small);
+    this.#printText(this.#name, PdfConstants.fontSize.small);
+    this.#printText(`Image ${id} / ${total}`, PdfConstants.fontSize.small);
     this.#printHR();
 
     const maxWidth = this.#pos.width;
     const maxHeight = this.#pos.height;
-    const dimensions = UtilsGetMaxDimensions(width, height, maxWidth, maxHeight);
+    const dimensions = getMaxDimensions(width, height, maxWidth, maxHeight);
 
     this.#doc.addImage(base64, 'JPEG', this.#pos.x, this.#pos.y, dimensions.width, dimensions.height);
   }

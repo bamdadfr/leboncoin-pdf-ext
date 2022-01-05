@@ -1,17 +1,17 @@
 import {
-  UtilsImageToBase64,
-} from '../utils-image-to-base-64/utils-image-to-base-64';
+  convertToBase64,
+} from '../../utils/convert-to-base64';
 import {
-  UtilsGetDimensionsFromUrl,
-} from '../utils-get-dimensions-from-url/utils-get-dimensions-from-url';
-import {UtilsAsyncForEach} from '../utils-async-for-each/utils-async-for-each';
+  getDimensionsFromUrl,
+} from '../../utils/get-dimensions-from-url';
+import {asyncForEach} from '../../utils/async-for-each';
 
 /**
  * @description Ad images
  * @param {object} json - Ad data
  * @returns {Promise<Array.<*>>} - Images block
  */
-export async function AdImages(json) {
+export async function Images(json) {
   const data = [];
   let images = undefined;
 
@@ -25,9 +25,9 @@ export async function AdImages(json) {
     return data;
   }
 
-  await UtilsAsyncForEach(images, async (image, k) => {
-    const base64 = await UtilsImageToBase64(image);
-    const dimensions = await UtilsGetDimensionsFromUrl(image);
+  await asyncForEach(images, async (image, k) => {
+    const base64 = await convertToBase64(image);
+    const dimensions = await getDimensionsFromUrl(image);
 
     data.push(
       {
