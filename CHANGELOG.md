@@ -1,3 +1,16 @@
+## [1.10.30](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.29...v1.10.30) (2022-01-05)
+
+
+### Bug Fixes
+
+* **pdf:** position spacer function not referring to correct font size ([b75bb34](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/b75bb3447683c8323cb8da735ab8d5d312390288))
+
+
+### Performance Improvements
+
+* remove unused files ([e72d530](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/e72d5300d918508c3a45793707f31ef1899c5993))
+* rename files and add better folder structure ([73707e2](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/73707e295c19369a434dfd52d8c378631ba0a112))
+
 ## [1.10.29](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.28...v1.10.29) (2022-01-03)
 
 
