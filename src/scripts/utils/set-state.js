@@ -1,4 +1,4 @@
-import {Browser} from '../browser/browser';
+import {getBrowser} from './get-browser';
 
 /**
  * @description Set the state of the browser.
@@ -6,8 +6,8 @@ import {Browser} from '../browser/browser';
  * @param {boolean} payload - Payload of state to set.
  * @returns {Promise<void>}
  */
-export async function StateSet(type, payload) {
-  const browser = await Browser();
+export async function setState(type, payload) {
+  const browser = await getBrowser();
 
   // reducer
   switch (type) {

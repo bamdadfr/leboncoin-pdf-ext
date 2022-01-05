@@ -3,7 +3,7 @@
  * @param {string} url - The url of the image to encode
  * @returns {Promise<string>} - The base64 encoded image
  */
-export async function UtilsImageToBase64(url) {
+export async function convertToBase64(url) {
   const response = await fetch(url);
   const blob = await response.blob();
   const reader = new FileReader();

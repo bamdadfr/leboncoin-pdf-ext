@@ -1,21 +1,16 @@
-import {
-  PdfConstantsFontWeights,
-} from '../pdf-constants-font-weights/pdf-constants-font-weights';
-import {
-  PdfConstantsFontSizes,
-} from '../pdf-constants-font-sizes/pdf-constants-font-sizes';
+import {PdfConstants} from '../../pdf/pdf.constants';
 
 /**
  * @description Ad attributes.
  * @param {object} json - Ad data.
  * @returns {Array.<object>} - Attributes block.
  */
-export function AdAttributes(json) {
+export function Attributes(json) {
   const data = [
     {isHR: true},
     {
       text: 'Critères',
-      type: PdfConstantsFontWeights.bold,
+      type: PdfConstants.fontWeight.bold,
     },
   ];
 
@@ -26,7 +21,7 @@ export function AdAttributes(json) {
     if (title !== undefined) {
       data.push({
         text: `${title} : ${value}`,
-        size: PdfConstantsFontSizes.small,
+        size: PdfConstants.fontSize.small,
       });
     }
   });
