@@ -20,7 +20,7 @@ PdfConstants.position = {
   },
   x: 0.5,
   y: 0.5,
-  spacer: (size = PdfConstants.weight.normal, coef = 1) => {
+  spacer: (size = PdfConstants.fontSize.normal, coef = 1) => {
     PdfConstants.position.y += (0.5 * size / 24) * coef;
   },
   reset: () => {
