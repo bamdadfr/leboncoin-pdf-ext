@@ -35,7 +35,7 @@
     "@bamdadsabbagh/eslint-config": "^2.0.4",
     "@bamdadsabbagh/stylelint-config": "^1.2.43",
     "babel-loader": "^8.2.2",
-    "concurrently": "^6.0.0",
+    "concurrently": "^7.0.0",
     "copy-webpack-plugin": "^10.0.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "html-minimizer-webpack-plugin": "^3.4.0",
