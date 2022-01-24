@@ -106,8 +106,17 @@ export class PDF {
       .setFont(this.#font, weight)
       .splitTextToSize(text, 7.5);
 
-    this.#doc.text(this.#pos.x, this.#pos.y, lines);
-    this.#pos.spacer(size, lines.length);
+    const pageHeight = this.#doc.internal.pageSize.height;
+
+    lines.forEach((line) => {
+      const isOvertop = Math.round(this.#pos.y + 1) > pageHeight;
+      if (isOvertop) {
+        this.#printNewPage();
+      }
+
+      this.#doc.text(this.#pos.x, this.#pos.y, line);
+      this.#pos.spacer(size);
+    });
   }
 
   /**
