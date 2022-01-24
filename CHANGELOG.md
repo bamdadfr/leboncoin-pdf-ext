@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.32...v1.11.0) (2022-01-24)
+
+
+### Features
+
+* Add auto breaking for long text blocks ([926d343](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/926d343fa6e2011bbe25a8e1131d3777802b0dcf)), closes [#213](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/213)
+
 ## [1.10.32](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.10.31...v1.10.32) (2022-01-17)
 
 
