@@ -1,3 +1,15 @@
+## [1.11.2](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.11.1...v1.11.2) (2022-01-25)
+
+
+### Bug Fixes
+
+* Handle image fetching errors by returning an empty base64 body that will get skipped on print ([f14267b](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f14267b6813e4ff120c93435b4b671a6ee651dcd)), closes [#217](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/217)
+
+
+### Performance Improvements
+
+* Get dimensions from existing base64 string instead of fetching it again ([ddb9e15](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ddb9e1520a912995bd5e44986ca7e885aba2106e))
+
 ## [1.11.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.11.0...v1.11.1) (2022-01-24)
 
 
