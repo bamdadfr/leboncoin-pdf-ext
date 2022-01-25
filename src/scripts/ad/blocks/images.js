@@ -1,6 +1,6 @@
 import {
-  convertToBase64,
-} from '../../utils/convert-to-base64';
+  fetchAndConvertToBase64,
+} from '../../utils/fetch-and-convert-to-base64';
 import {
   getDimensionsFromUrl,
 } from '../../utils/get-dimensions-from-url';
@@ -26,7 +26,12 @@ export async function Images(json) {
   }
 
   await asyncForEach(images, async (image, k) => {
-    const base64 = await convertToBase64(image);
+    const base64 = await fetchAndConvertToBase64(image);
+
+    if (typeof base64 === 'undefined') {
+      return;
+    }
+
     const dimensions = await getDimensionsFromUrl(image);
 
     data.push(
