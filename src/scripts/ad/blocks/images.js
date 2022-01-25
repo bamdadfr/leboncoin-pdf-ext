@@ -1,10 +1,8 @@
 import {
   fetchAndConvertToBase64,
 } from '../../utils/fetch-and-convert-to-base64';
-import {
-  getDimensionsFromUrl,
-} from '../../utils/get-dimensions-from-url';
 import {asyncForEach} from '../../utils/async-for-each';
+import {getDimensionsFromBase64} from '../../utils/get-dimensions-from-base64';
 
 /**
  * @description Ad images
@@ -32,7 +30,7 @@ export async function Images(json) {
       return;
     }
 
-    const dimensions = await getDimensionsFromUrl(image);
+    const dimensions = await getDimensionsFromBase64(base64);
 
     data.push(
       {
