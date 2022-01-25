@@ -65,7 +65,7 @@ thus making them available to you after their expiry on the actual website.
 
 [<img height=30 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-chrome-icon.png"> **Chrome**](https://chrome.google.com/webstore/detail/pdf-exporter-for-leboncoi/mifkoblilhehppoemadbhopbbijpifcj)
 
-[<img height=30 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-firefox-icon.png"> **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/leboncoin-pdf/)
+[<img height=30 src="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Internet-firefox-icon.png"> **Firefox**](https://addons.mozilla.org/firefox/addon/leboncoin-pdf/)
 
 ## 🖊 Contribute
 
