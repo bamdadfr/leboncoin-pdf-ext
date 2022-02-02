@@ -3,6 +3,12 @@ export default {
   testRegex: '\\.test\\.ts$',
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    resources: 'usable',
+  },
   collectCoverageFrom: ['src/**/*.ts'],
-  setupFiles: ['jest-canvas-mock'],
+  setupFiles: [
+    'jest-webextension-mock',
+    'jest-canvas-mock',
+  ],
 };

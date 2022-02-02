@@ -3,7 +3,7 @@ type GetScaledDimensions = {
   height: number;
 }
 
-const defaultProps = {
+export const defaultProps = {
   margin: 0.5,
 };
 
@@ -24,31 +24,20 @@ export function getScaledDimensions(
   canvasHeight: number,
   margin = defaultProps.margin,
 ): GetScaledDimensions {
-  const compute = (margin: number) => {
-    let maxWidth = canvasWidth - margin;
+  const targetW = canvasWidth - margin * 2;
+  const targetH = canvasHeight - margin * 2;
 
-    // TODO: write a better fix because this one is clunky
-    // (case when image get zoomed in too much and right margin is negative)
-    if (maxWidth > canvasWidth) {
-      maxWidth = canvasWidth - 0.5;
-    }
+  const ratio = width / height;
+  let newWidth = targetW;
+  let newHeight = newWidth / ratio;
 
-    const ratio = maxWidth / width;
-    const maxHeight = height * ratio;
-
-    return {
-      width: maxWidth,
-      height: maxHeight,
-    };
-  };
-
-  const dimensions = compute(margin);
-  const bottomDifference = canvasHeight - dimensions.height;
-
-  // if true, this means the bottom margin is not big enough
-  if (bottomDifference <= margin) {
-    return compute(margin + bottomDifference);
+  if (newHeight > targetH) {
+    newHeight = targetH;
+    newWidth = newHeight * ratio;
   }
 
-  return dimensions;
+  return {
+    width: newWidth,
+    height: newHeight,
+  };
 }

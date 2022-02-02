@@ -1,8 +1,6 @@
-import {getDate} from '../utils/get-date';
-import {fetchAndConvertToBase64} from '../utils/fetch-and-convert-to-base64';
+import {getIsoDateTime} from '../utils/get-iso-date-time';
 import {getDimensionsFromBase64} from '../utils/get-dimensions-from-base64';
 import {
-  PDF,
   PDFBlock,
   PDFBreak,
   PDFData,
@@ -10,12 +8,13 @@ import {
   PDFLink,
   PDFText,
 } from '../pdf/pdf';
-import {FONT_SIZES, FONT_WEIGHTS} from '../constants'; // eslint-disable-next-line @typescript-eslint/no-var-requires
+import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
+import {convertToBase64} from '../utils/convert-to-base64';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const manifest = require('../../manifest.json');
 
-interface Attribute {
+export interface AdAttribute {
   generic: boolean;
   key: string;
   key_label?: string;
@@ -24,15 +23,16 @@ interface Attribute {
   values: string[];
 }
 
-interface AdProps {
+export interface AdData {
   ad_type: string;
-  attributes: Attribute[];
+  attributes: AdAttribute[];
   body: string;
   category_id: string;
   category_name: string;
   expiration_date: string;
   first_publication_date: string;
   has_phone: boolean;
+  is_boosted: boolean;
   images: {
     nb_images: number;
     small_url: string;
@@ -91,32 +91,64 @@ interface AdProps {
   url: string;
 }
 
+export type GetBreak = PDFBreak[]
+
+export type GetHeader = (PDFText|PDFLink)[]
+
+export type GetTitle = (PDFText|PDFLink)[]
+
+export type GetSeller = (PDFText|PDFLink)[]
+
+export type GetAttributes = PDFText[]
+
+export type GetDescription = (PDFText|PDFBlock)[]
+
 /**
  * @description Class representing an Ad.
  */
 export class Ad {
-  private props: AdProps;
+  private readonly props: AdData;
 
-  private now;
+  private readonly date: string;
 
-  private version: string = manifest.version;
+  private readonly time: string;
 
-  constructor(props: AdProps) {
+  private readonly version: string = manifest.version;
+
+  constructor(props: AdData) {
     this.props = props;
-    this.now = getDate();
+    const {date, time} = getIsoDateTime();
+    this.date = date;
+    this.time = time;
   }
 
-  private static getBreak(): PDFBreak[] {
+  public get name(): string {
+    if (this.props) {
+      return this.getName();
+    }
+  }
+
+  public static parseLeboncoin(): AdData {
+    try {
+      const node = document.getElementById('__NEXT_DATA__');
+      const data = node.innerHTML;
+      const json = JSON.parse(data);
+      return json.props.pageProps.ad;
+    } catch (error) {
+      throw new Error('Unable to get ad data');
+    }
+  }
+
+  private static getBreak(): GetBreak {
     return [{
       isBreak: true,
     }];
   }
 
-  public async export(): Promise<void> {
-    const name = this.getName();
+  public async build(): Promise<PDFData> {
     const images = await this.getImages();
 
-    const data: PDFData = [
+    return [
       ...this.getHeader(),
       ...Ad.getBreak(),
       ...this.getTitle(),
@@ -128,9 +160,10 @@ export class Ad {
       ...this.getDescription(),
       ...images,
     ];
+  }
 
-    const pdf = new PDF(name);
-    pdf.run(data);
+  private getName() {
+    return `${this.props.location.zipcode} - ${this.props.list_id} - ${this.props.subject} - ${this.props.price[0].toString()} euros`;
   }
 
   private async getImages(): Promise<PDFImage[]> {
@@ -146,10 +179,12 @@ export class Ad {
     if (images === undefined) {
       return data;
     }
-    
+
     for (let k = 0; k < images.length; k++) {
       const image = images[k];
-      const base64 = await fetchAndConvertToBase64(image);
+      const response = await fetch(image);
+      const blob = await response.blob();
+      const base64 = await convertToBase64(blob);
 
       if (!base64) {
         return;
@@ -172,7 +207,7 @@ export class Ad {
     return data;
   }
 
-  private getAttributes(): PDFText[] {
+  private getAttributes(): GetAttributes {
     const data: PDFText[] = [
       {
         text: 'Critères',
@@ -180,7 +215,7 @@ export class Ad {
       },
     ];
 
-    this.props.attributes.forEach((attribute: Attribute) => {
+    this.props.attributes.forEach((attribute: AdAttribute) => {
       const title = attribute.key_label;
       const value = attribute.value_label;
 
@@ -197,7 +232,7 @@ export class Ad {
     return data;
   }
 
-  private getDescription(): (PDFText|PDFBlock)[] {
+  private getDescription(): GetDescription {
     return [
       {
         // description title
@@ -214,7 +249,7 @@ export class Ad {
     ];
   }
 
-  private getSeller(): (PDFText|PDFLink)[] {
+  private getSeller(): GetSeller {
     let type = this.props.owner.type;
 
     if (type === 'private') {
@@ -247,7 +282,7 @@ export class Ad {
     return data;
   }
 
-  private getTitle(): (PDFText|PDFLink)[] {
+  private getTitle(): GetTitle {
     return [
       {
         // title
@@ -279,7 +314,7 @@ export class Ad {
     ];
   }
 
-  private getHeader(): (PDFText|PDFLink)[] {
+  private getHeader(): GetHeader {
     return [
       {
         // url
@@ -304,13 +339,9 @@ export class Ad {
         size: FONT_SIZES.xsmall,
       },
       {
-        text: `Edité le ${this.now.date} ${this.now.time}, version ${this.version}`,
+        text: `Edité le ${this.date} ${this.time}, version ${this.version}`,
         size: FONT_SIZES.xsmall,
       },
     ];
-  }
-
-  private getName() {
-    return `${this.props.location.zipcode} - ${this.props.list_id} - ${this.props.subject} - ${this.props.price[0].toString()} euros`;
   }
 }

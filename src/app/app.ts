@@ -1,10 +1,11 @@
 import {initializeState} from './state/initialize-state';
-import {getState} from './state/get-state';
+import {getState, State} from './state/get-state';
 import {setState} from './state/set-state';
 import {Ad} from './ad/ad';
 import {getBrowser} from './utils/get-browser';
+import {PDF} from './pdf/pdf';
 
-export async function content(): Promise<void> {
+export async function content(): Promise<State> {
   await initializeState();
   const state = await getState();
 
@@ -12,13 +13,16 @@ export async function content(): Promise<void> {
     await setState('SET_RELOADED', true);
 
     if (document.visibilityState === 'visible') {
-      const node = document.getElementById('__NEXT_DATA__');
-      const data = node.innerHTML;
-      const json = JSON.parse(data);
-      const ad = await new Ad(json.props.pageProps.ad);
-      await ad.export();
+      const json = Ad.parseLeboncoin();
+      const ad = await new Ad(json);
+      const pdf = new PDF(ad.name);
+
+      const data = await ad.build();
+      pdf.export(data);
     }
   }
+
+  return state;
 }
 
 export async function background(): Promise<void> {

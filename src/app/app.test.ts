@@ -1,7 +1,15 @@
-import {background, content, popup} from './app';
+import {content} from './app';
+import {State} from './state/get-state';
+import {defaultState} from './state/initialize-state';
 
-it('should have content', () => {
-  expect(content).toBeDefined();
-  expect(background).toBeDefined();
-  expect(popup).toBeDefined();
+describe('content', () => {
+  it('should be defined', () => {
+    expect(content).toBeDefined();
+  });
+
+  it('should return an initialized state', async () => {
+    const state: State = await content();
+    expect(state.isTriggered).toBe(defaultState.isTriggered);
+    expect(state.isReloading).toBe(defaultState.isReloading);
+  });
 });

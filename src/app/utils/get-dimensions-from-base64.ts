@@ -13,11 +13,11 @@ export function getDimensionsFromBase64(base64: string): Promise<GetDimensionsFr
   return new Promise((resolve) => {
     const image = new Image();
     image.src = base64;
-    image.addEventListener('load', () => {
+    image.onload = () => {
       resolve({
         width: image.naturalWidth,
         height: image.naturalHeight,
       });
-    });
+    };
   });
 }

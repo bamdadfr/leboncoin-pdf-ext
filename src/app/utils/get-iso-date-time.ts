@@ -1,4 +1,4 @@
-type GetDate = {
+type GetIsoDateTime = {
   date: string;
   time: string;
 }
@@ -6,9 +6,9 @@ type GetDate = {
 /**
  * Get the current date and time
  *
- * @returns {GetDate} - The current date and time
+ * @returns {GetIsoDateTime} - The current date and time
  */
-export function getDate(): GetDate {
+export function getIsoDateTime(): GetIsoDateTime {
   const test = new Date();
   const diff = -test.getTimezoneOffset() * 60 * 1000; // example UTC+2: returns -(-120)
   const now = new Date(Date.now() + diff);

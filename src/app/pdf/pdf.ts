@@ -65,7 +65,7 @@ export class PDF {
     this.name = filename;
   }
 
-  public run(data: PDFData): void {
+  public export(data: PDFData): void {
     this.resetPosition();
     this.iterate(data);
     this.save();
