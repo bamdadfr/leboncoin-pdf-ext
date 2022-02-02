@@ -1,12 +1,15 @@
+type FetchAndConvertToBase64 = string|void
+
 /**
- * @description Encodes an image to base64
- * @param {string} url - The url of the image to encode
- * @returns {Promise<string>} - The base64 encoded image
+ * Fetch and convert an image to base64
+ *
+ * @param {string} url - The url of the image to fetch
+ * @returns {Promise<FetchAndConvertToBase64>} - The base64 representation of the image
  */
-export function fetchAndConvertToBase64(url) {
+export function fetchAndConvertToBase64(url: string): Promise<FetchAndConvertToBase64> {
   return new Promise((resolve) => {
     let response;
-    let blob;
+    let blob: Blob;
 
     (async () => {
       response = await fetch(url);
@@ -16,7 +19,7 @@ export function fetchAndConvertToBase64(url) {
         const reader = new FileReader();
         reader.readAsDataURL(blob);
         reader.onloadend = () => {
-          const base64 = reader.result;
+          const base64 = reader.result as string;
           resolve(base64);
         };
       })
