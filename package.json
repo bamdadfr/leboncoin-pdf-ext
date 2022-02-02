@@ -26,7 +26,7 @@
     "package:sort": "npx sort-package-json"
   },
   "dependencies": {
-    "jspdf": "2.4.0"
+    "jspdf": "2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
