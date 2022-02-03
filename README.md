@@ -1,57 +1,24 @@
-# <img width=25 src="https://i.imgur.com/LCwbHeA.png"> PDF Exporter for leboncoin.fr
+![release](https://img.shields.io/github/v/release/bamdadsabbagh/leboncoin-pdf-ext)
+![license](https://img.shields.io/github/license/bamdadsabbagh/leboncoin-pdf-ext)
+![maintainability](https://img.shields.io/codeclimate/maintainability/bamdadsabbagh/leboncoin-pdf-ext)
+![coverage](https://img.shields.io/codeclimate/coverage/bamdadsabbagh/leboncoin-pdf-ext)
+![snyk](https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/leboncoin-pdf-ext)
 
-<p align=center>
-  <a href="https://github.com/bamdadsabbagh/leboncoin-pdf-ext"><img width=150 src="https://raw.githubusercontent.com/bamdadsabbagh/leboncoin-pdf-ext/master/src/assets/icon.png"></a>
-</p>
+![chrome version](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj?label=chrome)
+![chrome users](https://img.shields.io/chrome-web-store/users/mifkoblilhehppoemadbhopbbijpifcj)
+![chrome rating](https://img.shields.io/chrome-web-store/stars/mifkoblilhehppoemadbhopbbijpifcj)
 
-<p align=center>
-  PDF Exporter for <a href="https://www.leboncoin.fr/">leboncoin.fr</a>
-</p>
+![firefox version](https://img.shields.io/amo/v/leboncoin-pdf?label=firefox)
+![firefox users](https://img.shields.io/amo/users/leboncoin-pdf)
+![firefox rating](https://img.shields.io/amo/stars/leboncoin-pdf?label=rating)
 
-<p align=center>
-  <a href="https://github.com/bamdadsabbagh/leboncoin-pdf-ext"><img src="https://img.shields.io/github/stars/bamdadsabbagh/leboncoin-pdf-ext?label=git"></a>
-  <img src="https://img.shields.io/github/license/bamdadsabbagh/leboncoin-pdf-ext">
-</p>
+![](https://i.imgur.com/kAdOAZ9.gif)
 
-<p align=center>
-  <img src="https://img.shields.io/github/languages/count/bamdadsabbagh/leboncoin-pdf-ext">
-  <img src="https://img.shields.io/github/languages/top/bamdadsabbagh/leboncoin-pdf-ext">
-</p>
-
-<p align=center>
-  <img src="https://img.shields.io/github/v/release/bamdadsabbagh/leboncoin-pdf-ext">
-  <img src="https://api.codeclimate.com/v1/badges/90c2b2e5d1c33e53448d/maintainability" />
-</p>
-
-<p align=center>
-  <img src="https://img.shields.io/david/bamdadsabbagh/leboncoin-pdf-ext">
-  <img src="https://img.shields.io/david/dev/bamdadsabbagh/leboncoin-pdf-ext">
-  <img src="https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/leboncoin-pdf-ext">
-</p>
-
-<p align=center>
-  <img src="https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj">
-  <img src="https://img.shields.io/chrome-web-store/stars/mifkoblilhehppoemadbhopbbijpifcj">
-  <img src="https://img.shields.io/chrome-web-store/users/mifkoblilhehppoemadbhopbbijpifcj">
-</p>
-
-<p align=center>
-  <img src="https://img.shields.io/amo/v/leboncoin-pdf">
-  <img src="https://img.shields.io/amo/stars/leboncoin-pdf">
-  <img src="https://img.shields.io/amo/users/leboncoin-pdf">
-</p>
-
-<p align=center>
-  <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
-</p>
-
-<p align=center>
-  <img src="https://i.imgur.com/kAdOAZ9.gif">
-</p>
+<img alt="logo" width="80px" src="https://raw.githubusercontent.com/bamdadsabbagh/leboncoin-pdf-ext/master/src/assets/icon.png">
 
 <img align=right width=200 src="./assets/screenshots/promo_small.jpg">
 
-## 📖 Context
+PDF Exporter for <a href="https://www.leboncoin.fr/">leboncoin.fr</a>
 
 This Web Extension allows you to export a classified ad from leboncoin.fr
 in PDF format.
