@@ -113,7 +113,6 @@ export class PDF {
     total,
     url,
   }: PrintImage): Promise<void> {
-    // Test image accessibility first
     let base64;
     try {
       base64 = await fetchBase64(url);
@@ -125,36 +124,8 @@ export class PDF {
       this.printNewPage();
     }
 
-    // Header
-    this.printText({
-      text: this.name,
-      size: FONT_SIZES.small,
-    });
-
-    this.printText({
-      text: `Image ${id} / ${total}`,
-      size: FONT_SIZES.small,
-    });
-
-    this.printBreak();
-
-    // Image
-    const dimensions = await getDimensionsFromBase64(base64);
-    const scaledDimensions = getScaledDimensions(
-      dimensions.width,
-      dimensions.height,
-      this.width,
-      this.height,
-    );
-
-    this.doc.addImage(
-      base64,
-      'JPEG',
-      this.x,
-      this.y,
-      scaledDimensions.width,
-      scaledDimensions.height,
-    );
+    this.printImageHeader(id, total);
+    await this.printImageData(base64);
   }
 
   public save(): void {
@@ -173,6 +144,39 @@ export class PDF {
     a.click();
 
     window.URL.revokeObjectURL(url);
+  }
+
+  private async printImageData(base64: string) {
+    const dimensions = await getDimensionsFromBase64(base64);
+    const scaledDimensions = getScaledDimensions(
+      dimensions.width,
+      dimensions.height,
+      this.width,
+      this.height,
+    );
+
+    this.doc.addImage(
+      base64,
+      'JPEG',
+      this.x,
+      this.y,
+      scaledDimensions.width,
+      scaledDimensions.height,
+    );
+  }
+
+  private printImageHeader(id: PrintImage['id'], total: PrintImage['total']) {
+    this.printText({
+      text: this.name,
+      size: FONT_SIZES.small,
+    });
+
+    this.printText({
+      text: `Image ${id} / ${total}`,
+      size: FONT_SIZES.small,
+    });
+
+    this.printBreak();
   }
 
   private isPositionNewPage() {
