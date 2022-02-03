@@ -12,5 +12,8 @@
       "chrome"
     ],
     "esModuleInterop": true
-  }
+  },
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
 }

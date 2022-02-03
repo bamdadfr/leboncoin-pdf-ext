@@ -1,5 +1,4 @@
 import {Ad, AdData} from './ad';
-import {PDFData, PDFLink} from '../pdf/pdf';
 
 const fakeData: AdData = {
   'list_id': 12345,
@@ -311,32 +310,15 @@ const fakeData: AdData = {
 
 describe('Ad', () => {
   let ad: Ad;
-  let build: PDFData;
-  let header: PDFLink;
-  // let breakBlock: void;
-  // let title: void;
-  // let seller: void;
-  // let attributes: void;
-  // let description: void;
 
   beforeEach(async () => {
     ad = new Ad(fakeData);
-    build = await ad.build();
-    header = build[0] as PDFLink;
+    await ad.build();
   });
 
-  describe('name', () => {
+  describe('ad', () => {
     it('should be defined', () => {
-      expect(ad.name).toBeDefined();
-      expect(ad.name).toContain('euros');
-    });
-  });
-
-  describe('build', () => {
-    describe('header', () => {
-      it('should contain a link', async () => {
-        expect(header.isLink).toBe(true);
-      });
+      expect(ad).toBeDefined();
     });
   });
 });

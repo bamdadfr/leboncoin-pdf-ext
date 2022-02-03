@@ -1,13 +1,6 @@
 import {getIsoDateTime} from '../utils/get-iso-date-time';
 import {getDimensionsFromBase64} from '../utils/get-dimensions-from-base64';
-import {
-  PDFBlock,
-  PDFBreak,
-  PDFData,
-  PDFImage,
-  PDFLink,
-  PDFText,
-} from '../pdf/pdf';
+import {PDF} from '../pdf/pdf';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 import {convertToBase64} from '../utils/convert-to-base64';
 
@@ -91,18 +84,6 @@ export interface AdData {
   url: string;
 }
 
-export type GetBreak = PDFBreak[]
-
-export type GetHeader = (PDFText|PDFLink)[]
-
-export type GetTitle = (PDFText|PDFLink)[]
-
-export type GetSeller = (PDFText|PDFLink)[]
-
-export type GetAttributes = PDFText[]
-
-export type GetDescription = (PDFText|PDFBlock)[]
-
 /**
  * @description Class representing an Ad.
  */
@@ -115,20 +96,17 @@ export class Ad {
 
   private readonly version: string = manifest.version;
 
-  constructor(props: AdData) {
+  private pdf: PDF;
+
+  constructor(props: AdData = Ad.parseLeboncoin()) {
     this.props = props;
     const {date, time} = getIsoDateTime();
     this.date = date;
     this.time = time;
+    this.pdf = new PDF(this.getName());
   }
 
-  public get name(): string {
-    if (this.props) {
-      return this.getName();
-    }
-  }
-
-  public static parseLeboncoin(): AdData {
+  private static parseLeboncoin(): AdData {
     try {
       const node = document.getElementById('__NEXT_DATA__');
       const data = node.innerHTML;
@@ -139,36 +117,29 @@ export class Ad {
     }
   }
 
-  private static getBreak(): GetBreak {
-    return [{
-      isBreak: true,
-    }];
+  public export(): void {
+    this.pdf.save();
   }
 
-  public async build(): Promise<PDFData> {
-    const images = await this.getImages();
-
-    return [
-      ...this.getHeader(),
-      ...Ad.getBreak(),
-      ...this.getTitle(),
-      ...Ad.getBreak(),
-      ...this.getSeller(),
-      ...Ad.getBreak(),
-      ...this.getAttributes(),
-      ...Ad.getBreak(),
-      ...this.getDescription(),
-      ...images,
-    ];
+  public async build(): Promise<void> {
+    this.buildHeader();
+    this.pdf.printBreak();
+    this.buildTitle();
+    this.pdf.printBreak();
+    this.buildSeller();
+    this.pdf.printBreak();
+    this.printAttributes();
+    this.pdf.printBreak();
+    this.buildDescription();
+    await this.buildImages();
   }
 
   private getName() {
     return `${this.props.location.zipcode} - ${this.props.list_id} - ${this.props.subject} - ${this.props.price[0].toString()} euros`;
   }
 
-  private async getImages(): Promise<PDFImage[]> {
-    const data: PDFImage[] = [];
-    let images = undefined;
+  private async buildImages(): Promise<void> {
+    let images;
 
     if (this.props.images.urls_large) {
       images = this.props.images.urls_large;
@@ -176,13 +147,20 @@ export class Ad {
       images = this.props.images.urls;
     }
 
-    if (images === undefined) {
-      return data;
+    if (!images) {
+      return;
     }
 
     for (let k = 0; k < images.length; k++) {
       const image = images[k];
-      const response = await fetch(image);
+
+      let response;
+      try {
+        response = await fetch(image);
+      } catch {
+        continue;
+      }
+
       const blob = await response.blob();
       const base64 = await convertToBase64(blob);
 
@@ -192,156 +170,152 @@ export class Ad {
 
       const dimensions = await getDimensionsFromBase64(base64);
 
-      data.push(
-        {
-          isImage: true,
-          id: k + 1,
-          total: images.length,
-          base64,
-          width: dimensions.width,
-          height: dimensions.height,
-        },
-      );
+      this.pdf.printImage({
+        id: k + 1,
+        total: images.length,
+        base64,
+        width: dimensions.width,
+        height: dimensions.height,
+      });
     }
-
-    return data;
   }
 
-  private getAttributes(): GetAttributes {
-    const data: PDFText[] = [
-      {
-        text: 'Critères',
-        weight: FONT_WEIGHTS.bold,
-      },
-    ];
+  private printAttributes(): void {
+    const {bold} = FONT_WEIGHTS;
+    const {small} = FONT_SIZES;
 
+    // Title
+    this.pdf.printText({
+      text: 'Critères',
+      weight: bold,
+    });
+
+    // Content
     this.props.attributes.forEach((attribute: AdAttribute) => {
       const title = attribute.key_label;
       const value = attribute.value_label;
 
       if (title) {
-        data.push(
-          {
-            text: `${title} : ${value}`,
-            size: FONT_SIZES.small,
-          },
-        );
+        this.pdf.printText({
+          text: `${title} : ${value}`,
+          size: small,
+        });
       }
     });
-
-    return data;
   }
 
-  private getDescription(): GetDescription {
-    return [
-      {
-        // description title
-        text: 'Description',
-        size: FONT_SIZES.normal,
-        weight: FONT_WEIGHTS.bold,
-      },
-      {
-        // description
-        isBlock: true,
-        text: this.props.body,
-        size: FONT_SIZES.small,
-      },
-    ];
+  private buildDescription(): void {
+    const {bold} = FONT_WEIGHTS;
+    const {normal, small} = FONT_SIZES;
+    // Title
+    this.pdf.printText({
+      text: 'Description',
+      size: normal,
+      weight: bold,
+    });
+
+    // Content
+    this.pdf.printBlock({
+      text: this.props.body,
+      size: small,
+    });
   }
 
-  private getSeller(): GetSeller {
-    let type = this.props.owner.type;
+  private buildSeller(): void {
+    const {type} = this.props.owner;
 
-    if (type === 'private') {
-      type = 'particulier';
-    }
+    // Seller
+    this.pdf.printText({
+      text: 'Vendeur',
+      size: FONT_SIZES.normal,
+      weight: FONT_WEIGHTS.bold,
+    });
 
-    const data: (PDFText|PDFLink)[] = [
-      {
-        text: 'Vendeur',
-        size: FONT_SIZES.normal,
-        weight: FONT_WEIGHTS.bold,
-      },
-      {
-        isLink: true,
-        text: `Vendeur ${type} : ${this.props.owner.name}`,
-        url: `https://www.leboncoin.fr/profil/${this.props.owner.user_id}`,
-        size: FONT_SIZES.small,
-      },
-    ];
+    // Link
+    this.pdf.printLink({
+      text: `Vendeur ${type === 'private' ? 'particulier' : type} : ${this.props.owner.name}`,
+      url: `https://www.leboncoin.fr/profil/${this.props.owner.user_id}`,
+      size: FONT_SIZES.small,
+    });
 
+    // SIREN
     if (this.props.owner.siren) {
-      data.push(
-        {
-          text: `SIREN : ${this.props.owner.siren}`,
-          size: FONT_SIZES.xsmall,
-        },
-      );
+      this.pdf.printText({
+        text: `SIREN : ${this.props.owner.siren}`,
+        size: FONT_SIZES.xsmall,
+      });
     }
-
-    return data;
   }
 
-  private getTitle(): GetTitle {
-    return [
-      {
-        // title
-        text: this.props.subject,
-        weight: FONT_WEIGHTS.bold,
-      },
-      {
-        // price
-        text: `Prix : ${this.props.price[0].toString() || '?'} euros`,
-        size: FONT_SIZES.small,
-      },
-      {
-        // location
-        text: `Lieu : ${this.props.location.city}, ${this.props.location.zipcode}, ${this.props.location.department_name}`,
-        size: FONT_SIZES.small,
-      },
-      {
-        // satellite
-        text: `GPS : ${this.props.location.lat}, ${this.props.location.lng}`,
-        size: FONT_SIZES.small,
-      },
-      {
-        // google maps
-        isLink: true,
-        text: 'Google Maps',
-        url: `https://www.google.com/maps/place/${this.props.location.lat},${this.props.location.lng}`,
-        size: FONT_SIZES.xsmall,
-      },
-    ];
+  private buildTitle(): void {
+    const {bold} = FONT_WEIGHTS;
+    const {small, xsmall} = FONT_SIZES;
+
+    // Title
+    this.pdf.printText({
+      text: this.props.subject,
+      weight: bold,
+    });
+
+    // Price
+    this.pdf.printText({
+      text: `Prix : ${this.props.price[0].toString() || '?'} euros`,
+      size: small,
+    });
+
+    // Location
+    this.pdf.printText({
+      text: `Lieu : ${this.props.location.city}, ${this.props.location.zipcode}, ${this.props.location.department_name}`,
+      size: small,
+    });
+
+    // Satellite
+    this.pdf.printText({
+      text: `GPS : ${this.props.location.lat}, ${this.props.location.lng}`,
+      size: small,
+    });
+
+    // Google Maps
+    this.pdf.printLink({
+      text: 'Google Maps',
+      url: `https://www.google.com/maps/place/${this.props.location.lat},${this.props.location.lng}`,
+      size: xsmall,
+    });
   }
 
-  private getHeader(): GetHeader {
-    return [
-      {
-        // url
-        isLink: true,
-        text: this.props.url,
-        url: this.props.url,
-        size: FONT_SIZES.small,
-      },
-      {
-        // category
-        text: this.props.category_name,
-        size: FONT_SIZES.small,
-      },
-      {
-        // date of first publication
-        text: `Première publication : ${this.props.first_publication_date}`,
-        size: FONT_SIZES.xsmall,
-      },
-      {
-        // date of latest update
-        text: `Dernière mise à jour : ${this.props.index_date}`,
-        size: FONT_SIZES.xsmall,
-      },
-      {
-        text: `Edité le ${this.date} ${this.time}, version ${this.version}`,
-        size: FONT_SIZES.xsmall,
-      },
-    ];
+  private buildHeader(): void {
+    const {small, xsmall} = FONT_SIZES;
+
+    // URL
+    this.pdf.printLink({
+      text: this.props.url,
+      url: this.props.url,
+      size: small,
+    });
+
+    // Category
+    this.pdf.printText({
+      text: this.props.category_name,
+      size: small,
+    });
+
+    // Date of publication
+    this.pdf.printText({
+      text: `Première publication : ${this.props.first_publication_date}`,
+      size: xsmall,
+
+    });
+
+    // Date of last update
+    this.pdf.printText({
+      text: `Dernière mise à jour : ${this.props.index_date}`,
+      size: xsmall,
+    });
+
+    // Date, time of creation and version
+    this.pdf.printText({
+      text: `Edité le ${this.date} ${this.time}, version ${this.version}`,
+      size: xsmall,
+    });
   }
 }

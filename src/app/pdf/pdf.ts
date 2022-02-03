@@ -2,39 +2,30 @@ import {jsPDF} from 'jspdf';
 import {getScaledDimensions} from '../utils/get-scaled-dimensions';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 
-export type PDFLink = {
-  isLink: boolean;
+export type PrintLink = {
   text: string;
   url: string;
   size: number;
 }
 
-export type PDFText = {
+export type PrintText = {
   text: string;
   size?: number;
   weight?: string;
 }
 
-export type PDFBreak = {
-  isBreak: boolean;
-}
-
-export type PDFBlock = {
-  isBlock: boolean;
+export type PrintBlock = {
   text: string;
   size: number;
 }
 
-export type PDFImage = {
-  isImage: boolean;
+export type PrintImage = {
   id: number;
   total: number;
   width: number;
   height: number;
   base64: string;
 }
-
-export type PDFData = (PDFLink | PDFText | PDFBreak | PDFBlock | PDFImage)[];
 
 export class PDF {
   // eslint-disable-next-line new-cap
@@ -63,63 +54,39 @@ export class PDF {
 
   constructor(filename: string) {
     this.name = filename;
-  }
-
-  public export(data: PDFData): void {
     this.resetPosition();
-    this.iterate(data);
-    this.save();
   }
 
-  private iterate(data: PDFData) {
-    data.forEach((el: (PDFBlock & PDFBreak & PDFImage & PDFLink & PDFText)) => {
-      if (el.isBlock) {
-        return this.printBlock(el);
-      } else if (el.isBreak) {
-        return this.printBreak();
-      } else if (el.isImage) {
-        return this.printImage(el);
-      } else if (el.isLink) {
-        return this.printLink(el);
-      } else {
-        return this.printText(el);
-      }
-    });
-  }
-
-  private movePosition(size = this.size) {
-    this.y += 0.5 * size / 24;
-  }
-
-  private resetPosition() {
-    this.x = this.init.x;
-    this.y = this.init.y;
-  }
-
-  private printText({
-    text,
-    size,
-    weight,
-  }: PDFText) {
-    this.doc.setFontSize(size || this.size).setFont(this.font, weight || this.weight);
-    this.doc.text(text, this.x, this.y);
-    this.movePosition(size);
-  }
-
-  private printLink({
+  public printLink({
     text,
     url,
     size,
-  }: PDFLink) {
+  }: PrintLink): void {
     this.doc.setFontSize(size || this.size).setFont(this.font, this.weight);
     this.doc.textWithLink(text, this.x, this.y, {url});
     this.movePosition(size);
   }
 
-  private printBlock({
+  public printText({
     text,
     size,
-  }: PDFBlock) {
+    weight,
+  }: PrintText): void {
+    this.doc.setFontSize(size || this.size).setFont(this.font, weight || this.weight);
+    this.doc.text(text, this.x, this.y);
+    this.movePosition(size);
+  }
+
+  public printBreak(): void {
+    this.doc.setLineWidth(0.01);
+    this.doc.line(this.x, this.y, this.width, this.y);
+    this.movePosition();
+  }
+
+  public printBlock({
+    text,
+    size,
+  }: PrintBlock): void {
     const lines = this.doc
       .setFontSize(size || this.size)
       .setFont(this.font, this.weight)
@@ -138,24 +105,13 @@ export class PDF {
     });
   }
 
-  private printNewPage() {
-    this.doc.addPage();
-    this.resetPosition();
-  }
-
-  private printBreak() {
-    this.doc.setLineWidth(0.01);
-    this.doc.line(this.x, this.y, this.width, this.y);
-    this.movePosition();
-  }
-
-  private printImage({
+  public printImage({
     id,
     total,
     base64,
     width,
     height,
-  }: PDFImage) {
+  }: PrintImage): void {
     if (this.x !== this.init.x || this.y !== this.init.y) {
       this.printNewPage();
     }
@@ -179,7 +135,7 @@ export class PDF {
     this.doc.addImage(base64, 'JPEG', this.x, this.y, dimensions.width, dimensions.height);
   }
 
-  private save() {
+  public save(): void {
     const blobData = this.doc.output('blob');
     const a = document.createElement('a');
 
@@ -195,5 +151,19 @@ export class PDF {
     a.click();
 
     window.URL.revokeObjectURL(url);
+  }
+
+  private movePosition(size = this.size) {
+    this.y += 0.5 * size / 24;
+  }
+
+  private resetPosition() {
+    this.x = this.init.x;
+    this.y = this.init.y;
+  }
+
+  private printNewPage() {
+    this.doc.addPage();
+    this.resetPosition();
   }
 }

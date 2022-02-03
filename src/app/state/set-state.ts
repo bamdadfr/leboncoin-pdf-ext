@@ -10,7 +10,7 @@ type ActionType = keyof State | 'SET_RELOADED'
  * @returns {Promise<void>}
  */
 export async function setState(actionType: ActionType, payload: boolean): Promise<void> {
-  const browser = await getBrowser();
+  const browser = getBrowser();
 
   // reducer
   switch (actionType) {
