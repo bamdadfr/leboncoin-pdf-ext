@@ -1,3 +1,16 @@
+## [1.12.2](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.1...v1.12.2) (2022-02-03)
+
+
+### Bug Fixes
+
+* **Background:** Let typescript infer changes type thanks to `@types/chrome` ([38ff3f5](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/38ff3f5034984249e20d7ab9a02d6c581f2d7346))
+
+
+### Performance Improvements
+
+* **App:** Move entry points under `app` folder and split code for each entry point to reduce bundle size + Reconfigure webpack ([31ba136](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/31ba1365b2ac1ae5a4062e4eb0c42b54bf008ab9))
+* **State:** Add enum for actions/keys setters + Rename `State` interface to `StateType` ([85ff8a4](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/85ff8a4c27fe7e1746d92c4aafb04bf76c627dd4))
+
 ## [1.12.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.0...v1.12.1) (2022-02-03)
 
 
