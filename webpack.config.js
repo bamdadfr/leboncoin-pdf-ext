@@ -12,12 +12,15 @@ module.exports = {
   mode: isProduction ? 'production' : 'development',
   devtool: isProduction ? false : 'cheap-source-map',
   entry: {
-    'scripts/background': './src/scripts/background.js',
-    'scripts/content': './src/scripts/content.js',
-    'scripts/popup': './src/scripts/popup.js',
+    'scripts/background': './src/scripts/background.ts',
+    'scripts/content': './src/scripts/content.ts',
+    'scripts/popup': './src/scripts/popup.ts',
   },
   output: {
     publicPath: '',
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
   node: false,
   plugins: [
@@ -42,10 +45,13 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        use: 'babel-loader',
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+      },
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },
