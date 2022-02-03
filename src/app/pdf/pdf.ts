@@ -114,17 +114,15 @@ export class PDF {
       this.printNewPage();
     }
 
-    const {small} = FONT_SIZES;
-
     // Header
     this.printText({
       text: this.name,
-      size: small,
+      size: FONT_SIZES.small,
     });
 
     this.printText({
       text: `Image ${id} / ${total}`,
-      size: small,
+      size: FONT_SIZES.small,
     });
 
     this.printBreak();

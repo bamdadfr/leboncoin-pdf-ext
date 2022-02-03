@@ -161,13 +161,10 @@ export class Ad {
   }
 
   private printAttributes(): void {
-    const {bold} = FONT_WEIGHTS;
-    const {small} = FONT_SIZES;
-
     // Title
     this.pdf.printText({
       text: 'Critères',
-      weight: bold,
+      weight: FONT_WEIGHTS.bold,
     });
 
     // Content
@@ -178,26 +175,24 @@ export class Ad {
       if (title) {
         this.pdf.printText({
           text: `${title} : ${value}`,
-          size: small,
+          size: FONT_SIZES.small,
         });
       }
     });
   }
 
   private buildDescription(): void {
-    const {bold} = FONT_WEIGHTS;
-    const {normal, small} = FONT_SIZES;
     // Title
     this.pdf.printText({
       text: 'Description',
-      size: normal,
-      weight: bold,
+      size: FONT_SIZES.normal,
+      weight: FONT_WEIGHTS.bold,
     });
 
     // Content
     this.pdf.printBlock({
       text: this.props.body,
-      size: small,
+      size: FONT_SIZES.small,
     });
   }
 
@@ -228,74 +223,69 @@ export class Ad {
   }
 
   private buildTitle(): void {
-    const {bold} = FONT_WEIGHTS;
-    const {small, xsmall} = FONT_SIZES;
-
     // Title
     this.pdf.printText({
       text: this.props.subject,
-      weight: bold,
+      weight: FONT_WEIGHTS.bold,
     });
 
     // Price
     this.pdf.printText({
       text: `Prix : ${this.props.price[0].toString() || '?'} euros`,
-      size: small,
+      size: FONT_SIZES.small,
     });
 
     // Location
     this.pdf.printText({
       text: `Lieu : ${this.props.location.city}, ${this.props.location.zipcode}, ${this.props.location.department_name}`,
-      size: small,
+      size: FONT_SIZES.small,
     });
 
     // Satellite
     this.pdf.printText({
       text: `GPS : ${this.props.location.lat}, ${this.props.location.lng}`,
-      size: small,
+      size: FONT_SIZES.small,
     });
 
     // Google Maps
     this.pdf.printLink({
       text: 'Google Maps',
       url: `https://www.google.com/maps/place/${this.props.location.lat},${this.props.location.lng}`,
-      size: xsmall,
+      size: FONT_SIZES.xsmall,
     });
   }
 
   private buildHeader(): void {
-    const {small, xsmall} = FONT_SIZES;
-
     // URL
     this.pdf.printLink({
       text: this.props.url,
       url: this.props.url,
-      size: small,
+      size: FONT_SIZES.small,
     });
 
     // Category
     this.pdf.printText({
       text: this.props.category_name,
-      size: small,
+      size: FONT_SIZES.small,
     });
 
     // Date of publication
     this.pdf.printText({
       text: `Première publication : ${this.props.first_publication_date}`,
-      size: xsmall,
+      size: FONT_SIZES.xsmall,
 
     });
 
     // Date of last update
     this.pdf.printText({
       text: `Dernière mise à jour : ${this.props.index_date}`,
-      size: xsmall,
+      size: FONT_SIZES.xsmall,
     });
 
     // Date, time of creation and version
     this.pdf.printText({
       text: `Edité le ${this.date} ${this.time}, version ${this.version}`,
-      size: xsmall,
+      size: FONT_SIZES.xsmall,
     });
   }
 }
