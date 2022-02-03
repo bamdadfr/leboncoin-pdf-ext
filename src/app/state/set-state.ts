@@ -1,21 +1,25 @@
 import {getBrowser} from '../utils/get-browser';
-import {State} from './get-state';
+import {StateType} from './get-state';
 
-type ActionType = keyof State | 'SET_RELOADED'
+export enum StateKeys {
+  isTriggered = 'isTriggered',
+  isReloading = 'isReloading',
+  setReloaded = 'setReloaded',
+}
 
 /**
  * Set the state of the application.
  *
- * @param {ActionType} actionType - The action type.
+ * @param {StateKeys} actionType - The action type.
  * @param {boolean} payload - The payload.
  */
-export async function setState(actionType: ActionType, payload: boolean): Promise<void> {
+export async function setState(actionType: StateKeys, payload: boolean): Promise<void> {
   const browser = getBrowser();
 
   // reducer
   switch (actionType) {
-    case 'isTriggered': {
-      const obj: Pick<State, 'isTriggered'> = {
+    case StateKeys.isTriggered: {
+      const obj: Pick<StateType, StateKeys.isTriggered> = {
         isTriggered: payload,
       };
 
@@ -23,8 +27,8 @@ export async function setState(actionType: ActionType, payload: boolean): Promis
       break;
     }
 
-    case 'isReloading': {
-      const obj: Pick<State, 'isReloading'> = {
+    case StateKeys.isReloading: {
+      const obj: Pick<StateType, StateKeys.isReloading> = {
         isReloading: payload,
       };
 
@@ -32,8 +36,8 @@ export async function setState(actionType: ActionType, payload: boolean): Promis
       break;
     }
 
-    case 'SET_RELOADED': {
-      const obj: State = {
+    case StateKeys.setReloaded: {
+      const obj: StateType = {
         isTriggered: false,
         isReloading: false,
       };

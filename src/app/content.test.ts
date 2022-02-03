@@ -1,5 +1,5 @@
 import {content} from './content';
-import {State} from './state/get-state';
+import {StateType} from './state/get-state';
 import {defaultState} from './state/initialize-state';
 
 describe('content', () => {
@@ -8,7 +8,7 @@ describe('content', () => {
   });
 
   it('should return an initialized state', async () => {
-    const state: State = await content();
+    const state: StateType = await content();
     expect(state.isTriggered).toBe(defaultState.isTriggered);
     expect(state.isReloading).toBe(defaultState.isReloading);
   });

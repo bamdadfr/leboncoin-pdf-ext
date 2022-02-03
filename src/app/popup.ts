@@ -1,4 +1,4 @@
-import {setState} from './state/set-state';
+import {setState, StateKeys} from './state/set-state';
 
 /**
  * Popup script entry point.
@@ -7,7 +7,7 @@ async function popup(): Promise<void> {
   const link = document.getElementById('export');
 
   link.addEventListener('click', async () => {
-    await setState('isTriggered', true);
+    await setState(StateKeys.isTriggered, true);
   });
 }
 

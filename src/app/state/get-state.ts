@@ -1,6 +1,6 @@
 import {getBrowser} from '../utils/get-browser';
 
-export interface State {
+export interface StateType {
   isTriggered: boolean;
   isReloading: boolean;
 }
@@ -8,14 +8,14 @@ export interface State {
 /**
  * Get state of the app stored in the browser's local storage.
  *
- * @returns {Promise<State>} - Promise resolving to the state of the app.
+ * @returns {Promise<StateType>} - Promise resolving to the state of the app.
  */
-export function getState(): Promise<State> {
+export function getState(): Promise<StateType> {
   const browser = getBrowser();
   return new Promise((resolve) => {
     browser.storage.local.get(
       null,
-      async (state: State) => {
+      async (state: StateType) => {
         resolve(state);
       },
     );

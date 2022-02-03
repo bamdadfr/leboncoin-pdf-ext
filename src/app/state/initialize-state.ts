@@ -1,5 +1,5 @@
 import {getState} from './get-state';
-import {setState} from './set-state';
+import {setState, StateKeys} from './set-state';
 
 export const defaultState = {
   isTriggered: false,
@@ -13,10 +13,10 @@ export async function initializeState(): Promise<void> {
   const state = await getState();
 
   if (typeof state.isTriggered === 'undefined') {
-    await setState('isTriggered', defaultState.isTriggered);
+    await setState(StateKeys.isTriggered, defaultState.isTriggered);
   }
 
   if (typeof state.isReloading === 'undefined') {
-    await setState('isReloading', defaultState.isReloading);
+    await setState(StateKeys.isReloading, defaultState.isReloading);
   }
 }
