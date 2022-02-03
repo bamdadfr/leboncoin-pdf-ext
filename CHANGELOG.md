@@ -1,3 +1,25 @@
+# [1.12.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.11.3...v1.12.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* **PDF.printImage:** Try fetching image before printing anything ([120901d](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/120901d6008d88339e5c394b97d551b748ab54f5))
+
+
+### Features
+
+* Rewrite in TypeScript ([4ca4769](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/4ca4769966a9429a13500262e22f237df7ea5cc4))
+* Rewrite in TypeScript + Add jest ([c349c85](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/c349c85d5dce41e7b693a447e63ee786bb503067))
+
+
+### Performance Improvements
+
+* **Abstraction:** Add method calls to replace transferred array + Various improvements ([f3dd50d](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/f3dd50d50f37e9c1c7e4d7209ae8b389057d7862))
+* **Constants:** Use constants the same way everywhere ([ad66c8b](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ad66c8bac47940b07dc3fb9f6c98e98786785b3b))
+* **Dependencies:** Upgrade to latest ([b79d906](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/b79d906c3e672bc9062b9f25b9f8e49ee3e1207b))
+* Move image printing logic to PDF class + Extract fetch base64 to its own utility function ([d2d5dad](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/d2d5dadfcfeb937f1d423b24568109a6ee9f5faa))
+* Write unit tests (WIP) ([b007ec2](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/b007ec2ae97675d0d560c6c873ec5df68439c0cd))
+
 ## [1.11.3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.11.2...v1.11.3) (2022-01-31)
 
 
