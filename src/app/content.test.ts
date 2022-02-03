@@ -1,4 +1,4 @@
-import {content} from './app';
+import {content} from './content';
 import {State} from './state/get-state';
 import {defaultState} from './state/initialize-state';
 

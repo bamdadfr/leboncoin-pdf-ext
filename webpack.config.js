@@ -12,9 +12,9 @@ module.exports = {
   mode: isProduction ? 'production' : 'development',
   devtool: isProduction ? false : 'cheap-source-map',
   entry: {
-    'scripts/background': './src/scripts/background.ts',
-    'scripts/content': './src/scripts/content.ts',
-    'scripts/popup': './src/scripts/popup.ts',
+    'scripts/background': './src/app/background.ts',
+    'scripts/content': './src/app/content.ts',
+    'scripts/popup': './src/app/popup.ts',
   },
   output: {
     publicPath: '',
