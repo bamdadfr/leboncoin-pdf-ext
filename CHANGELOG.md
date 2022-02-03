@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.0...v1.12.1) (2022-02-03)
+
+
+### Performance Improvements
+
+* **PDF:** Split `printImage` into `printImageHeader` and `printImageData` ([ce9a17e](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ce9a17ef54203d4416ead2762e048935a5458db9))
+
 # [1.12.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.11.3...v1.12.0) (2022-02-03)
 
 
