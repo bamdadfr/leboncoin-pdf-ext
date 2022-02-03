@@ -1,8 +1,6 @@
 import {getIsoDateTime} from '../utils/get-iso-date-time';
-import {getDimensionsFromBase64} from '../utils/get-dimensions-from-base64';
 import {PDF} from '../pdf/pdf';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
-import {convertToBase64} from '../utils/convert-to-base64';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const manifest = require('../../manifest.json');
@@ -154,28 +152,10 @@ export class Ad {
     for (let k = 0; k < images.length; k++) {
       const image = images[k];
 
-      let response;
-      try {
-        response = await fetch(image);
-      } catch {
-        continue;
-      }
-
-      const blob = await response.blob();
-      const base64 = await convertToBase64(blob);
-
-      if (!base64) {
-        return;
-      }
-
-      const dimensions = await getDimensionsFromBase64(base64);
-
-      this.pdf.printImage({
+      await this.pdf.printImage({
         id: k + 1,
         total: images.length,
-        base64,
-        width: dimensions.width,
-        height: dimensions.height,
+        url: image,
       });
     }
   }

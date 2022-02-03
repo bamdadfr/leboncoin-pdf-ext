@@ -1,6 +1,8 @@
 import {jsPDF} from 'jspdf';
 import {getScaledDimensions} from '../utils/get-scaled-dimensions';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
+import {getDimensionsFromBase64} from '../utils/get-dimensions-from-base64';
+import {fetchBase64} from '../utils/fetch-base64';
 
 export type PrintLink = {
   text: string;
@@ -22,9 +24,7 @@ export type PrintBlock = {
 export type PrintImage = {
   id: number;
   total: number;
-  width: number;
-  height: number;
-  base64: string;
+  url: string;
 }
 
 export class PDF {
@@ -105,34 +105,54 @@ export class PDF {
     });
   }
 
-  public printImage({
+  public async printImage({
     id,
     total,
-    base64,
-    width,
-    height,
-  }: PrintImage): void {
-    if (this.x !== this.init.x || this.y !== this.init.y) {
+    url,
+  }: PrintImage): Promise<void> {
+    if (!this.isPositionNewPage()) {
       this.printNewPage();
     }
 
-    const size = FONT_SIZES.small;
+    const {small} = FONT_SIZES;
 
+    // Header
     this.printText({
       text: this.name,
-      size,
+      size: small,
     });
+
     this.printText({
       text: `Image ${id} / ${total}`,
-      size,
+      size: small,
     });
+
     this.printBreak();
 
-    const maxWidth = this.width;
-    const maxHeight = this.height;
-    const dimensions = getScaledDimensions(width, height, maxWidth, maxHeight);
+    // Image
+    let base64;
+    try {
+      base64 = await fetchBase64(url);
+    } catch {
+      return;
+    }
 
-    this.doc.addImage(base64, 'JPEG', this.x, this.y, dimensions.width, dimensions.height);
+    const dimensions = await getDimensionsFromBase64(base64);
+    const scaledDimensions = getScaledDimensions(
+      dimensions.width,
+      dimensions.height,
+      this.width,
+      this.height,
+    );
+
+    this.doc.addImage(
+      base64,
+      'JPEG',
+      this.x,
+      this.y,
+      scaledDimensions.width,
+      scaledDimensions.height,
+    );
   }
 
   public save(): void {
@@ -151,6 +171,10 @@ export class PDF {
     a.click();
 
     window.URL.revokeObjectURL(url);
+  }
+
+  private isPositionNewPage() {
+    return this.x === this.init.x && this.y === this.init.y;
   }
 
   private movePosition(size = this.size) {
