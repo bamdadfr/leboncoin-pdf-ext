@@ -110,6 +110,14 @@ export class PDF {
     total,
     url,
   }: PrintImage): Promise<void> {
+    // Test image accessibility first
+    let base64;
+    try {
+      base64 = await fetchBase64(url);
+    } catch {
+      return;
+    }
+
     if (!this.isPositionNewPage()) {
       this.printNewPage();
     }
@@ -128,13 +136,6 @@ export class PDF {
     this.printBreak();
 
     // Image
-    let base64;
-    try {
-      base64 = await fetchBase64(url);
-    } catch {
-      return;
-    }
-
     const dimensions = await getDimensionsFromBase64(base64);
     const scaledDimensions = getScaledDimensions(
       dimensions.width,
