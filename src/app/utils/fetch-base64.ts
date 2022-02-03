@@ -1,5 +1,11 @@
 import {convertToBase64} from './convert-to-base64';
 
+/**
+ * Fetch a file and convert it to base64
+ *
+ * @param {string} url - The url of the file to fetch
+ * @returns {Promise<string>} - The base64 representation of the file
+ */
 export async function fetchBase64(url: string): Promise<string> {
   let response;
   try {

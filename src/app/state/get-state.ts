@@ -6,8 +6,9 @@ export interface State {
 }
 
 /**
- * @description Get state instance.
- * @returns {Promise<object>} - State instance.
+ * Get state of the app stored in the browser's local storage.
+ *
+ * @returns {Promise<State>} - Promise resolving to the state of the app.
  */
 export function getState(): Promise<State> {
   const browser = getBrowser();

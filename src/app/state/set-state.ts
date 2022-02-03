@@ -4,10 +4,10 @@ import {State} from './get-state';
 type ActionType = keyof State | 'SET_RELOADED'
 
 /**
- * @description Set the state of the browser.
- * @param {string} actionType - Type of state to set.
- * @param {boolean} payload - Payload of state to set.
- * @returns {Promise<void>}
+ * Set the state of the application.
+ *
+ * @param {ActionType} actionType - The action type.
+ * @param {boolean} payload - The payload.
  */
 export async function setState(actionType: ActionType, payload: boolean): Promise<void> {
   const browser = getBrowser();

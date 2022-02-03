@@ -6,6 +6,9 @@ export const defaultState = {
   isReloading: false,
 };
 
+/**
+ * Initialize the state.
+ */
 export async function initializeState(): Promise<void> {
   const state = await getState();
 

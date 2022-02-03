@@ -4,6 +4,11 @@ import {setState} from './state/set-state';
 import {Ad} from './ad/ad';
 import {getBrowser} from './utils/get-browser';
 
+/**
+ * Content script entry point.
+ *
+ * @returns {Promise<State>} - The state of the extension.
+ */
 export async function content(): Promise<State> {
   await initializeState();
   const state = await getState();
@@ -21,6 +26,9 @@ export async function content(): Promise<State> {
   return state;
 }
 
+/**
+ * Background script entry point.
+ */
 export async function background(): Promise<void> {
   const browser = getBrowser();
 
@@ -33,6 +41,9 @@ export async function background(): Promise<void> {
   });
 }
 
+/**
+ * Popup script entry point.
+ */
 export async function popup(): Promise<void> {
   const link = document.getElementById('export');
 

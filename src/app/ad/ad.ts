@@ -83,7 +83,7 @@ export interface AdData {
 }
 
 /**
- * @description Class representing an Ad.
+ * Class representing an Ad.
  */
 export class Ad {
   private readonly props: AdData;

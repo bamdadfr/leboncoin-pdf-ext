@@ -27,6 +27,9 @@ export type PrintImage = {
   url: string;
 }
 
+/**
+ * Class for printing PDFs
+ */
 export class PDF {
   // eslint-disable-next-line new-cap
   private readonly doc = new jsPDF('p', 'in', 'letter');
