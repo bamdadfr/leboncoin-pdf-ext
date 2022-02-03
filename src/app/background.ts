@@ -7,8 +7,7 @@ import {setState} from './state/set-state';
 async function background(): Promise<void> {
   const browser = getBrowser();
 
-  // TODO: type derivative of state
-  browser.storage.onChanged.addListener(async (changes: any) => {
+  browser.storage.onChanged.addListener(async (changes) => {
     if (changes.isTriggered && changes.isTriggered.newValue === true) {
       await setState('isReloading', true);
       await browser.tabs.reload();
