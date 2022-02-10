@@ -74,7 +74,7 @@ export interface AdData {
     user_id: string;
     siren?: string;
   };
-  price: number[];
+  price?: number[];
   price_calendar: null;
   price_cents: number;
   status: string;
@@ -132,8 +132,12 @@ export class Ad {
     await this.buildImages();
   }
 
+  private getPrice() {
+    return this.props?.price?.[0].toString() || '?';
+  }
+
   private getName() {
-    return `${this.props.location.zipcode} - ${this.props.list_id} - ${this.props.subject} - ${this.props.price[0].toString()} euros`;
+    return `${this.props.location.zipcode} - ${this.props.list_id} - ${this.props.subject} - ${this.getPrice()} euros`;
   }
 
   private async buildImages(): Promise<void> {
@@ -231,7 +235,7 @@ export class Ad {
 
     // Price
     this.pdf.printText({
-      text: `Prix : ${this.props.price[0].toString() || '?'} euros`,
+      text: `Prix : ${this.getPrice()} euros`,
       size: FONT_SIZES.small,
     });
 
