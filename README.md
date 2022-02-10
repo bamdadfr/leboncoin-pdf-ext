@@ -20,13 +20,23 @@ PDF Exporter for <a href="https://www.leboncoin.fr/">leboncoin.fr</a>
 
 <img align=right width=200 src="./assets/screenshots/promo_small.jpg">
 
-This Web Extension allows you to export a classified ad from leboncoin.fr
-in PDF format.
+## 📖 Description
 
-It is useful if you want to keep archives of certain ads,
-thus making them available to you after their expiry on the actual website.
+### 🇫🇷 Français
 
-**No more outdated ad you can't access.**
+Exportez les annonces postées sur leboncoin.fr au format PDF.
+
+Archivez les annonces qui suscitent votre intérêt.
+
+Dites adieu aux annonces expirées que vous ne pouvez plus consulter.
+
+### 🇬🇧 English
+
+Export classified ads from leboncoin.fr in PDF format.
+
+Archive ads that interest you.
+
+Say goodbye to unavailable ads.
 
 ## 🚀 Download
 
