@@ -1,3 +1,10 @@
+## [1.12.4](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.3...v1.12.4) (2022-02-10)
+
+
+### Bug Fixes
+
+* **Ad:** `price` prop can be missing, prevent those sad cases ([8caf4fb](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8caf4fb03621562444c35f0115915abd8b650f52))
+
 ## [1.12.3](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.2...v1.12.3) (2022-02-07)
 
 
