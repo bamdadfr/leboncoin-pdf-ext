@@ -1,3 +1,10 @@
+## [1.12.6](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.5...v1.12.6) (2022-02-14)
+
+
+### Bug Fixes
+
+* **Manifest:** Remove unnecessary `tab` permission ([8947aeb](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/8947aeb9be843bfea80a1c02e896dffd656941a8))
+
 ## [1.12.5](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.4...v1.12.5) (2022-02-14)
 
 
