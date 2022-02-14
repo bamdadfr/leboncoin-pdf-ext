@@ -33,7 +33,6 @@
   },
   "permissions": [
     "*://*.leboncoin.fr/*",
-    "storage",
-    "tabs"
+    "storage"
   ]
 }
