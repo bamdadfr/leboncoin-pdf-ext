@@ -1,3 +1,10 @@
+## [1.12.7](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.6...v1.12.7) (2022-02-20)
+
+
+### Performance Improvements
+
+* Dummy commit to trigger semver ([3dec0b0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/3dec0b08d092a180916b47fff9cc76090f525b85))
+
 ## [1.12.6](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.5...v1.12.6) (2022-02-14)
 
 
