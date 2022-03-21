@@ -32,7 +32,7 @@
     "jspdf": "2.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.0",
+    "@babel/core": "^7.17.8",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.14.7",
     "@bamdadsabbagh/eslint-config": "^2.0.4",
