@@ -1,3 +1,17 @@
+# [1.13.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.17...v1.13.0) (2024-03-26)
+
+
+### Features
+
+* **Ad:** Add price per square meter for real estates ads ([50ef827](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/50ef82785b6c6cd6ffc3c3d74a1c738855516745)), closes [#385](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/385)
+* Upgrade to manifest v3 ([13293e1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/13293e16d8cf331b2b5f13940d6e54cf57420f2e)), closes [#376](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/376)
+
+
+### Performance Improvements
+
+* Move from yarn to pnpm + Update CD workflows ([bd13e62](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/bd13e626cf4eb1557c7bf6c1737b268fec122ba1))
+* Update dependencies to lates + Add prettier ([215f309](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/215f309d4998fc99d5a483829b117134a113c293))
+
 ## [1.12.17](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.16...v1.12.17) (2022-04-18)
 
 

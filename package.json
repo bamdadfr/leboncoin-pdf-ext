@@ -1,6 +1,6 @@
 {
   "name": "leboncoin-pdf-ext",
-  "version": "1.12.17",
+  "version": "1.13.0",
   "description": "PDF exporter for leboncoin.fr",
   "license": "MIT",
   "author": {
