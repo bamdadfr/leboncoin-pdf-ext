@@ -3,7 +3,7 @@ import {PDF} from '../pdf/pdf';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const manifest = require('../../manifest.json');
+const manifest = require('../../manifest-chrome.json');
 
 export interface AdAttribute {
   generic: boolean;
@@ -136,6 +136,14 @@ export class Ad {
     return this.props?.price?.[0].toString() || '?';
   }
 
+  private getPricePerSquareMeter() {
+    const price = this.props.price[0];
+    const square = this.props.attributes.find((attr) => attr.key === 'square');
+    const squarePrice = Number(square.value);
+    const pricePerSquareMeter = price / squarePrice;
+    return pricePerSquareMeter.toFixed(0);
+  }
+
   private getName() {
     return `${this.props.location.zipcode} - ${this.props.list_id} - ${this.props.subject} - ${this.getPrice()} euros`;
   }
@@ -164,6 +172,10 @@ export class Ad {
     }
   }
 
+  private get isRealEstateSale(): boolean {
+    return this.props.category_name === 'Ventes immobilières';
+  }
+
   private printAttributes(): void {
     // Title
     this.pdf.printText({
@@ -183,6 +195,13 @@ export class Ad {
         });
       }
     });
+
+    if (this.isRealEstateSale) {
+      this.pdf.printText({
+        text: `Prix au m² : ${this.getPricePerSquareMeter()} €/m²`,
+        size: FONT_SIZES.small,
+      });
+    }
   }
 
   private buildDescription(): void {
@@ -277,7 +296,6 @@ export class Ad {
     this.pdf.printText({
       text: `Première publication : ${this.props.first_publication_date}`,
       size: FONT_SIZES.xsmall,
-
     });
 
     // Date of last update
