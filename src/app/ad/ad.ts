@@ -3,7 +3,7 @@ import {PDF} from '../pdf/pdf';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const manifest = require('../../manifest.json');
+const manifest = require('../../manifest-chrome.json');
 
 export interface AdAttribute {
   generic: boolean;
@@ -277,7 +277,6 @@ export class Ad {
     this.pdf.printText({
       text: `Première publication : ${this.props.first_publication_date}`,
       size: FONT_SIZES.xsmall,
-
     });
 
     // Date of last update

@@ -1,0 +1,36 @@
+{
+  "name": "PDF Exporter for leboncoin.fr",
+  "short_name": "leboncoin-pdf",
+  "description": "PDF exporting Web Extension of classified ads listed on leboncoin.fr",
+  "version": "1.12.17",
+  "manifest_version": 3,
+  "icons": {
+    "512": "assets/icon.png"
+  },
+  "action": {
+    "default_icon": {
+      "512": "assets/icon.png"
+    },
+    "default_title": "PDF Exporter for leboncoin.fr",
+    "default_popup": "popup/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.leboncoin.fr/*"
+      ],
+      "js": [
+        "scripts/content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "permissions": [
+    "*://*.leboncoin.fr/*",
+    "storage"
+  ]
+}
