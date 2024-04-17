@@ -1,13 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <link href="./styles.css" rel="stylesheet">
-  <title>leboncoin-pdf-ext</title>
-</head>
-<body>
-<button id="export">exporter</button>
-<script src="../scripts/popup.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0"
+      name="viewport"
+    />
+    <link
+      href="./styles.css"
+      rel="stylesheet"
+    />
+    <title>leboncoin-pdf-ext</title>
+  </head>
+  <body>
+    <div class="container">
+      <button
+        id="export"
+        class="button"
+      >
+        exporter
+      </button>
+
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          id="phoneCheckbox"
+          name="phoneCheckbox"
+          value="checked"
+        />
+        <label for="phoneCheckbox">Prendre téléphone</label>
+      </div>
+    </div>
+
+    <script src="../scripts/popup.js"></script>
+  </body>
 </html>

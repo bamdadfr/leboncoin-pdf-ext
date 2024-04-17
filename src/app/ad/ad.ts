@@ -2,6 +2,7 @@ import {getIsoDateTime} from '../utils/get-iso-date-time';
 import {PDF} from '../pdf/pdf';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 import {observeElement} from '../utils/observe-element';
+import {defaultState} from '../state/initialize-state';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const manifest = require('../../manifest-chrome.json');
@@ -83,6 +84,14 @@ export interface AdData {
   url: string;
 }
 
+interface Props {
+  gatherPhone: boolean;
+}
+
+const defaultProps = {
+  gatherPhone: defaultState.isPhoneChecked,
+};
+
 /**
  * Class representing an Ad.
  */
@@ -97,8 +106,11 @@ export class Ad {
 
   private pdf: PDF;
 
-  constructor(props: AdData = Ad.parseLeboncoin()) {
-    this.props = props;
+  private gatherPhone: boolean;
+
+  constructor({gatherPhone}: Props = defaultProps) {
+    this.props = Ad.parseLeboncoin();
+    this.gatherPhone = gatherPhone;
     const {date, time} = getIsoDateTime();
     this.date = date;
     this.time = time;
@@ -242,7 +254,7 @@ export class Ad {
     });
 
     // Phone
-    if (this.isAuthenticated) {
+    if (this.isAuthenticated && this.gatherPhone) {
       const phone = await this.getSellerPhone();
       this.pdf.printText({
         text: `Tel: ${phone}`,

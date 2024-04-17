@@ -1,3 +1,30 @@
 html {
-    user-select: none;
+  user-select: none;
+}
+
+.container {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: calc(100% - 8px);
+}
+
+.checkbox {
+  width: 100%;
+  height: auto;
+  margin-top: 4px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.checkbox input {
+  width: 15px;
+  height: 15px;
 }

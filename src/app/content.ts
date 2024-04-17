@@ -16,7 +16,7 @@ export async function content(): Promise<StateType> {
     await setState(StateKeys.setReloaded, true);
 
     if (document.visibilityState === 'visible') {
-      const ad = new Ad();
+      const ad = new Ad({gatherPhone: state.isPhoneChecked});
       await ad.build();
       ad.export();
     }

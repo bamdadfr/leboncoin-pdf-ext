@@ -8,24 +8,24 @@ export type PrintLink = {
   text: string;
   url: string;
   size: number;
-}
+};
 
 export type PrintText = {
   text: string;
   size?: number;
   weight?: string;
-}
+};
 
 export type PrintBlock = {
   text: string;
   size: number;
-}
+};
 
 export type PrintImage = {
   id: number;
   total: number;
   url: string;
-}
+};
 
 /**
  * Class for printing PDFs
@@ -45,37 +45,33 @@ export class PDF {
 
   private y: number = this.init.y;
 
-  private readonly width: number = this.doc.internal.pageSize.getWidth() - this.x;
+  private readonly width: number =
+    this.doc.internal.pageSize.getWidth() - this.x;
 
-  private readonly height: number = this.doc.internal.pageSize.getHeight() - this.y;
+  private readonly height: number =
+    this.doc.internal.pageSize.getHeight() - this.y;
 
   private readonly font = 'times';
 
-  private readonly weight = FONT_WEIGHTS.normal
+  private readonly weight = FONT_WEIGHTS.normal;
 
-  private readonly size = FONT_SIZES.normal
+  private readonly size = FONT_SIZES.normal;
 
   constructor(filename: string) {
     this.name = filename;
     this.resetPosition();
   }
 
-  public printLink({
-    text,
-    url,
-    size,
-  }: PrintLink): void {
+  public printLink({text, url, size}: PrintLink): void {
     this.doc.setFontSize(size || this.size).setFont(this.font, this.weight);
     this.doc.textWithLink(text, this.x, this.y, {url});
     this.movePosition(size);
   }
 
-  public printText({
-    text,
-    size,
-    weight,
-  }: PrintText): void {
-    this.doc.setFontSize(size || this.size).setFont(this.font, weight || this.weight);
+  public printText({text, size, weight}: PrintText): void {
+    this.doc
+      .setFontSize(size || this.size)
+      .setFont(this.font, weight || this.weight);
     this.doc.text(text, this.x, this.y);
     this.movePosition(size);
   }
@@ -86,10 +82,7 @@ export class PDF {
     this.movePosition();
   }
 
-  public printBlock({
-    text,
-    size,
-  }: PrintBlock): void {
+  public printBlock({text, size}: PrintBlock): void {
     const lines = this.doc
       .setFontSize(size || this.size)
       .setFont(this.font, this.weight)
@@ -108,11 +101,7 @@ export class PDF {
     });
   }
 
-  public async printImage({
-    id,
-    total,
-    url,
-  }: PrintImage): Promise<void> {
+  public async printImage({id, total, url}: PrintImage): Promise<void> {
     let base64;
     try {
       base64 = await fetchBase64(url);
@@ -184,7 +173,7 @@ export class PDF {
   }
 
   private movePosition(size = this.size) {
-    this.y += 0.5 * size / 24;
+    this.y += (0.5 * size) / 24;
   }
 
   private resetPosition() {
