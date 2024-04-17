@@ -5,6 +5,7 @@ export enum StateKeys {
   isTriggered = 'isTriggered',
   isReloading = 'isReloading',
   setReloaded = 'setReloaded',
+  isPhoneChecked = 'isPhoneChecked',
 }
 
 /**
@@ -13,13 +14,16 @@ export enum StateKeys {
  * @param {StateKeys} actionType - The action type.
  * @param {boolean} payload - The payload.
  */
-export async function setState(actionType: StateKeys, payload: boolean): Promise<void> {
+export async function setState(
+  actionType: StateKeys,
+  payload: boolean,
+): Promise<void> {
   const browser = getBrowser();
 
   // reducer
   switch (actionType) {
     case StateKeys.isTriggered: {
-      const obj: Pick<StateType, StateKeys.isTriggered> = {
+      const obj: Partial<StateType> = {
         isTriggered: payload,
       };
 
@@ -28,7 +32,7 @@ export async function setState(actionType: StateKeys, payload: boolean): Promise
     }
 
     case StateKeys.isReloading: {
-      const obj: Pick<StateType, StateKeys.isReloading> = {
+      const obj: Partial<StateType> = {
         isReloading: payload,
       };
 
@@ -37,9 +41,18 @@ export async function setState(actionType: StateKeys, payload: boolean): Promise
     }
 
     case StateKeys.setReloaded: {
-      const obj: StateType = {
+      const obj: Partial<StateType> = {
         isTriggered: false,
         isReloading: false,
+      };
+
+      await browser.storage.local.set(obj);
+      break;
+    }
+
+    case StateKeys.isPhoneChecked: {
+      const obj: Partial<StateType> = {
+        isPhoneChecked: payload,
       };
 
       await browser.storage.local.set(obj);

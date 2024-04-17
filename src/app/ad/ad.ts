@@ -1,6 +1,8 @@
 import {getIsoDateTime} from '../utils/get-iso-date-time';
 import {PDF} from '../pdf/pdf';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
+import {observeElement} from '../utils/observe-element';
+import {defaultState} from '../state/initialize-state';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const manifest = require('../../manifest-chrome.json');
@@ -82,6 +84,14 @@ export interface AdData {
   url: string;
 }
 
+interface Props {
+  gatherPhone: boolean;
+}
+
+const defaultProps = {
+  gatherPhone: defaultState.isPhoneChecked,
+};
+
 /**
  * Class representing an Ad.
  */
@@ -96,8 +106,11 @@ export class Ad {
 
   private pdf: PDF;
 
-  constructor(props: AdData = Ad.parseLeboncoin()) {
-    this.props = props;
+  private gatherPhone: boolean;
+
+  constructor({gatherPhone}: Props = defaultProps) {
+    this.props = Ad.parseLeboncoin();
+    this.gatherPhone = gatherPhone;
     const {date, time} = getIsoDateTime();
     this.date = date;
     this.time = time;
@@ -115,6 +128,10 @@ export class Ad {
     }
   }
 
+  private get isAuthenticated(): boolean {
+    return document.querySelectorAll('[aria-label="Mon compte"]').length > 0;
+  }
+
   public export(): void {
     this.pdf.save();
   }
@@ -124,7 +141,7 @@ export class Ad {
     this.pdf.printBreak();
     this.buildTitle();
     this.pdf.printBreak();
-    this.buildSeller();
+    await this.buildSeller();
     this.pdf.printBreak();
     this.printAttributes();
     this.pdf.printBreak();
@@ -219,7 +236,7 @@ export class Ad {
     });
   }
 
-  private buildSeller(): void {
+  private async buildSeller(): Promise<void> {
     const {type} = this.props.owner;
 
     // Seller
@@ -236,6 +253,15 @@ export class Ad {
       size: FONT_SIZES.small,
     });
 
+    // Phone
+    if (this.isAuthenticated && this.gatherPhone) {
+      const phone = await this.getSellerPhone();
+      this.pdf.printText({
+        text: `Tel: ${phone}`,
+        size: FONT_SIZES.small,
+      });
+    }
+
     // SIREN
     if (this.props.owner.siren) {
       this.pdf.printText({
@@ -243,6 +269,38 @@ export class Ad {
         size: FONT_SIZES.xsmall,
       });
     }
+  }
+
+  private async getSellerPhone() {
+    return new Promise((resolve) => {
+      const containers = document.querySelectorAll(
+        '[data-pub-id="clicknumero"]',
+      ) as NodeListOf<HTMLDivElement>;
+
+      const container = containers[1];
+
+      observeElement(container, (mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.addedNodes.length === 0) {
+            return;
+          }
+
+          mutation.addedNodes.forEach((addedNode) => {
+            const isAnchor = addedNode instanceof HTMLAnchorElement;
+
+            if (!isAnchor) {
+              return;
+            }
+
+            const phone = addedNode.textContent;
+            resolve(phone);
+          });
+        });
+      });
+
+      const button = container.children[0].children[0] as HTMLButtonElement;
+      button.click();
+    });
   }
 
   private buildTitle(): void {
