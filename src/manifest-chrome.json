@@ -2,7 +2,7 @@
   "name": "PDF Exporter for leboncoin.fr",
   "short_name": "leboncoin-pdf",
   "description": "PDF exporting Web Extension of classified ads listed on leboncoin.fr",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "manifest_version": 3,
   "icons": {
     "512": "assets/icon.png"

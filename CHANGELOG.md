@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.14.0...v1.14.1) (2024-04-17)
+
+
+### Bug Fixes
+
+* **Ad:** Do not get seller phone if no containers detected ([9430b21](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/9430b210bb8b5801e6be88c6100eca18fbd8facf))
+
 # [1.14.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.13.0...v1.14.0) (2024-04-17)
 
 
