@@ -1,3 +1,17 @@
+# [1.14.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.13.0...v1.14.0) (2024-04-17)
+
+
+### Features
+
+* **Ad:** Add DOM button to export PDF ([ca38c20](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/ca38c20aed80517a4f014014ab9fd73f6bbdcc10)), closes [#384](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/384)
+* **Ad:** Add seller phone number if authenticated ([41b5a3b](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/41b5a3b09dc33208cc3b78f7445c55e86158135b)), closes [#316](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/316)
+* **Ad:** Add user setting to grab phone or not ([1aa5a4a](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/1aa5a4a23797d7eeb7f069a6bde546053fd86278)), closes [#316](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/issues/316)
+
+
+### Performance Improvements
+
+* Update dependencies ([007381f](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/commit/007381fa53449bd890f6ba9c7978342a7410c74a))
+
 # [1.13.0](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.12.17...v1.13.0) (2024-03-26)
 
 
