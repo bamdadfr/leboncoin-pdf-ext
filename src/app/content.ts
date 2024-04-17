@@ -1,14 +1,10 @@
-import {getState, StateType} from './state/get-state';
+import {getState} from './state/get-state';
 import {initializeState} from './state/initialize-state';
 import {setState, StateKeys} from './state/set-state';
 import {Ad} from './ad/ad';
+import {addContentButton} from './utils/add-content-button';
 
-/**
- * Content script entry point.
- *
- * @returns {Promise<StateType>} - The state of the extension.
- */
-export async function content(): Promise<StateType> {
+export async function content(): Promise<void> {
   await initializeState();
   const state = await getState();
 
@@ -22,7 +18,7 @@ export async function content(): Promise<StateType> {
     }
   }
 
-  return state;
+  addContentButton();
 }
 
 window.addEventListener('load', content);
