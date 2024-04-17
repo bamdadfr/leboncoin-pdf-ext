@@ -256,10 +256,12 @@ export class Ad {
     // Phone
     if (this.isAuthenticated && this.gatherPhone) {
       const phone = await this.getSellerPhone();
-      this.pdf.printText({
-        text: `Tel: ${phone}`,
-        size: FONT_SIZES.small,
-      });
+      if (phone) {
+        this.pdf.printText({
+          text: `Tel: ${phone}`,
+          size: FONT_SIZES.small,
+        });
+      }
     }
 
     // SIREN
@@ -271,11 +273,16 @@ export class Ad {
     }
   }
 
-  private async getSellerPhone() {
+  private async getSellerPhone(): Promise<string | null> {
     return new Promise((resolve) => {
       const containers = document.querySelectorAll(
         '[data-pub-id="clicknumero"]',
       ) as NodeListOf<HTMLDivElement>;
+
+      if (containers.length === 0) {
+        resolve(null);
+        return;
+      }
 
       const container = containers[1];
 
