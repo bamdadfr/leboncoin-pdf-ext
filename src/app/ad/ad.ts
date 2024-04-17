@@ -1,8 +1,8 @@
-import {getIsoDateTime} from '../utils/get-iso-date-time';
-import {PDF} from '../pdf/pdf';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
-import {observeElement} from '../utils/observe-element';
+import {PDF} from '../pdf/pdf';
 import {defaultState} from '../state/initialize-state';
+import {getIsoDateTime} from '../utils/get-iso-date-time';
+import {observeElement} from '../utils/observe-element';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const manifest = require('../../manifest-chrome.json');
@@ -117,6 +117,14 @@ export class Ad {
     this.pdf = new PDF(this.getName());
   }
 
+  private get isAuthenticated(): boolean {
+    return document.querySelectorAll('[aria-label="Mon compte"]').length > 0;
+  }
+
+  private get isRealEstateSale(): boolean {
+    return this.props.category_name === 'Ventes immobilières';
+  }
+
   private static parseLeboncoin(): AdData {
     try {
       const node = document.getElementById('__NEXT_DATA__');
@@ -126,10 +134,6 @@ export class Ad {
     } catch (error) {
       throw new Error('Unable to get ad data');
     }
-  }
-
-  private get isAuthenticated(): boolean {
-    return document.querySelectorAll('[aria-label="Mon compte"]').length > 0;
   }
 
   public export(): void {
@@ -187,10 +191,6 @@ export class Ad {
         url: image,
       });
     }
-  }
-
-  private get isRealEstateSale(): boolean {
-    return this.props.category_name === 'Ventes immobilières';
   }
 
   private printAttributes(): void {
