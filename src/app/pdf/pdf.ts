@@ -3,6 +3,9 @@ import {getScaledDimensions} from '../utils/get-scaled-dimensions';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 import {getDimensionsFromBase64} from '../utils/get-dimensions-from-base64';
 import {fetchBase64} from '../utils/fetch-base64';
+import '../../fonts/Lato-bold';
+import '../../fonts/Lato-normal';
+import '../../fonts/Lato-italic';
 
 export type PrintLink = {
   text: string;
@@ -51,7 +54,7 @@ export class PDF {
   private readonly height: number =
     this.doc.internal.pageSize.getHeight() - this.y;
 
-  private readonly font = 'times';
+  private readonly font = 'Lato';
 
   private readonly weight = FONT_WEIGHTS.normal;
 
