@@ -1,3 +1,11 @@
+## [1.14.2](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.1...v1.14.2) (2024-07-02)
+
+
+### Bug Fixes
+
+* add Lato as default font ([c7651e1](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/c7651e123ff34ee7cdaad05fc7fbc3570abee39b))
+* update readme ([db5d3b2](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/db5d3b27ddf222f9a95fc7cf69db0ab2cb2cfb82))
+
 ## [1.14.1](https://github.com/bamdadsabbagh/leboncoin-pdf-ext/compare/v1.14.0...v1.14.1) (2024-04-17)
 
 
