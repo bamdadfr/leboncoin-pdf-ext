@@ -1,8 +1,8 @@
-![release](https://img.shields.io/github/v/release/bamdadsabbagh/leboncoin-pdf-ext)
-![license](https://img.shields.io/github/license/bamdadsabbagh/leboncoin-pdf-ext)
-![maintainability](https://img.shields.io/codeclimate/maintainability/bamdadsabbagh/leboncoin-pdf-ext)
-![coverage](https://img.shields.io/codeclimate/coverage/bamdadsabbagh/leboncoin-pdf-ext)
-![snyk](https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/leboncoin-pdf-ext)
+![release](https://img.shields.io/github/v/release/bamdadfr/leboncoin-pdf-ext)
+![license](https://img.shields.io/github/license/bamdadfr/leboncoin-pdf-ext)
+![maintainability](https://img.shields.io/codeclimate/maintainability/bamdadfr/leboncoin-pdf-ext)
+![coverage](https://img.shields.io/codeclimate/coverage/bamdadfr/leboncoin-pdf-ext)
+![snyk](https://img.shields.io/snyk/vulnerabilities/github/bamdadfr/leboncoin-pdf-ext)
 
 ![chrome version](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj?label=chrome)
 ![chrome users](https://img.shields.io/chrome-web-store/users/mifkoblilhehppoemadbhopbbijpifcj)
@@ -12,7 +12,7 @@
 ![firefox users](https://img.shields.io/amo/users/leboncoin-pdf)
 ![firefox rating](https://img.shields.io/amo/stars/leboncoin-pdf?label=rating)
 
-<img alt="logo" width="80px" src="https://raw.githubusercontent.com/bamdadsabbagh/leboncoin-pdf-ext/master/src/assets/icon.png">
+<img alt="logo" width="80px" src="https://raw.githubusercontent.com/bamdadfr/leboncoin-pdf-ext/master/src/assets/icon.png">
 
 PDF Exporter for <a href="https://www.leboncoin.fr/">leboncoin.fr</a>
 
