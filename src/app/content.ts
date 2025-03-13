@@ -4,7 +4,7 @@ import {setState, StateKeys} from './state/set-state';
 import {Ad} from './ad/ad';
 import {addContentButton} from './utils/add-content-button';
 
-export async function content(): Promise<void> {
+export async function content() {
   await initializeState();
   const state = await getState();
 

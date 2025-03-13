@@ -106,10 +106,10 @@ export class Ad {
 
   private pdf: PDF;
 
-  private gatherPhone: boolean;
+  private readonly gatherPhone: boolean;
 
-  constructor({gatherPhone}: Props = defaultProps) {
-    this.props = Ad.parseLeboncoin();
+  constructor({gatherPhone}: Props = defaultProps, data?: AdData) {
+    this.props = data ?? Ad.parseLeboncoin();
     this.gatherPhone = gatherPhone;
     const {date, time} = getIsoDateTime();
     this.date = date;
@@ -248,7 +248,9 @@ export class Ad {
 
     // Link
     this.pdf.printLink({
-      text: `Vendeur ${type === 'private' ? 'particulier' : type} : ${this.props.owner.name}`,
+      text: `Vendeur ${
+        type === 'private' ? 'particulier' : type
+      } : ${this.props.owner.name}`,
       url: `https://www.leboncoin.fr/profil/${this.props.owner.user_id}`,
       size: FONT_SIZES.small,
     });

@@ -7,8 +7,11 @@ export default {
     resources: 'usable',
   },
   collectCoverageFrom: ['src/**/*.ts'],
-  setupFiles: [
-    'jest-webextension-mock',
-    'jest-canvas-mock',
+  setupFiles: ['jest-webextension-mock', 'jest-canvas-mock'],
+  transformIgnorePatterns: [
+    '/node_modules/(?!jspdf|some-other-esm-package).+\\.js$',
   ],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+  },
 };
