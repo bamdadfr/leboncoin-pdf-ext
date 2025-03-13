@@ -1,3 +1,13 @@
+## [1.14.3](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.2...v1.14.3) (2025-03-13)
+
+
+### Bug Fixes
+
+* add missing dev package ([4366a99](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/4366a9970cd06471413ea2adb03336c9f40cebfd))
+* update all dependencies ([bbc3cc1](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/bbc3cc1350649ca7ab775e45d4fe7601015573bd))
+* update contact details ([2fa9162](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/2fa9162a02fa61b8d5a0a2929b6d16088716e6cc))
+* update test suit, eslint and jest configs ([1ac3546](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/1ac354619ac776957dc341a0812d0caa95a85fc4))
+
 ## [1.14.2](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.1...v1.14.2) (2024-07-02)
 
 
