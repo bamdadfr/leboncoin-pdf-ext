@@ -15,4 +15,4 @@ async function background(): Promise<void> {
   });
 }
 
-background().then(() => undefined);
+background().then();
