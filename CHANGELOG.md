@@ -1,3 +1,10 @@
+## [1.14.4](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.3...v1.14.4) (2025-03-18)
+
+
+### Bug Fixes
+
+* update jspdf dependency to fix CVE-2025-25977 ([ed8b7c8](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/ed8b7c876e8ef31e56e75b6fde3c8d7b563fd36c))
+
 ## [1.14.3](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.2...v1.14.3) (2025-03-13)
 
 
