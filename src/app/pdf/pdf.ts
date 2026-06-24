@@ -142,8 +142,8 @@ export class PDF {
   public printFloatingField({
     fieldName,
     label,
-    boxWidth = 2.5,
-    boxHeight = 1.2,
+    boxWidth = 2.8,
+    boxHeight = 2.8,
     marginRight = 0.5,
     marginTop = 0.5,
   }: {
