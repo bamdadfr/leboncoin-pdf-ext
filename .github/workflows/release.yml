@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: '20'
+          node-version: 'latest'
       - run: npm install -g pnpm
       - run: pnpm i
       - run: pnpm build
