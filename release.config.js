@@ -12,7 +12,10 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'pnpm build:increment ${nextRelease.version} && pnpm build',
+        prepareCmd:
+          'pnpm build:increment ${nextRelease.version} && pnpm build && cd dist/chrome && zip -r ../../leboncoin-pdf-ext-${nextRelease.version}.zip .',
+        publishCmd:
+          'npx chrome-webstore-upload-cli upload --source leboncoin-pdf-ext-${nextRelease.version}.zip --extension-id mifkoblilhehppoemadbhopbbijpifcj --auto-publish',
       },
     ],
     [
@@ -23,14 +26,6 @@ module.exports = {
         sourceDir: 'dist/firefox',
         artifactsDir: 'packages',
         channel: 'listed',
-      },
-    ],
-    [
-      'semantic-release-chrome',
-      {
-        asset: 'leboncoin-pdf-ext-${nextRelease.version}.zip',
-        extensionId: 'mifkoblilhehppoemadbhopbbijpifcj',
-        distFolder: 'dist/chrome',
       },
     ],
     [
