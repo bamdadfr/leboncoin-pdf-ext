@@ -5,7 +5,6 @@ export enum StateKeys {
   isTriggered = 'isTriggered',
   isReloading = 'isReloading',
   setReloaded = 'setReloaded',
-  isPhoneChecked = 'isPhoneChecked',
 }
 
 /**
@@ -44,15 +43,6 @@ export async function setState(
       const obj: Partial<StateType> = {
         isTriggered: false,
         isReloading: false,
-      };
-
-      await browser.storage.local.set(obj);
-      break;
-    }
-
-    case StateKeys.isPhoneChecked: {
-      const obj: Partial<StateType> = {
-        isPhoneChecked: payload,
       };
 
       await browser.storage.local.set(obj);

@@ -1,8 +1,5 @@
 ![release](https://img.shields.io/github/v/release/bamdadfr/leboncoin-pdf-ext)
 ![license](https://img.shields.io/github/license/bamdadfr/leboncoin-pdf-ext)
-![maintainability](https://img.shields.io/codeclimate/maintainability/bamdadfr/leboncoin-pdf-ext)
-![coverage](https://img.shields.io/codeclimate/coverage/bamdadfr/leboncoin-pdf-ext)
-![snyk](https://img.shields.io/snyk/vulnerabilities/github/bamdadfr/leboncoin-pdf-ext)
 
 ![chrome version](https://img.shields.io/chrome-web-store/v/mifkoblilhehppoemadbhopbbijpifcj?label=chrome)
 ![chrome users](https://img.shields.io/chrome-web-store/users/mifkoblilhehppoemadbhopbbijpifcj)

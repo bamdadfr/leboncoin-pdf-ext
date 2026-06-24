@@ -8,11 +8,11 @@ export async function content() {
   await initializeState();
   const state = await getState();
 
-  if (state.isReloading === true && state.isTriggered === true) {
+  if (state.isReloading && state.isTriggered) {
     await setState(StateKeys.setReloaded, true);
 
     if (document.visibilityState === 'visible') {
-      const ad = new Ad({gatherPhone: state.isPhoneChecked});
+      const ad = new Ad();
       await ad.build();
       ad.export();
     }

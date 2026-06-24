@@ -1,4 +1,4 @@
-import {jsPDF} from 'jspdf';
+import {AcroFormTextField, jsPDF} from 'jspdf';
 import {getScaledDimensions} from '../utils/get-scaled-dimensions';
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 import {getDimensionsFromBase64} from '../utils/get-dimensions-from-base64';
@@ -6,6 +6,7 @@ import {fetchBase64} from '../utils/fetch-base64';
 import '../../fonts/Lato-bold';
 import '../../fonts/Lato-normal';
 import '../../fonts/Lato-italic';
+// import 'jspdf/dist/polyfills.es';
 
 export type PrintLink = {
   text: string;
@@ -136,6 +137,56 @@ export class PDF {
     a.click();
 
     window.URL.revokeObjectURL(url);
+  }
+
+  public printFloatingField({
+    fieldName,
+    label,
+    boxWidth = 2.5,
+    boxHeight = 1.2,
+    marginRight = 0.5,
+    marginTop = 0.5,
+  }: {
+    fieldName: string;
+    label: string;
+    boxWidth?: number;
+    boxHeight?: number;
+    marginRight?: number;
+    marginTop?: number;
+  }): void {
+    const pageWidth = this.doc.internal.pageSize.getWidth();
+    const boxX = pageWidth - boxWidth - marginRight;
+    const boxY = marginTop;
+
+    // Fond blanc + bordure
+    this.doc.setDrawColor(0);
+    this.doc.setFillColor(255, 255, 255);
+    this.doc.setLineWidth(0.01);
+    this.doc.rect(boxX, boxY, boxWidth, boxHeight, 'FD');
+
+    // Label
+    const labelPadding = 0.08;
+    this.doc
+      .setFontSize(FONT_SIZES.small)
+      .setFont(this.font, FONT_WEIGHTS.bold);
+    this.doc.text(label, boxX + labelPadding, boxY + 0.15);
+
+    // Champ éditable — mêmes unités que le doc (inches), pas de conversion
+    const fieldX = boxX + labelPadding;
+    const fieldY = boxY + 0.25;
+    const fieldW = boxWidth - labelPadding * 2;
+    const fieldH = boxHeight - 0.3;
+
+    const textField = new AcroFormTextField();
+    textField.x = fieldX;
+    textField.y = fieldY;
+    textField.width = fieldW;
+    textField.height = fieldH;
+    textField.fieldName = fieldName;
+    textField.multiline = true;
+    textField.maxFontSize = 9;
+
+    this.doc.addField(textField);
   }
 
   private async printImageData(base64: string) {
