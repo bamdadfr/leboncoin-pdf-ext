@@ -3,17 +3,11 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "esnext",
-    "target": "es5",
+    "target": "ES2017",
     "allowJs": true,
-    "moduleResolution": "node",
-    "types": [
-      "jest",
-      "node",
-      "chrome"
-    ],
+    "moduleResolution": "bundler",
+    "types": ["jest", "node", "chrome"],
     "esModuleInterop": true
   },
-  "exclude": [
-    "src/**/*.test.ts"
-  ]
+  "exclude": ["src/**/*.test.ts"]
 }

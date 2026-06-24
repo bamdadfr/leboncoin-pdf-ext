@@ -13,6 +13,11 @@ async function attach(): Promise<void> {
   const state = await getState();
 
   const exportButton = document.getElementById('export');
+
+  if (!exportButton) {
+    throw new Error('could not get export button');
+  }
+
   exportButton.addEventListener('click', async () => {
     await setState(StateKeys.isTriggered, true);
   });

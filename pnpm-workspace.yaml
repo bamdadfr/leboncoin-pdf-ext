@@ -1,0 +1,4 @@
+allowBuilds:
+  core-js: true
+  spawn-sync: true
+  unrs-resolver: true

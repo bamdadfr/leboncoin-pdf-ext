@@ -12,5 +12,5 @@ export function addContentButton() {
     await setState(StateKeys.isTriggered, true);
   };
 
-  container.appendChild(button);
+  container?.appendChild(button);
 }

@@ -128,6 +128,9 @@ export class Ad {
   private static parseLeboncoin(): AdData {
     try {
       const node = document.getElementById('__NEXT_DATA__');
+      if (!node) {
+        throw new Error('could not get next data');
+      }
       const data = node.innerHTML;
       const json = JSON.parse(data);
       return json.props.pageProps.ad;
@@ -158,9 +161,9 @@ export class Ad {
   }
 
   private getPricePerSquareMeter() {
-    const price = this.props.price[0];
+    const price = this.props.price?.[0] ?? 0;
     const square = this.props.attributes.find((attr) => attr.key === 'square');
-    const squarePrice = Number(square.value);
+    const squarePrice = Number(square?.value ?? '0');
     const pricePerSquareMeter = price / squarePrice;
     return pricePerSquareMeter.toFixed(0);
   }
