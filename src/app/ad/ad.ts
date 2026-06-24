@@ -141,6 +141,11 @@ export class Ad {
     this.printAttributes();
     this.pdf.printBreak();
     this.buildDescription();
+    this.pdf.printFloatingField({
+      fieldName: 'notes',
+      label: 'Notes',
+    });
+
     await this.buildImages();
   }
 
