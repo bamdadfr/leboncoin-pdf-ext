@@ -136,14 +136,16 @@ export class Ad {
     this.buildTitle();
     this.pdf.printBreak();
     await this.buildSeller();
-    this.pdf.printBreak();
-    this.printAttributes();
-    this.pdf.printBreak();
-    this.buildDescription();
+
     this.pdf.printFloatingField({
       fieldName: 'notes',
       label: 'Notes',
     });
+
+    this.pdf.printBreak();
+    this.printAttributes();
+    this.pdf.printBreak();
+    this.buildDescription();
 
     await this.buildImages();
   }
