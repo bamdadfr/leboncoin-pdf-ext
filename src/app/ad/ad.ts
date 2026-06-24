@@ -1,7 +1,6 @@
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 import {PDF} from '../pdf/pdf';
 import {getIsoDateTime} from '../utils/get-iso-date-time';
-import {observeElement} from '../utils/observe-element';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const manifest = require('../../manifest-chrome.json');
@@ -251,17 +250,6 @@ export class Ad {
       size: FONT_SIZES.small,
     });
 
-    // Phone
-    if (this.isAuthenticated) {
-      const phone = await this.getSellerPhone();
-      if (phone) {
-        this.pdf.printText({
-          text: `Tel: ${phone}`,
-          size: FONT_SIZES.small,
-        });
-      }
-    }
-
     // SIREN
     if (this.props.owner.siren) {
       this.pdf.printText({
@@ -269,43 +257,6 @@ export class Ad {
         size: FONT_SIZES.xsmall,
       });
     }
-  }
-
-  private async getSellerPhone(): Promise<string | null> {
-    return new Promise((resolve) => {
-      const containers = document.querySelectorAll(
-        '[data-pub-id="clicknumero"]',
-      ) as NodeListOf<HTMLDivElement>;
-
-      if (containers.length === 0) {
-        resolve(null);
-        return;
-      }
-
-      const container = containers[1];
-
-      observeElement(container, (mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.addedNodes.length === 0) {
-            return;
-          }
-
-          mutation.addedNodes.forEach((addedNode) => {
-            const isAnchor = addedNode instanceof HTMLAnchorElement;
-
-            if (!isAnchor) {
-              return;
-            }
-
-            const phone = addedNode.textContent;
-            resolve(phone);
-          });
-        });
-      });
-
-      const button = container.children[0].children[0] as HTMLButtonElement;
-      button.click();
-    });
   }
 
   private buildTitle(): void {
