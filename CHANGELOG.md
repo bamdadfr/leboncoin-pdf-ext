@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.15.0...v1.15.1) (2026-06-24)
+
+
+### Bug Fixes
+
+* add publisher id ([88bdcdc](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/88bdcdcb1a8c3c55dbab9f19dc7b11498559dee6))
+
 # [1.15.0](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.4...v1.15.0) (2026-06-24)
 
 
