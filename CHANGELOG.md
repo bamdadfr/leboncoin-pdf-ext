@@ -1,3 +1,12 @@
+## [1.15.3](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.15.2...v1.15.3) (2026-06-24)
+
+
+### Bug Fixes
+
+* force editable notes on first page ([ae0686f](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/ae0686f873edd7f1c6bf2f668c82c4cbe02ff153))
+* increase editables notes box size ([7e73415](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/7e7341514a3575f4b566a66e6d0fb2e98aee6c2f))
+* remove dead code ([de398f0](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/de398f000d95d6a46791217aaaf39ef0203701eb))
+
 ## [1.15.2](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.15.1...v1.15.2) (2026-06-24)
 
 
