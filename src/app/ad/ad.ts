@@ -1,6 +1,5 @@
 import {FONT_SIZES, FONT_WEIGHTS} from '../constants';
 import {PDF} from '../pdf/pdf';
-import {defaultState} from '../state/initialize-state';
 import {getIsoDateTime} from '../utils/get-iso-date-time';
 import {observeElement} from '../utils/observe-element';
 
@@ -84,14 +83,6 @@ export interface AdData {
   url: string;
 }
 
-interface Props {
-  gatherPhone: boolean;
-}
-
-const defaultProps = {
-  gatherPhone: defaultState.isPhoneChecked,
-};
-
 /**
  * Class representing an Ad.
  */
@@ -106,11 +97,8 @@ export class Ad {
 
   private pdf: PDF;
 
-  private readonly gatherPhone: boolean;
-
-  constructor({gatherPhone}: Props = defaultProps, data?: AdData) {
+  constructor(data?: AdData) {
     this.props = data ?? Ad.parseLeboncoin();
-    this.gatherPhone = gatherPhone;
     const {date, time} = getIsoDateTime();
     this.date = date;
     this.time = time;
@@ -259,7 +247,7 @@ export class Ad {
     });
 
     // Phone
-    if (this.isAuthenticated && this.gatherPhone) {
+    if (this.isAuthenticated) {
       const phone = await this.getSellerPhone();
       if (phone) {
         this.pdf.printText({

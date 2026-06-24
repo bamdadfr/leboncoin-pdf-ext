@@ -4,12 +4,8 @@ import {setState, StateKeys} from './set-state';
 export const defaultState = {
   isTriggered: false,
   isReloading: false,
-  isPhoneChecked: false,
 };
 
-/**
- * Initialize the state.
- */
 export async function initializeState(): Promise<void> {
   const state = await getState();
 
@@ -19,9 +15,5 @@ export async function initializeState(): Promise<void> {
 
   if (typeof state.isReloading === 'undefined') {
     await setState(StateKeys.isReloading, defaultState.isReloading);
-  }
-
-  if (typeof state.isPhoneChecked === 'undefined') {
-    await setState(StateKeys.isPhoneChecked, defaultState.isPhoneChecked);
   }
 }
