@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.15.1...v1.15.2) (2026-06-24)
+
+
+### Bug Fixes
+
+* dummy for CI ([a36d7bd](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/a36d7bd786fc1f5cbb62046455395fb7f1d13add))
+
 ## [1.15.1](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.15.0...v1.15.1) (2026-06-24)
 
 
