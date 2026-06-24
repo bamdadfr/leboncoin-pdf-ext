@@ -1,3 +1,18 @@
+# [1.15.0](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.4...v1.15.0) (2026-06-24)
+
+
+### Bug Fixes
+
+* remove phone checkbox ([721c3c7](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/721c3c766a561c1145cc539e1ce97a9035f40ea3))
+* update packages and fix ts errors ([0019426](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/00194260eaa813a33cc6bf7d466c89a8878db004))
+* update workflows ([bd3c08d](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/bd3c08d8aa51a098efb31942191583e4a8945efb))
+* use new CI workflow for chrome ([f6d4960](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/f6d49604ee1fc918536a936ee571ddc00480abb1))
+
+
+### Features
+
+* add editable notes ([27dbd0a](https://github.com/bamdadfr/leboncoin-pdf-ext/commit/27dbd0a91aed3016440305dd75d23ff3e884f78c))
+
 ## [1.14.4](https://github.com/bamdadfr/leboncoin-pdf-ext/compare/v1.14.3...v1.14.4) (2025-03-18)
 
 
